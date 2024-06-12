@@ -6,15 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>u’Blogs</title>
+  <title>Linux应急常用命令+技巧 | u’Blogs</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="u’blogs 网络安全|WEB安全|渗透测试">
-<meta property="og:type" content="website">
-<meta property="og:title" content="u’Blogs">
-<meta property="og:url" content="http://example.com/index.html">
+  <meta name="description" content="主要命令: 1awk、sort、uniq、find、lsattr  文件排查近期修改&#x2F;创建文件排查">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux应急常用命令+技巧">
+<meta property="og:url" content="http://example.com/2022/07/14/Linux%E5%BA%94%E6%80%A5%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4+%E6%8A%80%E5%B7%A7/index.html">
 <meta property="og:site_name" content="u’Blogs">
-<meta property="og:description" content="u’blogs 网络安全|WEB安全|渗透测试">
+<meta property="og:description" content="主要命令: 1awk、sort、uniq、find、lsattr  文件排查近期修改&#x2F;创建文件排查">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-07-14T08:33:08.626Z">
+<meta property="article:modified_time" content="2022-07-14T09:36:22.012Z">
 <meta property="article:author" content="uuuuuu">
 <meta property="article:tag" content="u’blogs 网络安全|WEB安全|渗透测试">
 <meta name="twitter:card" content="summary">
@@ -183,460 +185,196 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-Windows提权笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-Linux应急常用命令+技巧" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2024/04/28/Windows%E6%8F%90%E6%9D%83%E7%AC%94%E8%AE%B0/">Windows提权笔记</a>
+    <h1 class="article-title" itemprop="name">
+      Linux应急常用命令+技巧
     </h1>
   
 
         
-        <a href="/2024/04/28/Windows%E6%8F%90%E6%9D%83%E7%AC%94%E8%AE%B0/" class="archive-article-date">
-  	<time datetime="2024-04-28T15:13:31.162Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-04-28</time>
+        <a href="/2022/07/14/Linux%E5%BA%94%E6%80%A5%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4+%E6%8A%80%E5%B7%A7/" class="archive-article-date">
+  	<time datetime="2022-07-14T08:33:08.626Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-07-14</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Windows提权笔记"><a href="#Windows提权笔记" class="headerlink" title="Windows提权笔记"></a>Windows提权笔记</h1><ul>
-<li>最近在搞老外的站，好多古老的站，还是这些姿势好解决。</li>
-</ul>
-<p>1.能不能执行cmd就看这个命令：net user，net不行就用net1，再不行就上传一个net到可写可读目录，执行/c c:\windows\temp\cookies\net1.exe user</p>
-<p>2.当提权成功，3389没开的情况下，上传开3389的vps没成功时，试试上传rootkit.asp 用刚提权的用户登录进去就是system权限，再试试一般就可以了。</p>
-<p>3.cmd拒绝访问的话就自己上传一个cmd.exe 自己上传的后缀是不限制后缀的，cmd.exe/cmd.com/cmd.txt 都可以。</p>
-        
-          <a class="article-more-a" href="/2024/04/28/Windows%E6%8F%90%E6%9D%83%E7%AC%94%E8%AE%B0/#more">more >></a>
-        
-      
+        <p>主要命令:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">awk、sort、uniq、find、lsattr</span><br></pre></td></tr></table></figure>
 
-      
+<h2 id="文件排查"><a href="#文件排查" class="headerlink" title="文件排查"></a>文件排查</h2><p>近期修改/创建文件排查</p>
+<span id="more"></span>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#查看24小时内被修改的文件,0不是24小时 1表示48小时。单位为天</span></span><br><span class="line">find ./ -mtime 0 -name <span class="string">&quot;*.php&quot;</span></span><br><span class="line"><span class="comment">#查看24小时内创建的文件,同理单位为天。</span></span><br><span class="line">find ./ -ctime 0 -name <span class="string">&quot;*.php&quot;</span></span><br><span class="line"><span class="comment">#查看文件修改创建访问时间</span></span><br><span class="line"><span class="built_in">stat</span> filename.php</span><br><span class="line"><span class="comment">#查看权限为777文件</span></span><br><span class="line">find *.txt -perm 777</span><br></pre></td></tr></table></figure>
 
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/PententTest//" class="article-tag-list-link color2">PententTest</a>
-        		</li>
-      		
-		</ul>
-	</div>
+<p>检查Root用户的.bash_history 文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat /root/.bash_history</span><br></pre></td></tr></table></figure>
 
+<p>检查普通用户的.bash_history 文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat /home/[user]/.bash_history</span><br></pre></td></tr></table></figure>
 
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2024/04/28/Windows%E6%8F%90%E6%9D%83%E7%AC%94%E8%AE%B0/">展开全文 >></a>
-        </p>
-      
+<p>i属性：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#查看文件是否有</span></span><br><span class="line">lsattr &lt;filename&gt;</span><br><span class="line"><span class="comment">#去除i属性</span></span><br><span class="line">chattr -I &lt;filename&gt;</span><br></pre></td></tr></table></figure>
 
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
+<p>webshell查找：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find /var/www/ -name <span class="string">&quot;*.php&quot;</span> |xargs egrep <span class="string">&#x27;assert|phpspy|c99sh|milw0rm|eval|\(gunerpress|\(base64_decoolcode|spider_bc|shell_exec|passthru|\(\$\_\POST\[|eval \(str_rot13|\.chr\(|\$\&#123;\&quot;\_P|eval\(\$\_R|file_put_contents\(\.\*\$\_|base64_decode&#x27;</span></span><br></pre></td></tr></table></figure>
 
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
+<p>查找指定时间内修改过的文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">touch -t 202006171150 t_start //新建一个2015-06-17 11：50 时间点的文件</span><br><span class="line">touch -t 202006171230 t_end   //新建一个2015-06-17 12：30 时间点的文件</span><br><span class="line">find . -<span class="built_in">type</span> f -newer t_start ! -newer t_end | xargs ls -l | grep -v <span class="string">&quot;t_start\|t_end&quot;</span> </span><br></pre></td></tr></table></figure>
 
+<p>或者</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find / -name <span class="string">&#x27;*&#x27;</span> -newermt <span class="string">&#x27;2020-10-14 08:00:00&#x27;</span> ! -newermt <span class="string">&#x27;2020-10-16 00:00:00&#x27;</span></span><br></pre></td></tr></table></figure>
 
+<p>指定日期内产生的文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls --full-time /home/ | sed -n <span class="string">&#x27;/2019-09-03/p&#x27;</span> </span><br></pre></td></tr></table></figure>
 
+<h2 id="网络排查"><a href="#网络排查" class="headerlink" title="网络排查"></a>网络排查</h2><h3 id="进程端口"><a href="#进程端口" class="headerlink" title="进程端口"></a>进程端口</h3><p>异常连接:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">netstat -pantlu</span><br><span class="line">ps -axu</span><br><span class="line">ps -ajfx</span><br></pre></td></tr></table></figure>
 
-  
-    <article id="post-Redis利用方法整理" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2023/05/24/Redis%E5%88%A9%E7%94%A8%E6%96%B9%E6%B3%95%E6%95%B4%E7%90%86/">Redis利用方法整理</a>
-    </h1>
-  
+<p>通过进程ID查看对应程序:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Ls -alt /proc/&lt;pid&gt;/exe</span><br></pre></td></tr></table></figure>
 
-        
-        <a href="/2023/05/24/Redis%E5%88%A9%E7%94%A8%E6%96%B9%E6%B3%95%E6%95%B4%E7%90%86/" class="archive-article-date">
-  	<time datetime="2023-05-24T14:36:55.468Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-05-24</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="GetShell"><a href="#GetShell" class="headerlink" title="GetShell"></a>GetShell</h1><h3 id="写webshell"><a href="#写webshell" class="headerlink" title="写webshell"></a>写webshell</h3><ul>
-<li><p>已知web的绝对路径</p>
-</li>
-<li><p>对应目录具有读写权限</p>
-</li>
-</ul>
-        
-          <a class="article-more-a" href="/2023/05/24/Redis%E5%88%A9%E7%94%A8%E6%96%B9%E6%B3%95%E6%95%B4%E7%90%86/#more">more >></a>
-        
-      
+<p>查看历史命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">history</span></span><br><span class="line">cat /root/.bash_history</span><br></pre></td></tr></table></figure>
 
-      
+<p>查看资源占用情况：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">top</span><br></pre></td></tr></table></figure>
 
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/PententTest//" class="article-tag-list-link color2">PententTest</a>
-        		</li>
-      		
-		</ul>
-	</div>
+<h3 id="恶意通讯"><a href="#恶意通讯" class="headerlink" title="恶意通讯"></a>恶意通讯</h3><p>监控与目标IP通信的进程(有些时候可能会是域名，无法访问的时候可能会自动切换IP，这时候可以将域名在hosts里修改固定IP)</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> <span class="literal">true</span>;<span class="keyword">do</span> netstat -antp | grep 211.94.114.12; <span class="keyword">done</span></span><br><span class="line">ps -elf | grep [pid]</span><br><span class="line"><span class="built_in">kill</span> -9 [pid]</span><br><span class="line">ls -al /proc/[pid]/exe</span><br></pre></td></tr></table></figure>
 
+<p>枚举系统文件夹的文件，按修改事件排序查看7天内被修改过的文件：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find /usr/bin/ /usr/sbin/ /bin/ /usr/<span class="built_in">local</span>/bin/ -<span class="built_in">type</span> f -mtime +7 | xargs ls -la</span><br></pre></td></tr></table></figure>
 
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2023/05/24/Redis%E5%88%A9%E7%94%A8%E6%96%B9%E6%B3%95%E6%95%B4%E7%90%86/">展开全文 >></a>
-        </p>
-      
+<p>监控守护进程的行为：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lsof -p [pid]</span><br></pre></td></tr></table></figure>
 
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
+<h4 id="永恒之蓝流量"><a href="#永恒之蓝流量" class="headerlink" title="永恒之蓝流量"></a>永恒之蓝流量</h4><p>​        对于MS17010的流量，通过网络侧抓包分析，永恒之蓝的攻击载荷一般都会发送NT Trans Request的载荷，里面含有大量的nop指令，发送完NT Trans Request载荷后会发送几个Trans2 Secondary Request载荷相关的Trans2 Secondary Request，在发送载荷后，在Trans2 Respone内的返回Multiplex ID：82则为攻击成功。</p>
+<h2 id="系统排查"><a href="#系统排查" class="headerlink" title="系统排查"></a>系统排查</h2><h3 id="历史命令"><a href="#历史命令" class="headerlink" title="历史命令"></a>历史命令</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">history</span></span><br><span class="line">cat /root/.bash_history</span><br></pre></td></tr></table></figure>
 
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
+<p>登陆日志</p>
+<h3 id="Rootkit"><a href="#Rootkit" class="headerlink" title="Rootkit"></a>Rootkit</h3><h2 id="账户排查"><a href="#账户排查" class="headerlink" title="账户排查"></a>账户排查</h2><p>查看UID为0的帐号：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">awk -F: <span class="string">&#x27;&#123;if($3==0)print $1&#125;&#x27;</span> /etc/passwd</span><br></pre></td></tr></table></figure>
+
+<p>查看能够登录的帐号：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat /etc/passwd  | grep -E <span class="string">&quot;/bin/bash$&quot;</span></span><br></pre></td></tr></table></figure>
 
 
 
+<h2 id="进程排查"><a href="#进程排查" class="headerlink" title="进程排查"></a>进程排查</h2><p>通过进程ID查看对应程序:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Ls -alt /proc/&lt;pid&gt;/exe</span><br></pre></td></tr></table></figure>
 
-  
-    <article id="post-MySQL利用方法整理" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2023/05/24/MySQL%E5%88%A9%E7%94%A8%E6%96%B9%E6%B3%95%E6%95%B4%E7%90%86/">MySQL利用方法整理</a>
-    </h1>
-  
+<p>查看占用进程：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">top</span><br></pre></td></tr></table></figure>
 
-        
-        <a href="/2023/05/24/MySQL%E5%88%A9%E7%94%A8%E6%96%B9%E6%B3%95%E6%95%B4%E7%90%86/" class="archive-article-date">
-  	<time datetime="2023-05-24T14:35:24.037Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-05-24</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="GetShell"><a href="#GetShell" class="headerlink" title="GetShell"></a>GetShell</h1><h3 id="into-oufile-写-shell"><a href="#into-oufile-写-shell" class="headerlink" title="into oufile 写 shell"></a>into oufile 写 shell</h3><ul>
-<li>知道网站物理路径</li>
-<li>高权限数据库用户(root)</li>
-<li>secure_file_priv 无限制</li>
-<li>网站路径有写入权限</li>
-</ul>
-        
-          <a class="article-more-a" href="/2023/05/24/MySQL%E5%88%A9%E7%94%A8%E6%96%B9%E6%B3%95%E6%95%B4%E7%90%86/#more">more >></a>
-        
-      
+<p>隐藏进程查看</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ps -ef | awk <span class="string">&#x27;&#123;print&#125;&#x27;</span> | sort -n | uniq &gt;1</span><br><span class="line">ls /proc | sort -n |uniq &gt;2</span><br><span class="line">diff 1 2</span><br></pre></td></tr></table></figure>
 
-      
+<h3 id="隐藏项进程排查"><a href="#隐藏项进程排查" class="headerlink" title="隐藏项进程排查"></a>隐藏项进程排查</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ps -ef |awk <span class="string">&#x27;&#123;print&#125;&#x27;</span>|sort -n | uniq &gt;1</span><br><span class="line">ls /proc/ |sort -n |uniq &gt;2</span><br><span class="line">diff 1 2</span><br></pre></td></tr></table></figure>
 
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/PententTest//" class="article-tag-list-link color2">PententTest</a>
-        		</li>
-      		
-		</ul>
-	</div>
+<h3 id="启动项"><a href="#启动项" class="headerlink" title="启动项"></a>启动项</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ls -alt /etc/init.d/</span><br><span class="line"><span class="comment">#启动项文件：</span></span><br><span class="line">	more /etc/rc.local</span><br><span class="line">	/etc/rc.d/rc[0~6].d</span><br><span class="line">	ls -l /etc/rc.d/rc3.d/</span><br></pre></td></tr></table></figure>
 
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2023/05/24/MySQL%E5%88%A9%E7%94%A8%E6%96%B9%E6%B3%95%E6%95%B4%E7%90%86/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Fastjson漏洞总结" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2023/02/25/Fastjson%E6%BC%8F%E6%B4%9E%E6%80%BB%E7%BB%93/">命令执行漏洞总结</a>
-    </h1>
-  
-
-        
-        <a href="/2023/02/25/Fastjson%E6%BC%8F%E6%B4%9E%E6%80%BB%E7%BB%93/" class="archive-article-date">
-  	<time datetime="2023-02-24T16:22:24.362Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-02-25</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="Fastjson漏洞利用"><a href="#Fastjson漏洞利用" class="headerlink" title="Fastjson漏洞利用"></a>Fastjson漏洞利用</h1><h2 id="框架确认"><a href="#框架确认" class="headerlink" title="框架确认"></a>框架确认</h2><p><code>&#123;&quot;@type&quot;:&quot;java.lang.AutoCloseable&quot;</code></p>
-<p>存在漏洞版本：</p>
-<ul>
-<li>1.2.24</li>
-<li>1.2.45</li>
-<li>1.2.46</li>
-<li>1.2.47</li>
-<li>1.2.48</li>
-<li>1.2.49</li>
-<li>1.2.50</li>
-<li>1.2.51</li>
-<li>1.2.52</li>
-<li>1.2.53</li>
-<li>1.2.54</li>
-<li>1.2.55</li>
-<li>1.2.56</li>
-<li>1.2.57</li>
-<li>1.2.58</li>
-</ul>
-<h2 id="漏洞验证"><a href="#漏洞验证" class="headerlink" title="漏洞验证"></a>漏洞验证</h2>
-        
-          <a class="article-more-a" href="/2023/02/25/Fastjson%E6%BC%8F%E6%B4%9E%E6%80%BB%E7%BB%93/#more">more >></a>
-        
-      
-
-      
-
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/PententTest//" class="article-tag-list-link color2">PententTest</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2023/02/25/Fastjson%E6%BC%8F%E6%B4%9E%E6%80%BB%E7%BB%93/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-在IPA中重签名iOS应用程序" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2023/01/30/%E5%9C%A8IPA%E4%B8%AD%E9%87%8D%E7%AD%BE%E5%90%8DiOS%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F/">在IPA中重签名iOS应用程序</a>
-    </h1>
-  
-
-        
-        <a href="/2023/01/30/%E5%9C%A8IPA%E4%B8%AD%E9%87%8D%E7%AD%BE%E5%90%8DiOS%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F/" class="archive-article-date">
-  	<time datetime="2023-01-30T11:44:10.069Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-01-30</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>当我们在对iOS应用程序执行黑盒安全测试时，我们一般只能从AppStore来访问和获取iOS应用程序。但是在大多数情况下，客户都会给我们提供一个IPA文件。在黑盒测试过程中，我们无法访问目标应用的源代码，因此通过Xcode将其部署到设备并进行测试，几乎是不可能的。但是有一种可行的解决方案，即使用我们手头上的配置文件来重新启动应用程序，并将其部署到我们的测试设备上。</p>
+<h4 id="一-通过（init-d）服务的方式自启动"><a href="#一-通过（init-d）服务的方式自启动" class="headerlink" title="一 通过（init.d）服务的方式自启动"></a>一 通过（init.d）服务的方式自启动</h4><hr>
+<blockquote>
+<p>1.在/etc/init.d 下建立相关程序的启动脚本<br>ln -s /etc/init.d/服务名 /etc/rc.d/rc3.d/S100服务名 //S:开机自启动 100:启动顺序<br>2.chkconfig –add 服务名<br>3.chkconfig 服务名 on 开机自启动<br>chkconfig 服务名 off 关闭自启动<br>4.service 服务名 start 手动启动服务<br>5.service 服务名 stop 手动关闭服务<br>6.chkconfig –list查看开启启动项<br>3，5为<strong>关注启动</strong></p>
 </blockquote>
-<p>在这篇文章中，我们将演示如何重新对一个iOS应用程序签名，并生成一个IPA文件，然后将其部署到我们的测试设备上。</p>
-        
-          <a class="article-more-a" href="/2023/01/30/%E5%9C%A8IPA%E4%B8%AD%E9%87%8D%E7%AD%BE%E5%90%8DiOS%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F/#more">more >></a>
-        
-      
+<h4 id="二-通过systemctl-服务的方式自启动"><a href="#二-通过systemctl-服务的方式自启动" class="headerlink" title="二 通过systemctl 服务的方式自启动"></a>二 通过systemctl 服务的方式自启动</h4><hr>
+<p>1.cd /usr/lib/systemd/system/<br>2.vi 服务名.service</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Systemd unit file for default tomcat</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># To create clones of this service:</span></span><br><span class="line"><span class="comment"># DO NOTHING, use tomcat@.service instead.</span></span><br><span class="line"> </span><br><span class="line">[Unit]</span><br><span class="line">Description=Apache Tomcat Web Application Container</span><br><span class="line">After=syslog.target network.target</span><br><span class="line"> </span><br><span class="line">[Service]</span><br><span class="line">Type=simple</span><br><span class="line">EnvironmentFile=/etc/tomcat/tomcat.conf</span><br><span class="line">Environment=<span class="string">&quot;NAME=&quot;</span></span><br><span class="line">EnvironmentFile=-/etc/sysconfig/tomcat</span><br><span class="line">ExecStart=/usr/libexec/tomcat/server start</span><br><span class="line">SuccessExitStatus=143</span><br><span class="line">User=tomcat</span><br><span class="line"> </span><br><span class="line">[Install]</span><br><span class="line">WantedBy=multi-user.target</span><br></pre></td></tr></table></figure>
+
+<p>3.systemctl enable 服务名.service //设置自启动服务<br>4.systemctl start 服务名.service //启动服务<br>5.systemctl stop 服务名.service //停止服务<br>6.service 服务名 start //启动服务<br>7.service 服务名 stop //停止服务</p>
+<h4 id="三-自定义开机程序"><a href="#三-自定义开机程序" class="headerlink" title="三 自定义开机程序"></a>三 自定义开机程序</h4><hr>
+<p>1.vi /etc/rc.d/rc.local<br>2.末尾添加启动命令<br>3 /usr/src/tomcat/bin/startup.sh /*自动启动tomcat*/</p>
+<h4 id="四-定时启动脚本"><a href="#四-定时启动脚本" class="headerlink" title="四 定时启动脚本"></a>四 定时启动脚本</h4><p>最好是-e进去看，因为有些直接-l是无法看到的</p>
+<ol>
+<li>/root下写好启动的shell文件</li>
+<li>crontab -e</li>
+<li>设置好定时时间</li>
+<li>设置为每分钟检查一次 // */1 * * * * 脚本目录<br>other</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># 显示logged in表示用户还在登录</span><br><span class="line"># pts表示从SSH远程登录</span><br><span class="line"># tty表示从控制台登录，就是在服务器旁边登录</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">crontab -l</span><br><span class="line">ls -alh /var/spool/cron</span><br><span class="line">ls -al /etc/ | grep cron</span><br><span class="line">ls -al /etc/cron*</span><br><span class="line">cat /etc/cron*</span><br><span class="line">cat /etc/at.allow</span><br><span class="line">cat /etc/at.deny</span><br><span class="line">cat /etc/cron.allow</span><br><span class="line">cat /etc/cron.deny</span><br><span class="line">cat /etc/crontab</span><br><span class="line">cat /etc/anacrontab</span><br><span class="line">cat /var/spool/cron/crontabs/root</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="日志分析"><a href="#日志分析" class="headerlink" title="日志分析"></a>日志分析</h2><h3 id="应用日志"><a href="#应用日志" class="headerlink" title="应用日志"></a>应用日志</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cat access.log | cut -f 1 -d <span class="string">&#x27; &#x27;</span>|sort |uniq -c | sort -k 1 -n -r 查看攻击数量最多的IP</span><br><span class="line">cat access.log | cut -f 7 -d <span class="string">&#x27; &#x27;</span>|sort |uniq -c | sort -k 1 -n -r 查看访问最多的页面</span><br></pre></td></tr></table></figure>
+
+<p>跟这个等价：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat access.log | awk <span class="string">&#x27;&#123;print $7&#125;&#x27;</span> | uniq -c | sort -nr | head -10</span><br></pre></td></tr></table></figure>
+
+<p>IP统计到IP.txt</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">awk &#x27;&#123;print $1&#125;&#x27; access.log &gt;ip.txt</span><br></pre></td></tr></table></figure>
+
+<p>计算IP出现次数</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sort ip.txt |uniq  -c</span><br></pre></td></tr></table></figure>
+
+<p>查找文件</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find ./ -name &quot;*.log&quot; |xargs grep -rn &quot;/data/admin.html&quot;</span><br></pre></td></tr></table></figure>
+
+<h3 id="主机日志"><a href="#主机日志" class="headerlink" title="主机日志"></a>主机日志</h3><p>查询log主机登陆日志：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep <span class="string">&quot;Accepted &quot;</span> /var/<span class="built_in">log</span>/secure* | awk <span class="string">&#x27;&#123;print $1,$2,$3,$9,$11&#125;&#x27;</span></span><br></pre></td></tr></table></figure>
+
+
+<p>定位有爆破的源IP:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep <span class="string">&quot;Failed password&quot;</span> /var/<span class="built_in">log</span>/secure|grep -E -o <span class="string">&quot;(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)&quot;</span>|uniq -c</span><br></pre></td></tr></table></figure>
+
+
+<p>爆破日志的用户名密码：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep <span class="string">&quot;Failed password&quot;</span> /var/<span class="built_in">log</span>/secure|perl -e <span class="string">&#x27;while($_=&lt;&gt;)&#123; /for(.*?) from/; print &quot;$1\n&quot;;&#125;&#x27;</span>|uniq -c|sort -nr</span><br></pre></td></tr></table></figure>
+
+<p>登录成功</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep <span class="string">&#x27;Accepted&#x27;</span> /var/<span class="built_in">log</span>/secure | awk <span class="string">&#x27;&#123;print $11&#125;&#x27;</span> | sort | uniq -c | sort -nr</span><br></pre></td></tr></table></figure>
+
+<p>或者last命令，它会读取位于/var/log/wtmp的文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">lastb <span class="comment">#列出登入系统失败的用户相关信息</span></span><br><span class="line"></span><br><span class="line">Last <span class="comment">#显示用户最近登录信息</span></span><br><span class="line"></span><br><span class="line">lastlog <span class="comment">#拉取所有账户最后登陆的信息</span></span><br></pre></td></tr></table></figure>
+
+<p>把该文件记录的登录系统的用户名单，全部显示出来。</p>
+<p>登录失败：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep <span class="string">&#x27;Failed&#x27;</span> /var/<span class="built_in">log</span>/secure | awk <span class="string">&#x27;&#123;print $11&#125;&#x27;</span> | sort | uniq -c | sort -nr</span><br></pre></td></tr></table></figure>
+
+<p>查询可以远程登录的帐号信息：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">awk <span class="string">&#x27;/\$1|\$6/&#123;print $1&#125;&#x27;</span> /etc/shadow</span><br></pre></td></tr></table></figure>
+
+<p>查询特权用户特权用户(uid 为0)：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">awk -F: <span class="string">&#x27;$3==0&#123;print $1&#125;&#x27;</span> /etc/passwd</span><br></pre></td></tr></table></figure>
+
+<p>针对幽灵模式（last不会留存日志），可以通过ss -nt命令找到144.21.14.13</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">root@VM-0-7-ubuntu:~<span class="comment"># ss -nt#可以看到</span></span><br><span class="line">State             Recv-Q         Send-Q                          Local Address:Port                               Peer Address:Port</span><br><span class="line">ESTAB             0              0                                  172.21.0.7:49288                            49.232.128.178:40443</span><br><span class="line">ESTAB             0              0                                  172.21.0.7:35788                             221.13.31.165:26921</span><br><span class="line">ESTAB             0              0                                  172.21.0.7:35788                             221.13.31.165:25930</span><br><span class="line">ESTAB             0              0                                  172.21.0.7:59076                            144.21.14.13:22</span><br><span class="line">ESTAB             0              0                                  172.21.0.7:35788                             221.13.31.165:26496</span><br><span class="line">ESTAB             0              0                                  172.21.0.7:35788                             221.13.31.165:25606</span><br><span class="line">ESTAB             0              36                                 172.21.0.7:35788                             221.13.31.165:26293</span><br><span class="line">ESTAB             0              0                                  172.21.0.7:35788                             221.13.31.165:25615</span><br><span class="line">ESTAB             0              0                                  172.21.0.7:34680                              169.254.0.55:5574</span><br><span class="line">ESTAB             0              0                                  172.21.0.7:49034                            49.232.128.178:40443</span><br><span class="line">ESTAB             0              0                                  172.21.0.7:33389                               218.60.3.31:62853</span><br><span class="line">ESTAB             0              0                                  172.21.0.7:49198                            49.232.128.178:40443</span><br><span class="line">FIN-WAIT-1        0              116                       [::ffff:172.21.0.7]:899                     [::ffff:111.11.198.166]:54762</span><br><span class="line">ESTAB             272            0                         [::ffff:172.21.0.7]:40443                   [::ffff:49.232.128.178]:49198</span><br><span class="line">ESTAB             0              0                         [::ffff:172.21.0.7]:7010                     [::ffff:202.98.251.21]:36445</span><br><span class="line">ESTAB             272            0                         [::ffff:172.21.0.7]:40443                   [::ffff:49.232.128.178]:49034</span><br><span class="line">ESTAB             0              0                         [::ffff:172.21.0.7]:7010                     [::ffff:202.98.251.21]:42729</span><br><span class="line">ESTAB             272            0                         [::ffff:172.21.0.7]:40443                   [::ffff:49.232.128.178]:49288</span><br><span class="line">FIN-WAIT-2        0              0                         [::ffff:172.21.0.7]:899                      [::ffff:220.182.7.110]:51375</span><br><span class="line">ESTAB             0              0                         [::ffff:172.21.0.7]:7010                    [::ffff:202.112.38.250]:6517</span><br><span class="line">ESTAB             0              0                         [::ffff:172.21.0.7]:7010                     [::ffff:202.98.251.21]:42728</span><br><span class="line">ESTAB             0              0                         [::ffff:172.21.0.7]:7010                    [::ffff:144.21.14.13]:49059</span><br><span class="line">root@VM-0-7-ubuntu:~<span class="comment"># lsof -i:22#这里可以看到144.21.14.13IP有进行连接</span></span><br><span class="line">COMMAND  PID USER   FD   TYPE   DEVICE SIZE/OFF NODE NAME</span><br><span class="line">ssh     4056 root    3u  IPv4 79567595      0t0  TCP VM-0-7-ubuntu:59076-&gt;144.21.14.13:ssh (ESTABLISHED)</span><br></pre></td></tr></table></figure>
 
       
 
-    </div>
-    <div class="article-info article-info-index">
       
-      
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/iosTest//" class="article-tag-list-link color3">iosTest</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2023/01/30/%E5%9C%A8IPA%E4%B8%AD%E9%87%8D%E7%AD%BE%E5%90%8DiOS%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>祝老板天天开心<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/alipay.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Vcenter实战利用方式总结" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/11/13/Vcenter%E5%AE%9E%E6%88%98%E5%88%A9%E7%94%A8%E6%96%B9%E5%BC%8F%E6%80%BB%E7%BB%93/">Vcenter实战利用方式总结</a>
-    </h1>
-  
-
-        
-        <a href="/2022/11/13/Vcenter%E5%AE%9E%E6%88%98%E5%88%A9%E7%94%A8%E6%96%B9%E5%BC%8F%E6%80%BB%E7%BB%93/" class="archive-article-date">
-  	<time datetime="2022-11-13T14:25:40.427Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-11-13</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="Vcenter实战利用方式总结"><a href="#Vcenter实战利用方式总结" class="headerlink" title="Vcenter实战利用方式总结"></a>Vcenter实战利用方式总结</h1><p>原文：<a target="_blank" rel="noopener" href="https://forum.butian.net/share/1893">https://forum.butian.net/share/1893</a></p>
-<h1 id="0x01-指纹特征"><a href="#0x01-指纹特征" class="headerlink" title="0x01 指纹特征"></a>0x01 指纹特征</h1><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">title=<span class="string">&quot;+ ID_VC_Welcome +&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p><img src="https://shs3.b.qianxin.com/attack_forum/2022/09/attach-45ce5cec25a6cb4322a561fe2c04136bae411055.png" alt="image.png"></p>
-<h1 id="0x02-查看Vcenter版本"><a href="#0x02-查看Vcenter版本" class="headerlink" title="0x02 查看Vcenter版本"></a>0x02 查看Vcenter版本</h1>
-        
-          <a class="article-more-a" href="/2022/11/13/Vcenter%E5%AE%9E%E6%88%98%E5%88%A9%E7%94%A8%E6%96%B9%E5%BC%8F%E6%80%BB%E7%BB%93/#more">more >></a>
-        
-      
-
       
 
     </div>
@@ -649,91 +387,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/PententTest//" class="article-tag-list-link color2">PententTest</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/11/13/Vcenter%E5%AE%9E%E6%88%98%E5%88%A9%E7%94%A8%E6%96%B9%E5%BC%8F%E6%80%BB%E7%BB%93/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Elasticsearch基础（二）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/11/10/Elasticsearch%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/">Elasticsearch基础（二）</a>
-    </h1>
-  
-
-        
-        <a href="/2022/11/10/Elasticsearch%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/" class="archive-article-date">
-  	<time datetime="2022-11-10T13:49:47.499Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-11-10</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="Elasticsearch基础（二）"><a href="#Elasticsearch基础（二）" class="headerlink" title="Elasticsearch基础（二）"></a>Elasticsearch基础（二）</h2><p>ES里的关键字段与mysql的对照关系： </p>
-<ul>
-<li>Index(索引)—-数据库database</li>
-</ul>
-        
-          <a class="article-more-a" href="/2022/11/10/Elasticsearch%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/#more">more >></a>
-        
-      
-
-      
-
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/开发相关//" class="article-tag-list-link color5">开发相关</a>
+        			<a href="/categories/应急响应//" class="article-tag-list-link color5">应急响应</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="/categories/开发相关/elk//" class="article-tag-list-link color4">elk</a>
+        			<a href="/categories/应急响应/PententTest//" class="article-tag-list-link color2">PententTest</a>
         		</li>
       		
 		</ul>
@@ -741,16 +399,81 @@
 
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/11/10/Elasticsearch%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2022/09/22/VisualStudio%20Code%20settings%E9%85%8D%E7%BD%AE%E9%A1%B9/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Visual Studio Code settings配置项
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2022/07/13/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C%E6%BC%8F%E6%B4%9E%E6%80%BB%E7%BB%93/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">命令执行漏洞总结</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -765,259 +488,32 @@
         </div>
         
         
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Elasticsearch基础（一）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/11/08/Elasticsearch%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/">Elasticsearch基础（一）</a>
-    </h1>
-  
-
-        
-        <a href="/2022/11/08/Elasticsearch%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/" class="archive-article-date">
-  	<time datetime="2022-11-08T15:06:47.472Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-11-08</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="elasticsearch基础（一）"><a href="#elasticsearch基础（一）" class="headerlink" title="elasticsearch基础（一）"></a>elasticsearch基础（一）</h1><p>CRUD 功能，然而 Elasticsearch 的核心功能是搜索，所以在学习之前，为更好的演示这个功能，我们先往 Elasticsearch 中插入一些数据：</p>
-        
-          <a class="article-more-a" href="/2022/11/08/Elasticsearch%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/#more">more >></a>
-        
-      
-
-      
-
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/开发相关//" class="article-tag-list-link color5">开发相关</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/开发相关/elk//" class="article-tag-list-link color4">elk</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/11/08/Elasticsearch%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E6%8E%92%E6%9F%A5"><span class="toc-number">1.</span> <span class="toc-text">文件排查</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E6%8E%92%E6%9F%A5"><span class="toc-number">2.</span> <span class="toc-text">网络排查</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%9B%E7%A8%8B%E7%AB%AF%E5%8F%A3"><span class="toc-number">2.1.</span> <span class="toc-text">进程端口</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%81%B6%E6%84%8F%E9%80%9A%E8%AE%AF"><span class="toc-number">2.2.</span> <span class="toc-text">恶意通讯</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B0%B8%E6%81%92%E4%B9%8B%E8%93%9D%E6%B5%81%E9%87%8F"><span class="toc-number">2.2.1.</span> <span class="toc-text">永恒之蓝流量</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%B3%BB%E7%BB%9F%E6%8E%92%E6%9F%A5"><span class="toc-number">3.</span> <span class="toc-text">系统排查</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8E%86%E5%8F%B2%E5%91%BD%E4%BB%A4"><span class="toc-number">3.1.</span> <span class="toc-text">历史命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Rootkit"><span class="toc-number">3.2.</span> <span class="toc-text">Rootkit</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B4%A6%E6%88%B7%E6%8E%92%E6%9F%A5"><span class="toc-number">4.</span> <span class="toc-text">账户排查</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%9B%E7%A8%8B%E6%8E%92%E6%9F%A5"><span class="toc-number">5.</span> <span class="toc-text">进程排查</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9A%90%E8%97%8F%E9%A1%B9%E8%BF%9B%E7%A8%8B%E6%8E%92%E6%9F%A5"><span class="toc-number">5.1.</span> <span class="toc-text">隐藏项进程排查</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%AF%E5%8A%A8%E9%A1%B9"><span class="toc-number">5.2.</span> <span class="toc-text">启动项</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%80-%E9%80%9A%E8%BF%87%EF%BC%88init-d%EF%BC%89%E6%9C%8D%E5%8A%A1%E7%9A%84%E6%96%B9%E5%BC%8F%E8%87%AA%E5%90%AF%E5%8A%A8"><span class="toc-number">5.2.1.</span> <span class="toc-text">一 通过（init.d）服务的方式自启动</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%8C-%E9%80%9A%E8%BF%87systemctl-%E6%9C%8D%E5%8A%A1%E7%9A%84%E6%96%B9%E5%BC%8F%E8%87%AA%E5%90%AF%E5%8A%A8"><span class="toc-number">5.2.2.</span> <span class="toc-text">二 通过systemctl 服务的方式自启动</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%89-%E8%87%AA%E5%AE%9A%E4%B9%89%E5%BC%80%E6%9C%BA%E7%A8%8B%E5%BA%8F"><span class="toc-number">5.2.3.</span> <span class="toc-text">三 自定义开机程序</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9B%9B-%E5%AE%9A%E6%97%B6%E5%90%AF%E5%8A%A8%E8%84%9A%E6%9C%AC"><span class="toc-number">5.2.4.</span> <span class="toc-text">四 定时启动脚本</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%97%A5%E5%BF%97%E5%88%86%E6%9E%90"><span class="toc-number">6.</span> <span class="toc-text">日志分析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BA%94%E7%94%A8%E6%97%A5%E5%BF%97"><span class="toc-number">6.1.</span> <span class="toc-text">应用日志</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BB%E6%9C%BA%E6%97%A5%E5%BF%97"><span class="toc-number">6.2.</span> <span class="toc-text">主机日志</span></a></li></ol></li></ol>
+                    </div>
+                </span>
             </div>
         </div>
         
-        
     </div>
 </aside>
 
 
 
-
-  
-    <article id="post-域渗透一条龙手册" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/10/18/%E5%9F%9F%E6%B8%97%E9%80%8F%E4%B8%80%E6%9D%A1%E9%BE%99%E6%89%8B%E5%86%8C/">域渗透一条龙手册</a>
-    </h1>
   
 
-        
-        <a href="/2022/10/18/%E5%9F%9F%E6%B8%97%E9%80%8F%E4%B8%80%E6%9D%A1%E9%BE%99%E6%89%8B%E5%86%8C/" class="archive-article-date">
-  	<time datetime="2022-10-17T19:01:17.582Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-10-18</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="1-无凭证情况下"><a href="#1-无凭证情况下" class="headerlink" title="1.无凭证情况下"></a>1.无凭证情况下</h1><h2 id="网络扫描"><a href="#网络扫描" class="headerlink" title="网络扫描"></a>网络扫描</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">cme smb &lt;ip_range&gt; 							# SMB 扫描存活主机</span><br><span class="line">nmap -sP -p &lt;ip&gt; 							# ping 扫描</span><br><span class="line">nmap -PN -sV --top-ports 50 --open &lt;ip&gt; 	# 快速扫描</span><br><span class="line">nmap -PN --script smb-vuln* -p139,445 &lt;ip&gt; 	# 检测 SMB 漏洞</span><br><span class="line">nmap -PN -sC -sV &lt;ip&gt; 						# 经典扫描</span><br><span class="line">nmap -PN -sC -sV -p- &lt;ip&gt;		 			# 全扫描</span><br><span class="line">nmap -sU -sC -sV &lt;ip&gt; 						# UDP 扫描</span><br></pre></td></tr></table></figure>
-
-<h2 id="漏洞快速探测"><a href="#漏洞快速探测" class="headerlink" title="漏洞快速探测"></a>漏洞快速探测</h2>
-        
-          <a class="article-more-a" href="/2022/10/18/%E5%9F%9F%E6%B8%97%E9%80%8F%E4%B8%80%E6%9D%A1%E9%BE%99%E6%89%8B%E5%86%8C/#more">more >></a>
-        
-      
-
-      
-
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/PententTest//" class="article-tag-list-link color2">PententTest</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/10/18/%E5%9F%9F%E6%B8%97%E9%80%8F%E4%B8%80%E6%9D%A1%E9%BE%99%E6%89%8B%E5%86%8C/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-VisualStudio Code settings配置项" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/09/22/VisualStudio%20Code%20settings%E9%85%8D%E7%BD%AE%E9%A1%B9/">Visual Studio Code settings配置项</a>
-    </h1>
   
 
-        
-        <a href="/2022/09/22/VisualStudio%20Code%20settings%E9%85%8D%E7%BD%AE%E9%A1%B9/" class="archive-article-date">
-  	<time datetime="2022-09-22T15:48:39.723Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-09-22</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>在 VS Code 中，使用快捷键：<code>command+shift+P</code>C修改为如下setting配置项</p>
-<p>defaulttings.json</p>
-        
-          <a class="article-more-a" href="/2022/09/22/VisualStudio%20Code%20settings%E9%85%8D%E7%BD%AE%E9%A1%B9/#more">more >></a>
-        
-      
-
-      
-
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/开发相关//" class="article-tag-list-link color5">开发相关</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/开发相关/golang//" class="article-tag-list-link color2">golang</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/09/22/VisualStudio%20Code%20settings%E9%85%8D%E7%BD%AE%E9%A1%B9/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
+  
 
   
-  
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
-    </nav>
+
   
 
 
@@ -1040,8 +536,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,

